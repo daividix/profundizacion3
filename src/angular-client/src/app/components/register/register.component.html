@@ -1,0 +1,43 @@
+<form (ngSubmit)="registrarSitio($event)">
+  <label for="name">Nombre</label>
+  <input type="text" name="name" [(ngModel)]="modelSitio.name" id="name">
+  <br>
+
+  <label for="address">Direccion</label>
+  <input type="text" name="address" [(ngModel)]="modelSitio.address" id="address">
+  <br>
+
+  <label for="city">Ciudad</label>
+  <input type="text" name="city" [(ngModel)]="modelSitio.city" id="city">
+  <br>
+
+  <label for="latitude">Latitud</label>
+  <input type="text" name="latitude" [(ngModel)]="modelSitio.latitude" id="latitude">
+  <br>
+
+  <label for="longitude">Longitud</label>
+  <input type="text" name="longitude" [(ngModel)]="modelSitio.longitude" id="longitude">
+  <br>
+
+  <label for="phoneNumber">Telefono</label>
+  <input type="text" name="phoneNumber" [(ngModel)]="modelSitio.phoneNumber" id="phoneNumber">
+  <br>
+
+  <label for="eslogan">Eslogan</label>
+  <input type="text" name="eslogan" [(ngModel)]="modelSitio.eslogan" id="eslogan">
+  <br>
+
+  <label for="information">Informacion</label>
+  <input type="text" name="information" [(ngModel)]="modelSitio.information" id="information">
+  <br>
+
+  <label for="category">Categoria</label>
+  <input type="text" name="category" [(ngModel)]="modelSitio.category" id="category">
+  <br>
+
+  <label for="calification">Calificacion</label>
+  <input type="text" name="calification" [(ngModel)]="modelSitio.calification" id="calification">
+  <br>
+  <input type="submit" value="Enviar">
+
+</form>
