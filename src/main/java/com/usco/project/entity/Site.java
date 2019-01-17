@@ -67,14 +67,13 @@ public class Site implements Serializable{
 	private long clicks;
 	
 	@ManyToMany(targetEntity=Service.class)
-	private Set services;
+	private Set<Service> services;
 	
 	@ManyToMany(targetEntity=Category.class)
-	private Set categories;
+	private Set<Category> categories;
 	
-	public Site(long id, String name, String address, String city, String latitude, String longitude,
+	public Site(String name, String address, String city, String latitude, String longitude,
 			String phoneNumber, String eslogan, String information, float calification, long clicks) {
-		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.city = city;
@@ -180,6 +179,21 @@ public class Site implements Serializable{
 	public void setClicks(long clicks) {
 		this.clicks = clicks;
 	}
-	
+
+	public Set<Service> getServices() {
+		return services;
+	}
+
+	public void setServices(Set<Service> services) {
+		this.services = services;
+	}
+
+	public Set<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
+	}
 	
 }
