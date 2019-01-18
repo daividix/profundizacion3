@@ -1,0 +1,42 @@
+<body>
+  <div class="form-signup">
+    <form (ngSubmit)="signup()">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" [(ngModel)]="signUpForm.name" name="name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last name" [(ngModel)]="signUpForm.lastName" name="lastName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select placeholder="Favorite food" [(ngModel)]="signUpForm.gender" name="gender">
+          <mat-option *ngFor="let gender of genders" [value]="gender.value" name="gender">
+            {{gender.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Image</mat-label>
+        <input matInput placeholder="Image" [(ngModel)]="signUpForm.image" name="image">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" [(ngModel)]="signUpForm.username" name="username">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" [(ngModel)]="signUpForm.email" name="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Password" [(ngModel)]="signUpForm.password" name="password">
+      </mat-form-field>
+      <br>
+      <button mat-button type="submit">Sign-up</button>
+    </form>
+  </div>
+</body>

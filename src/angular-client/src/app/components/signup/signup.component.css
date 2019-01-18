@@ -1,0 +1,6 @@
+.form-signup {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-self: center;
+  }

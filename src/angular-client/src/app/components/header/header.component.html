@@ -1,3 +1,18 @@
-<p>
-  header works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <button mat-button (click)="drawer.toggle()"><mat-icon>view_headline</mat-icon></button>
+      <span>Tusit</span>
+    
+      <span class="space-header"></span>
+
+      <div *ngIf="isLogged; else notlogged">
+        {{tokenService.getUsername()}}
+        <button mat-button (click)="logout()">Log-out</button>
+      </div>
+      <ng-template #notlogged>
+          <a mat-button routerLink="/login"><b>Log-in</b></a>
+          <a mat-button routerLink="/signup"><b>Sign-up</b></a>
+      </ng-template>      
+  </mat-toolbar-row>
+</mat-toolbar>
+  

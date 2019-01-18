@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  @Input('drawer') drawer;
+  isLogged: Boolean = false;
+  constructor(public tokenService: TokenStorageService) { }
 
   ngOnInit() {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    }
   }
 
+  logout() {
+    this.tokenService.logOut();
+    window.location.reload();
+  }
 }
