@@ -8,5 +8,6 @@ import com.usco.project.entity.Category;
 @Repository("category_repository")
 public interface CategoryRepository extends JpaRepository<Category, Long>{
 
+    public abstract Category findById(Long id);
 
 }

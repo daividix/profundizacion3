@@ -40,9 +40,19 @@ public class Category implements Serializable{
 	@Column(name="state")
 	private String state;
 	
+
+	public Category(String name, String info, String icon, String state) {
+		this.name = name;
+		this.info = info;
+		this.icon = icon;
+		this.state = state;
+	}
+
+
 	public Category () {
 		
 	}
+
 
 	public long getId() {
 		return id;

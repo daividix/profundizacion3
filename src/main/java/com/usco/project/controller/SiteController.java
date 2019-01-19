@@ -83,7 +83,7 @@ public class SiteController {
 				siteForm.getLatitude(), siteForm.getLongitude(), siteForm.getPhoneNumber(),
 				siteForm.getEslogan(), siteForm.getInformation(), siteForm.getCalification(), siteForm.getClicks());
 		
-		List<Category> categorias =  categoryService.verCategorias();
+		List<Category> categorias =  categoryService.getCategories();
 		List<Service> servicios = serviceService.verServicios();
 		
 		Set<Long> strCategories = siteForm.getCategories();

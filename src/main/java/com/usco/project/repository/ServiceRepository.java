@@ -8,4 +8,5 @@ import com.usco.project.entity.Service;
 @Repository("service_repository")
 public interface ServiceRepository extends JpaRepository<Service, Long>{
 
+    public abstract Service findById(Long id);
 }
