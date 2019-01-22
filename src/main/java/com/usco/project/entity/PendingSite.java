@@ -14,7 +14,9 @@ import javax.persistence.Table;
 @Table(name="PendingSite")
 public class PendingSite implements Serializable{
 
-	//id del sitio pendiente, autogenerado
+	private static final long serialVersionUID = 1L;
+
+	// id del sitio pendiente, autogenerado
 	@Id
 	@GeneratedValue
 	@Column(name="id", unique=true)

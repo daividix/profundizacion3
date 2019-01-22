@@ -84,7 +84,7 @@ public class SiteController {
 				siteForm.getEslogan(), siteForm.getInformation(), siteForm.getCalification(), siteForm.getClicks());
 		
 		List<Category> categorias =  categoryService.getCategories();
-		List<Service> servicios = serviceService.verServicios();
+		List<Service> servicios = serviceService.getServices();
 		
 		Set<Long> strCategories = siteForm.getCategories();
 		Set<Category> categories = new HashSet<>();

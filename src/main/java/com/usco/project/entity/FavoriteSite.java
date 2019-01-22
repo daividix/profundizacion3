@@ -14,7 +14,9 @@ import javax.persistence.Table;
 @Table(name="FavoriteSite")
 public class FavoriteSite implements Serializable{
 
-	//id del sitio favorito, autogenerado
+	private static final long serialVersionUID = 1L;
+
+	// id del sitio favorito, autogenerado
 	@Id
 	@GeneratedValue
 	@Column(name="Favorite_Site_id", unique=true)

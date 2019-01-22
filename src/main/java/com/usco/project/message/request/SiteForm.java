@@ -8,9 +8,6 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import com.usco.project.entity.Category;
-import com.usco.project.entity.Service;
-
 public class SiteForm {
 
 	@NotBlank
