@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
         this.tokenService.saveToken(res.accessToken);
         this.tokenService.saveAuthorities(res.authorities);
         this.tokenService.saveUsername(res.username);
-        window.location.assign('/home');
+        window.location.assign('/');
       }
 
     });

@@ -1,6 +1,7 @@
-.form-signup {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    align-self: center;
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+.signup-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }

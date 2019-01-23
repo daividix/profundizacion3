@@ -1,16 +1,33 @@
-<body>
-    <div class="form-signup">
-      <form (ngSubmit)="login()">
-        <mat-form-field>
-          <mat-label>Username</mat-label>
-          <input matInput placeholder="Username" [(ngModel)]="loginForm.username" name="username">
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Password</mat-label>
-          <input type="password" matInput placeholder="Password" [(ngModel)]="loginForm.password" name="password">
-        </mat-form-field>
-        <br>
-        <button mat-button type="submit">Log-in</button>
-      </form>
-    </div>
-  </body>
+<body style="height: 100vmax; background: #5f5fc4">
+  <div class="form-signup">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar><mat-icon style="font-size: 40px;">account_box</mat-icon></div>
+        <mat-card-title style="text-align: center">Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <form (ngSubmit)="login()">
+              <div>
+                <mat-form-field style="width: 100%">
+                  <mat-label>Username</mat-label>
+                  <input matInput placeholder="Username" [(ngModel)]="loginForm.username" name="username">
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field style="width: 100%">
+                  <mat-label>Password</mat-label>
+                  <input type="password" matInput placeholder="Password" [(ngModel)]="loginForm.password" name="password">
+                </mat-form-field>
+              </div>
+              <br>
+              <mat-card-actions>
+                  <div style="text-align: center; min-width: 300px;">
+                    <button mat-button type="submit">Log-in</button> 
+                  </div>   
+              </mat-card-actions>
+            </form>
+      </mat-card-content> 
+    </mat-card>
+    
+  </div>
+</body>

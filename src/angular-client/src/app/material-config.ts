@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule, MatCheckboxModule,
 MatInputModule, MatToolbarModule, MatFormFieldModule, MatSidenavModule,
-MatSelectModule} from '@angular/material';
+MatSelectModule, MatCardModule, MatStepperModule, MatGridListModule, MatSnackBarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
@@ -14,7 +14,11 @@ import {MatIconModule} from '@angular/material/icon';
     MatToolbarModule,
     FormsModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    MatStepperModule,
+    MatGridListModule,
+    MatSnackBarModule
   ],
   exports: [MatButtonModule,
     MatCheckboxModule,
@@ -24,7 +28,11 @@ import {MatIconModule} from '@angular/material/icon';
     MatToolbarModule,
     FormsModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    MatStepperModule,
+    MatGridListModule,
+    MatSnackBarModule
   ],
 })
 export class MaterialModule { }
