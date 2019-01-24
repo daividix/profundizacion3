@@ -9,11 +9,11 @@ import org.hibernate.validator.constraints.NotBlank;
  
 public class SignUpForm {
     @NotBlank
-    @Size(min = 3, max = 50)
+    @Size(min = 2, max = 40)
     private String name;
     
     @NotBlank
-    @Size(min=3, max=60)
+    @Size(min=2, max=60)
     private String lastName;
     
     @NotBlank
@@ -24,7 +24,7 @@ public class SignUpForm {
     private String image;
  
     @NotBlank
-    @Size(min = 3, max = 50)
+    @Size(min = 3, max = 20)
     private String username;
  
     @NotBlank

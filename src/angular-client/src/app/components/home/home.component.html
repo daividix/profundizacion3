@@ -1,7 +1,7 @@
 <body> 
     <app-header [drawer]="drawer"></app-header>
     <mat-sidenav-container class="example-container" autosize>
-        <mat-sidenav #drawer class="example-sidenav" mode="side" [fixedInViewport]="fixed">
+        <mat-sidenav #drawer class="example-sidenav" mode="over" [fixedInViewport]="fixed">
           <div style="text-align: right"><button mat-icon-button (click)="drawer.close()"><mat-icon>clear</mat-icon></button></div>
           <p>Auto-resizing sidenav</p>
           <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
@@ -9,7 +9,7 @@
             Toggle extra text
           </button>
         </mat-sidenav>
-        Hello content 2!!
+          <app-sites [sitios]="sites"></app-sites>
     </mat-sidenav-container>
 </body>
   

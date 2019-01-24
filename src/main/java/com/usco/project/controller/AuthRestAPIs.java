@@ -3,6 +3,7 @@ package com.usco.project.controller;
 import java.security.Principal;
 import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Optional;
 import java.util.Set;
  
 import javax.validation.Valid;
@@ -27,12 +28,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.usco.project.message.request.LoginForm;
 import com.usco.project.message.request.SignUpForm;
 import com.usco.project.message.response.JwtResponse;
-import com.usco.project.message.response.ResponseMessage;
+import com.usco.project.message.response.Response;
 import com.usco.project.entity.Role;
 import com.usco.project.entity.RoleName;
 import com.usco.project.entity.User;
 import com.usco.project.repository.RoleRepository;
 import com.usco.project.repository.UserRepository;
+import com.usco.project.security.CryptPassword;
 import com.usco.project.security.jwt.JwtProvider;
 import com.usco.project.service.UserServices;
  
@@ -60,29 +62,42 @@ public class AuthRestAPIs {
 	JwtProvider jwtProvider;
  
 	@PostMapping("/signin")
-	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
- 
-		Authentication authentication = authenticationManager.authenticate(
+	public Response authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
+		User user = userRepository.getInfoUser(loginRequest.getUsername());
+		if (user == null) {
+			return new Response(false, "Usuario o contraseña incorrecta");
+		}
+		CryptPassword cryptPassword = new CryptPassword();
+		if (!cryptPassword.compare(loginRequest.getPassword(), user.getPassword())) {
+			return new Response(false, "Usuario o contraseña incorrecta");
+		}
+		try {
+			Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+				SecurityContextHolder.getContext().setAuthentication(authentication);
  
-		SecurityContextHolder.getContext().setAuthentication(authentication);
- 
-		String jwt = jwtProvider.generateJwtToken(authentication);
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
- 
-		return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
+				String jwt = jwtProvider.generateJwtToken(authentication);
+				UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+				Response response = new Response(true, "Usuario logueado correctamente");
+				response.setResult(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
+				return response;
+				//return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
+		} catch (Exception e) {
+			Response response = new Response(false, "Ocurrio un error en la autenticacion");
+			response.setError(e.toString());
+			return response;
+			//return new ResponseEntity<>(new ResponseMessage("Fail -> Wrong credentials", false), HttpStatus.BAD_REQUEST);
+		}
 	}
  
 	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
+	public Response registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-			return new ResponseEntity<>(new ResponseMessage("Fail -> Username is already taken!", false),
-					HttpStatus.BAD_REQUEST);
+			return new Response(false, "El usuario ya existe");
 		}
  
 		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-			return new ResponseEntity<>(new ResponseMessage("Fail -> Email is already in use!", false),
-					HttpStatus.BAD_REQUEST);
+			return new Response(false, "El email ya esta registrado");
 		}
  
 		// Creating user's account
@@ -122,8 +137,7 @@ public class AuthRestAPIs {
 					}
 				});
 			}else {
-				return new ResponseEntity<>(new ResponseMessage("Fail -> Secret invalid", false),
-						HttpStatus.BAD_REQUEST);
+				return new Response(false, "Secreto invalido");
 			}
 		}else {
 			Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
@@ -134,7 +148,7 @@ public class AuthRestAPIs {
 		user.setRoles(roles);
 		userRepository.save(user);
  
-		return new ResponseEntity<>(new ResponseMessage("User registered successfully!", true), HttpStatus.OK);
+		return new Response(true, "Usuario registrado satisfactoriamente");
 	}
 	
 	@GetMapping("/getuser")

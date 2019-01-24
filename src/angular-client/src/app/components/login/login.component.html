@@ -1,22 +1,25 @@
-<body style="height: 100vmax; background: #5f5fc4">
+<body style="height: 100vmax; background: #3F51B5">
   <div class="form-signup">
     <mat-card>
       <mat-card-header>
-        <div mat-card-avatar><mat-icon style="font-size: 40px;">account_box</mat-icon></div>
-        <mat-card-title style="text-align: center">Login</mat-card-title>
+        <div mat-card-avatar><mat-icon style="font-size: 40px;">input</mat-icon></div>
+        <mat-card-title style="text-align: center; margin: 7px;">Login</mat-card-title>
       </mat-card-header>
+      <br>
       <mat-card-content>
-          <form (ngSubmit)="login()">
+          <form (ngSubmit)="login()" [formGroup]="loginForm">
               <div>
-                <mat-form-field style="width: 100%">
-                  <mat-label>Username</mat-label>
-                  <input matInput placeholder="Username" [(ngModel)]="loginForm.username" name="username">
+                <span><mat-icon style="margin-bottom: 0;">perm_identity</mat-icon></span>
+                <mat-form-field style="width: 80%">
+                  <input matInput placeholder="Username" formControlName="username" name="username">
+                  <mat-error *ngIf="loginForm.controls['username'].errors != null">{{getErrorMessageUsername()}}</mat-error>
                 </mat-form-field>
               </div>
               <div>
-                <mat-form-field style="width: 100%">
-                  <mat-label>Password</mat-label>
-                  <input type="password" matInput placeholder="Password" [(ngModel)]="loginForm.password" name="password">
+                <mat-icon>lock</mat-icon>
+                <mat-form-field style="width: 80%">
+                  <input #password type="password" matInput placeholder="Password" formControlName="password" name="password">
+                  <mat-error *ngIf="loginForm.controls['password'].errors != null">{{getErrorMessagePassword()}}</mat-error>
                 </mat-form-field>
               </div>
               <br>

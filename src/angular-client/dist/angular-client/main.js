@@ -135,6 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_search_search_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/search/search.component */ "./src/app/components/search/search.component.ts");
 /* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/register/register.component */ "./src/app/components/register/register.component.ts");
 /* harmony import */ var _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/signup/signup.component */ "./src/app/components/signup/signup.component.ts");
+/* harmony import */ var _components_sites_sites_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/sites/sites.component */ "./src/app/components/sites/sites.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -148,6 +149,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
  // importacion modulos angular material
+
 
 
 
@@ -190,7 +192,8 @@ var AppModule = /** @class */ (function () {
                 _components_categories_categories_component__WEBPACK_IMPORTED_MODULE_15__["CategoriesComponent"],
                 _components_search_search_component__WEBPACK_IMPORTED_MODULE_16__["SearchComponent"],
                 _components_register_register_component__WEBPACK_IMPORTED_MODULE_17__["RegisterComponent"],
-                _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_18__["SignupComponent"]
+                _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_18__["SignupComponent"],
+                _components_sites_sites_component__WEBPACK_IMPORTED_MODULE_19__["SitesComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -424,7 +427,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "    .example-sidenav-content {\r\n    display: flex;\r\n    height: 100%;\r\n    align-items: center;\r\n    justify-content: center;\r\n  }\r\n  \r\n  .example-sidenav {\r\n    padding: 20px;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9ob21lL2hvbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiSUFBSTtJQUNBLGFBQWE7SUFDYixZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLHVCQUF1QjtFQUN6Qjs7RUFFQTtJQUNFLGFBQWE7RUFDZiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgICAgLmV4YW1wbGUtc2lkZW5hdi1jb250ZW50IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLXNpZGVuYXYge1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICB9Il19 */"
+module.exports = "    .example-sidenav-content {\r\n    display: flex;\r\n    height: 100%;\r\n    align-items: center;\r\n    justify-content: center;\r\n  }\r\n  \r\n  .example-sidenav {\r\n    padding: 10px;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9ob21lL2hvbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiSUFBSTtJQUNBLGFBQWE7SUFDYixZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLHVCQUF1QjtFQUN6Qjs7RUFFQTtJQUNFLGFBQWE7RUFDZiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgICAgLmV4YW1wbGUtc2lkZW5hdi1jb250ZW50IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLXNpZGVuYXYge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICB9Il19 */"
 
 /***/ }),
 
@@ -435,7 +438,7 @@ module.exports = "    .example-sidenav-content {\r\n    display: flex;\r\n    he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body> \n    <app-header [drawer]=\"drawer\"></app-header>\n    <mat-sidenav-container class=\"example-container\" autosize>\n        <mat-sidenav #drawer class=\"example-sidenav\" mode=\"side\" [fixedInViewport]=\"fixed\">\n          <div style=\"text-align: right\"><button mat-icon-button (click)=\"drawer.close()\"><mat-icon>clear</mat-icon></button></div>\n          <p>Auto-resizing sidenav</p>\n          <p *ngIf=\"showFiller\">Lorem, ipsum dolor sit amet consectetur.</p>\n          <button (click)=\"showFiller = !showFiller\" mat-raised-button>\n            Toggle extra text\n          </button>\n        </mat-sidenav>\n        Content\n    </mat-sidenav-container>\n</body>\n  \n\n\n"
+module.exports = "<body> \n    <app-header [drawer]=\"drawer\"></app-header>\n    <mat-sidenav-container class=\"example-container\" autosize>\n        <mat-sidenav #drawer class=\"example-sidenav\" mode=\"over\" [fixedInViewport]=\"fixed\">\n          <div style=\"text-align: right\"><button mat-icon-button (click)=\"drawer.close()\"><mat-icon>clear</mat-icon></button></div>\n          <p>Auto-resizing sidenav</p>\n          <p *ngIf=\"showFiller\">Lorem, ipsum dolor sit amet consectetur.</p>\n          <button (click)=\"showFiller = !showFiller\" mat-raised-button>\n            Toggle extra text\n          </button>\n        </mat-sidenav>\n          <app-sites [sitios]=\"sites\"></app-sites>\n    </mat-sidenav-container>\n</body>\n  \n\n\n"
 
 /***/ }),
 
@@ -451,6 +454,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/token/token-storage.service */ "./src/app/services/token/token-storage.service.ts");
+/* harmony import */ var src_app_services_site_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/site.service */ "./src/app/services/site.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -462,18 +466,27 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(token) {
+    function HomeComponent(token, siteService) {
         this.token = token;
+        this.siteService = siteService;
         this.showFiller = false;
         this.fixed = true;
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.info = {
             token: this.token.getToken() || '',
             username: this.token.getUsername() || '',
             authorities: this.token.getAuthorities() || []
         };
+        this.siteService.verSitios()
+            .subscribe(function (res) {
+            if (res.isOk) {
+                _this.sites = res.sitios;
+            }
+        });
     };
     HomeComponent.prototype.logout = function () {
         this.token.logOut();
@@ -485,7 +498,7 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/components/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/components/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_1__["TokenStorageService"]])
+        __metadata("design:paramtypes", [_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_1__["TokenStorageService"], src_app_services_site_service__WEBPACK_IMPORTED_MODULE_2__["SiteService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -512,7 +525,7 @@ module.exports = ".form-signup {\r\n    position: absolute;\r\n    top: 50%;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body style=\"height: 100vmax; background: #5f5fc4\">\n  <div class=\"form-signup\">\n    <mat-card>\n      <mat-card-header>\n        <div mat-card-avatar><mat-icon style=\"font-size: 40px;\">account_box</mat-icon></div>\n        <mat-card-title style=\"text-align: center\">Login</mat-card-title>\n      </mat-card-header>\n      <mat-card-content>\n          <form (ngSubmit)=\"login()\">\n              <div>\n                <mat-form-field style=\"width: 100%\">\n                  <mat-label>Username</mat-label>\n                  <input matInput placeholder=\"Username\" [(ngModel)]=\"loginForm.username\" name=\"username\">\n                </mat-form-field>\n              </div>\n              <div>\n                <mat-form-field style=\"width: 100%\">\n                  <mat-label>Password</mat-label>\n                  <input type=\"password\" matInput placeholder=\"Password\" [(ngModel)]=\"loginForm.password\" name=\"password\">\n                </mat-form-field>\n              </div>\n              <br>\n              <mat-card-actions>\n                  <div style=\"text-align: center; min-width: 300px;\">\n                    <button mat-button type=\"submit\">Log-in</button> \n                  </div>   \n              </mat-card-actions>\n            </form>\n      </mat-card-content> \n    </mat-card>\n    \n  </div>\n</body>\n"
+module.exports = "<body style=\"height: 100vmax; background: #3F51B5\">\n  <div class=\"form-signup\">\n    <mat-card>\n      <mat-card-header>\n        <div mat-card-avatar><mat-icon style=\"font-size: 40px;\">input</mat-icon></div>\n        <mat-card-title style=\"text-align: center; margin: 7px;\">Login</mat-card-title>\n      </mat-card-header>\n      <br>\n      <mat-card-content>\n          <form (ngSubmit)=\"login()\" [formGroup]=\"loginForm\">\n              <div>\n                <span><mat-icon style=\"margin-bottom: 0;\">perm_identity</mat-icon></span>\n                <mat-form-field style=\"width: 80%\">\n                  <input matInput placeholder=\"Username\" formControlName=\"username\" name=\"username\">\n                  <mat-error *ngIf=\"loginForm.controls['username'].errors != null\">{{getErrorMessageUsername()}}</mat-error>\n                </mat-form-field>\n              </div>\n              <div>\n                <mat-icon>lock</mat-icon>\n                <mat-form-field style=\"width: 80%\">\n                  <input #password type=\"password\" matInput placeholder=\"Password\" formControlName=\"password\" name=\"password\">\n                  <mat-error *ngIf=\"loginForm.controls['password'].errors != null\">{{getErrorMessagePassword()}}</mat-error>\n                </mat-form-field>\n              </div>\n              <br>\n              <mat-card-actions>\n                  <div style=\"text-align: center; min-width: 300px;\">\n                    <button mat-button type=\"submit\">Log-in</button> \n                  </div>   \n              </mat-card-actions>\n            </form>\n      </mat-card-content> \n    </mat-card>\n    \n  </div>\n</body>\n"
 
 /***/ }),
 
@@ -530,6 +543,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_models_login_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/models/login-info */ "./src/app/models/login-info.ts");
 /* harmony import */ var src_app_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/auth/auth.service */ "./src/app/services/auth/auth.service.ts");
 /* harmony import */ var src_app_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/token/token-storage.service */ "./src/app/services/token/token-storage.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -543,26 +558,77 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(authentication, tokenService) {
+    function LoginComponent(authentication, tokenService, snackBar, _formBuilder) {
         this.authentication = authentication;
         this.tokenService = tokenService;
-        this.loginForm = new src_app_models_login_info__WEBPACK_IMPORTED_MODULE_1__["AuthLoginInfo"]();
+        this.snackBar = snackBar;
+        this._formBuilder = _formBuilder;
+        this.errorLogin = false;
+        this.errorForm = {
+            username: {
+                value: false,
+                msg: ''
+            },
+            password: {
+                value: false,
+                msg: ''
+            }
+        };
     }
     LoginComponent.prototype.ngOnInit = function () {
+        this.loginForm = this._formBuilder.group({
+            username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(8)]]
+        });
     };
     LoginComponent.prototype.login = function () {
         var _this = this;
-        this.authentication.login(this.loginForm)
+        var form = new src_app_models_login_info__WEBPACK_IMPORTED_MODULE_1__["AuthLoginInfo"]();
+        if (!this.loginForm.getRawValue().username) {
+            return this.snackBar.open('El username es requerido', 'Ok', {
+                duration: 4000,
+            });
+        }
+        if (!this.loginForm.getRawValue().password) {
+            return this.snackBar.open('El password es requerido', 'Ok', {
+                duration: 4000,
+            });
+        }
+        form.username = this.loginForm.getRawValue().username;
+        form.password = this.loginForm.getRawValue().password;
+        this.authentication.login(form)
             .subscribe(function (res) {
-            console.log(res);
-            if (res.accessToken) {
-                _this.tokenService.saveToken(res.accessToken);
-                _this.tokenService.saveAuthorities(res.authorities);
-                _this.tokenService.saveUsername(res.username);
+            console.log('response', res);
+            if (res.isOk) {
+                _this.tokenService.saveToken(res.result.accessToken);
+                _this.tokenService.saveAuthorities(res.result.authorities);
+                _this.tokenService.saveUsername(res.result.username);
                 window.location.assign('/');
             }
+            else {
+                _this.snackBar.open(res.message, 'Ok', {
+                    duration: 4000,
+                });
+            }
         });
+    };
+    LoginComponent.prototype.getErrorMessageUsername = function () {
+        if (this.loginForm.controls['password'].errors == null) {
+            return;
+        }
+        return this.loginForm.controls['username'].errors.required ? 'Username requerido' :
+            '';
+    };
+    LoginComponent.prototype.getErrorMessagePassword = function () {
+        if (this.loginForm.controls['password'].errors == null) {
+            return;
+        }
+        return this.loginForm.controls['password'].errors.required ? 'Password requerido' :
+            this.loginForm.controls['password'].errors.minlength ? 'Minimo 8 caracteres' :
+                '';
     };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -570,7 +636,9 @@ var LoginComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/components/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/components/login/login.component.css")]
         }),
-        __metadata("design:paramtypes", [src_app_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"], src_app_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_3__["TokenStorageService"]])
+        __metadata("design:paramtypes", [src_app_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
+            src_app_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_3__["TokenStorageService"], _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -834,7 +902,7 @@ module.exports = "@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body style=\"height: 100vmax; background: #b3e5fc\">\n  <div class=\"signup-form col-md-6 col-sm-12\">\n    <p class=\"display-4\">Registrarse</p>\n    <mat-horizontal-stepper [linear]=\"isLinear\" #stepper>\n      <mat-step [stepControl]=\"firstFormGroup\">\n        <form [formGroup]=\"firstFormGroup\">\n          <ng-template matStepLabel>Info-Usuario</ng-template>\n          <div class=\"text-center\">\n            <mat-form-field>\n              <input matInput placeholder=\"Username\" name=\"username\" formControlName=\"username\"\n                required>\n            </mat-form-field>\n            <br>\n            <mat-form-field>\n              <input matInput placeholder=\"Email\" name=\"email\" formControlName=\"email\"\n                required>\n            </mat-form-field>\n            <br>\n            <mat-form-field>\n              <input type=\"password\" matInput placeholder=\"Password\" name=\"password\"\n                formControlName=\"password\" required>\n            </mat-form-field>\n          </div>\n          <div>\n            <button mat-button matStepperNext>Next</button>\n          </div>\n        </form>\n      </mat-step>\n      <mat-step [stepControl]=\"secondFormGroup\">\n        <form [formGroup]=\"secondFormGroup\">\n          <ng-template matStepLabel>Info-personal</ng-template>\n          <div class=\"text-center\">\n            <mat-form-field>\n              <input matInput placeholder=\"Name\" name=\"name\" formControlName=\"name\"\n                required>\n            </mat-form-field>\n            <mat-form-field>\n              <input matInput placeholder=\"Last name\" name=\"lastName\" formControlName=\"lastName\"\n                required>\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label>Gender</mat-label>\n              <mat-select placeholder=\"Favorite food\" name=\"gender\" formControlName=\"gender\"\n                required>\n                <mat-option *ngFor=\"let gender of genders\" [value]=\"gender.value\" name=\"gender\">\n                  {{gender.value}}\n                </mat-option>\n              </mat-select>\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label>Image</mat-label>\n              <input matInput placeholder=\"Image\" formControlName=\"image\" name=\"image\">\n            </mat-form-field>\n          </div>\n          <div>\n            <button mat-button matStepperPrevious>Back</button>\n            <button mat-button matStepperNext>Next</button>\n          </div>\n        </form>\n      </mat-step>\n      <mat-step>\n        <ng-template matStepLabel>Hecho</ng-template>\n        Seguro de querer registrarse?\n        <div>\n          <button mat-button matStepperPrevious>Back</button>\n          <button mat-button (click)=\"signup()\">Reset</button>\n        </div>\n      </mat-step>\n    </mat-horizontal-stepper>\n  </div>\n\n  <!-- <div class=\"form-signup\">\n    <form (ngSubmit)=\"signup()\">\n      <mat-form-field>\n        <mat-label>Name</mat-label>\n        <input matInput placeholder=\"Name\" [(ngModel)]=\"signUpForm.name\" name=\"name\">\n      </mat-form-field>\n\n      <mat-form-field>\n        <mat-label>Last Name</mat-label>\n        <input matInput placeholder=\"Last name\" formControlName=\"signUpForm.lastName\" name=\"lastName\">\n      </mat-form-field>\n\n      <mat-form-field>\n        <mat-label>Gender</mat-label>\n        <mat-select placeholder=\"Favorite food\" [(ngModel)]=\"signUpForm.gender\" name=\"gender\">\n          <mat-option *ngFor=\"let gender of genders\" [value]=\"gender.value\" name=\"gender\">\n            {{gender.value}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n      <mat-form-field>\n        <mat-label>Image</mat-label>\n        <input matInput placeholder=\"Image\" [(ngModel)]=\"signUpForm.image\" name=\"image\">\n      </mat-form-field>\n      <mat-form-field>\n        <mat-label>Username</mat-label>\n        <input matInput placeholder=\"Username\" [(ngModel)]=\"signUpForm.username\" name=\"username\">\n      </mat-form-field>\n      <mat-form-field>\n        <mat-label>Email</mat-label>\n        <input matInput placeholder=\"Email\" [(ngModel)]=\"signUpForm.email\" name=\"email\">\n      </mat-form-field>\n      <mat-form-field>\n        <mat-label>Password</mat-label>\n        <input type=\"password\" matInput placeholder=\"Password\" [(ngModel)]=\"signUpForm.password\" name=\"password\">\n      </mat-form-field>\n      <br>\n      <button mat-button type=\"submit\">Sign-up</button>\n    </form>\n  </div> -->\n\n</body>\n"
+module.exports = "<body style=\"height: 100vmax; background: #3F51B5\">\n  <div class=\"signup-form col-md-6 col-sm-12\">\n    <p class=\"display-4\">Registrarse</p>\n    <mat-horizontal-stepper [linear]=\"isLinear\" #stepper style=\"border-radius: 5px\">\n      <mat-step [stepControl]=\"firstFormGroup\">\n        <form [formGroup]=\"firstFormGroup\">\n          <ng-template matStepLabel>Info-Usuario</ng-template>\n          <div class=\"w-50 mx-auto\">\n            <mat-form-field class=\"w-100\">\n              <input matInput placeholder=\"Username\" name=\"username\" formControlName=\"username\"\n                required>\n                <mat-error *ngIf=\"firstFormGroup.controls['username'].errors != null\">{{firstFormError('username')}}</mat-error>\n            </mat-form-field>\n            <br>\n            <mat-form-field class=\"w-100\">\n              <input matInput placeholder=\"Email\" name=\"email\" formControlName=\"email\"\n                required>\n                <mat-error *ngIf=\"firstFormGroup.controls['email'].errors != null\">{{firstFormError('email')}}</mat-error>\n            </mat-form-field>\n            <br>\n            <mat-form-field class=\"w-100\">\n              <input type=\"password\" matInput placeholder=\"Password\" name=\"password\"\n                formControlName=\"password\" required>\n                <mat-error *ngIf=\"firstFormGroup.controls['password'].errors != null\">{{firstFormError('password')}}</mat-error>\n            </mat-form-field>\n          </div>\n          <div class=\"text-center\">\n            <button mat-button matStepperNext (click)=\"$event.preventDefault()\">Siguiente</button>\n          </div>\n        </form>\n      </mat-step>\n      <mat-step [stepControl]=\"secondFormGroup\">\n        <form [formGroup]=\"secondFormGroup\">\n          <ng-template matStepLabel>Info-personal</ng-template>\n          <div class=\"mx-auto w-50\">\n            <mat-form-field class=\"w-100\">\n              <input matInput placeholder=\"Nombre\" name=\"name\" formControlName=\"name\"\n                required>\n                <mat-error *ngIf=\"secondFormGroup.controls['name'].errors != null\">{{secondFormError('name')}}</mat-error>\n            </mat-form-field>\n            <br>\n            <mat-form-field class=\"w-100\">\n              <input matInput placeholder=\"Apellidos\" name=\"lastName\" formControlName=\"lastName\"\n                required>\n                <mat-error *ngIf=\"secondFormGroup.controls['lastName'].errors != null\">{{secondFormError('lastName')}}</mat-error>\n            </mat-form-field>\n            <br>\n            <mat-form-field class=\"w-100\">\n              <mat-label>Gender</mat-label>\n              <mat-select placeholder=\"Genero\" formControlName=\"gender\" name=\"gender\">\n                <mat-option *ngFor=\"let genero of genders\" [value]=\"genero.value\" name=\"gender\">\n                  {{genero.value}}\n                </mat-option>\n              </mat-select>\n              <mat-error *ngIf=\"secondFormGroup.controls['gender'].errors != null\">{{secondFormError('gender')}}</mat-error>\n            </mat-form-field>\n          </div>\n          <div class=\"text-center\">\n            <button mat-button matStepperPrevious>Volver</button>\n            <button mat-button matStepperNext>Siguiente</button>\n          </div>\n        </form>\n      </mat-step>\n      <mat-step>\n        <ng-template matStepLabel>Hecho</ng-template>\n        <div class=\"text-center\">\n            Seguro de querer registrarse?\n            <div>\n              <button mat-button matStepperPrevious>Volver</button>\n              <button mat-button (click)=\"signup()\">Si</button>\n            </div>\n        </div>\n        \n      </mat-step>\n    </mat-horizontal-stepper>\n  </div>\n</body>\n"
 
 /***/ }),
 
@@ -879,15 +947,14 @@ var SignupComponent = /** @class */ (function () {
     }
     SignupComponent.prototype.ngOnInit = function () {
         this.firstFormGroup = this._formBuilder.group({
-            username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+            username: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(20)]],
+            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(60)]],
+            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(40)]]
         });
         this.secondFormGroup = this._formBuilder.group({
-            name: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            lastName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            gender: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            image: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+            name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(40)]],
+            lastName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(60)]],
+            gender: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
         });
     };
     SignupComponent.prototype.signup = function () {
@@ -895,25 +962,112 @@ var SignupComponent = /** @class */ (function () {
         var form1 = this.firstFormGroup.getRawValue();
         var form2 = this.secondFormGroup.getRawValue();
         var form = Object.assign(form1, form2);
-        this.signUpForm = new src_app_models_signup_info__WEBPACK_IMPORTED_MODULE_1__["SignUpInfo"](form2.name, form2.lastName, form2.gender, form2.image, form1.username, form1.email, form1.password);
-        console.log(this.signUpForm);
+        this.signUpForm = new src_app_models_signup_info__WEBPACK_IMPORTED_MODULE_1__["SignUpInfo"](form.name, form.lastName, form.gender, form.image, form.username, form.email, form.password);
+        for (var key in form) {
+            if (form.hasOwnProperty(key)) {
+                var element = form[key];
+                if (!element) {
+                    return this.snackBar.open("El campo \"" + key + "\" es requerido", 'Ok', {
+                        duration: 3000,
+                    });
+                }
+            }
+        }
+        for (var key in this.firstFormGroup.controls) {
+            if (this.firstFormGroup.controls.hasOwnProperty(key)) {
+                var element = this.firstFormGroup.controls[key];
+                if (element.errors) {
+                    return this.snackBar.open("Porfavor revisa el campo \"" + key + "\"", 'Ok', {
+                        duration: 3000,
+                    });
+                }
+            }
+        }
+        for (var key in this.secondFormGroup.controls) {
+            if (this.secondFormGroup.controls.hasOwnProperty(key)) {
+                var element = this.secondFormGroup.controls[key];
+                if (element.errors) {
+                    return this.snackBar.open("Porfavor revisa el campo \"" + key + "\"", 'Ok', {
+                        duration: 3000,
+                    });
+                }
+            }
+        }
         this.authentication.signUp(this.signUpForm)
             .subscribe(function (res) {
             console.log(res);
-            if (res.isOk) {
-                _this.snackBar.open('Te has registrado correctamente', 'Login', {
-                    duration: 6000,
-                }).onAction().subscribe(function (action) {
-                    console.log(action);
-                    window.location.assign('/login');
-                });
-            }
-            if (res.isOk === undefined) {
-                _this.snackBar.open('Hubo un error al registrarse', 'Ok', {
-                    duration: 3000,
-                });
+            if (res) {
+                if (res.isOk) {
+                    return _this.snackBar.open('Te has registrado correctamente', 'Login', {
+                        duration: 6000,
+                    }).onAction().subscribe(function (action) {
+                        console.log(action);
+                        window.location.assign('/login');
+                    });
+                }
+                else {
+                    _this.snackBar.open('Hubo un error al registrarse', 'Ok', {
+                        duration: 3000,
+                    });
+                }
             }
         });
+    };
+    SignupComponent.prototype.firstFormError = function (input) {
+        if (input === 'username') {
+            if (this.firstFormGroup.controls['username'].errors == null) {
+                return;
+            }
+            return this.firstFormGroup.controls['username'].errors.required ? 'username requerido' :
+                this.firstFormGroup.controls['username'].errors.minlength ? 'Minimo 3 caracteres' :
+                    this.firstFormGroup.controls['username'].errors.maxlength ? 'Maximo 20 caracteres' :
+                        '';
+        }
+        if (input === 'email') {
+            if (this.firstFormGroup.controls['email'].errors == null) {
+                return;
+            }
+            return this.firstFormGroup.controls['email'].errors.required ? 'Email requerido' :
+                this.firstFormGroup.controls['email'].errors.email ? 'Email invalido' :
+                    this.firstFormGroup.controls['email'].errors.maxlength ? 'Maximo 60 caracteres ' :
+                        '';
+        }
+        if (input === 'password') {
+            if (this.firstFormGroup.controls['password'].errors == null) {
+                return;
+            }
+            return this.firstFormGroup.controls['password'].errors.required ? 'Password requerido' :
+                this.firstFormGroup.controls['password'].errors.minlength ? 'Minimo 8 caracteres' :
+                    this.firstFormGroup.controls['password'].errors.maxlength ? 'Maximo 40 caracteres' :
+                        '';
+        }
+    };
+    SignupComponent.prototype.secondFormError = function (input) {
+        if (input === 'name') {
+            if (this.secondFormGroup.controls['name'].errors == null) {
+                return;
+            }
+            return this.secondFormGroup.controls['name'].errors.required ? 'Nombre requerido' :
+                this.secondFormGroup.controls['name'].errors.minlength ? 'Minimo 2 caracteres' :
+                    this.secondFormGroup.controls['name'].errors.maxlength ? 'Maximo 40 caracteres' :
+                        '';
+        }
+        if (input === 'lastName') {
+            if (this.secondFormGroup.controls['lastName'].errors == null) {
+                return;
+            }
+            return this.secondFormGroup.controls['lastName'].errors.required ? 'Apellidos requerido' :
+                this.secondFormGroup.controls['lastName'].errors.minlength ? 'Minimo 2 caracteres' :
+                    this.secondFormGroup.controls['lastName'].errors.maxlength ? 'Maximo 60 caracteres' :
+                        '';
+        }
+        if (input === 'gender') {
+            if (this.secondFormGroup.controls['gender'].errors == null) {
+                return;
+            }
+            return this.secondFormGroup.controls['gender'].errors.required ? 'Elije tu genero' :
+                '';
+        }
     };
     SignupComponent.prototype.logger = function () {
         console.log(this.firstFormGroup.getRawValue());
@@ -991,6 +1145,73 @@ var SiteComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], SiteComponent);
     return SiteComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/sites/sites.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/components/sites/sites.component.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".card-site {\r\n    max-width: 400px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaXRlcy9zaXRlcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQixrQkFBa0I7QUFDdEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3NpdGVzL3NpdGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZC1zaXRlIHtcclxuICAgIG1heC13aWR0aDogNDAwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcclxuICAgIG1hcmdpbi1yaWdodDogYXV0bztcclxufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/sites/sites.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/components/sites/sites.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"text-align: center\">\n  <mat-card *ngFor=\"let sitio of sitios\" class=\"card-site\">\n    <mat-card-header>\n      <mat-card-title>{{sitio.name}}</mat-card-title>\n      <mat-card-subtitle>{{sitio.eslogan}}</mat-card-subtitle>\n    </mat-card-header>\n    <img mat-card-image src=\"{{sitio.image}}\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n      <p>\n        {{sitio.information}}\n      </p>\n    </mat-card-content>\n    <mat-card-actions>\n      <button mat-button>LIKE</button>\n      <button mat-button>SHARE</button>\n    </mat-card-actions>\n  </mat-card>  \n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/sites/sites.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/sites/sites.component.ts ***!
+  \*****************************************************/
+/*! exports provided: SitesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SitesComponent", function() { return SitesComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SitesComponent = /** @class */ (function () {
+    function SitesComponent() {
+    }
+    SitesComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('sitios'),
+        __metadata("design:type", Array)
+    ], SitesComponent.prototype, "sitios", void 0);
+    SitesComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-sites',
+            template: __webpack_require__(/*! ./sites.component.html */ "./src/app/components/sites/sites.component.html"),
+            styles: [__webpack_require__(/*! ./sites.component.css */ "./src/app/components/sites/sites.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SitesComponent);
+    return SitesComponent;
 }());
 
 
@@ -1245,6 +1466,50 @@ var RegisterService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], RegisterService);
     return RegisterService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/site.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/site.service.ts ***!
+  \******************************************/
+/*! exports provided: SiteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SiteService", function() { return SiteService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SiteService = /** @class */ (function () {
+    function SiteService(http) {
+        this.http = http;
+        this.domain = '/api/v1/sitio';
+    }
+    SiteService.prototype.verSitios = function () {
+        return this.http.get(this.domain + "/verSitios");
+    };
+    SiteService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], SiteService);
+    return SiteService;
 }());
 
 

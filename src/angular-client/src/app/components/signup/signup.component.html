@@ -1,113 +1,77 @@
-<body style="height: 100vmax; background: #b3e5fc">
+<body style="height: 100vmax; background: #3F51B5">
   <div class="signup-form col-md-6 col-sm-12">
     <p class="display-4">Registrarse</p>
-    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-horizontal-stepper [linear]="isLinear" #stepper style="border-radius: 5px">
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>Info-Usuario</ng-template>
-          <div class="text-center">
-            <mat-form-field>
+          <div class="w-50 mx-auto">
+            <mat-form-field class="w-100">
               <input matInput placeholder="Username" name="username" formControlName="username"
                 required>
+                <mat-error *ngIf="firstFormGroup.controls['username'].errors != null">{{firstFormError('username')}}</mat-error>
             </mat-form-field>
             <br>
-            <mat-form-field>
+            <mat-form-field class="w-100">
               <input matInput placeholder="Email" name="email" formControlName="email"
                 required>
+                <mat-error *ngIf="firstFormGroup.controls['email'].errors != null">{{firstFormError('email')}}</mat-error>
             </mat-form-field>
             <br>
-            <mat-form-field>
+            <mat-form-field class="w-100">
               <input type="password" matInput placeholder="Password" name="password"
                 formControlName="password" required>
+                <mat-error *ngIf="firstFormGroup.controls['password'].errors != null">{{firstFormError('password')}}</mat-error>
             </mat-form-field>
           </div>
-          <div>
-            <button mat-button matStepperNext>Next</button>
+          <div class="text-center">
+            <button mat-button matStepperNext (click)="$event.preventDefault()">Siguiente</button>
           </div>
         </form>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Info-personal</ng-template>
-          <div class="text-center">
-            <mat-form-field>
-              <input matInput placeholder="Name" name="name" formControlName="name"
+          <div class="mx-auto w-50">
+            <mat-form-field class="w-100">
+              <input matInput placeholder="Nombre" name="name" formControlName="name"
                 required>
+                <mat-error *ngIf="secondFormGroup.controls['name'].errors != null">{{secondFormError('name')}}</mat-error>
             </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Last name" name="lastName" formControlName="lastName"
+            <br>
+            <mat-form-field class="w-100">
+              <input matInput placeholder="Apellidos" name="lastName" formControlName="lastName"
                 required>
+                <mat-error *ngIf="secondFormGroup.controls['lastName'].errors != null">{{secondFormError('lastName')}}</mat-error>
             </mat-form-field>
-            <mat-form-field>
+            <br>
+            <mat-form-field class="w-100">
               <mat-label>Gender</mat-label>
-              <mat-select placeholder="Favorite food" name="gender" formControlName="gender"
-                required>
-                <mat-option *ngFor="let gender of genders" [value]="gender.value" name="gender">
-                  {{gender.value}}
+              <mat-select placeholder="Genero" formControlName="gender" name="gender">
+                <mat-option *ngFor="let genero of genders" [value]="genero.value" name="gender">
+                  {{genero.value}}
                 </mat-option>
               </mat-select>
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Image</mat-label>
-              <input matInput placeholder="Image" formControlName="image" name="image">
+              <mat-error *ngIf="secondFormGroup.controls['gender'].errors != null">{{secondFormError('gender')}}</mat-error>
             </mat-form-field>
           </div>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+          <div class="text-center">
+            <button mat-button matStepperPrevious>Volver</button>
+            <button mat-button matStepperNext>Siguiente</button>
           </div>
         </form>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Hecho</ng-template>
-        Seguro de querer registrarse?
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="signup()">Reset</button>
+        <div class="text-center">
+            Seguro de querer registrarse?
+            <div>
+              <button mat-button matStepperPrevious>Volver</button>
+              <button mat-button (click)="signup()">Si</button>
+            </div>
         </div>
+        
       </mat-step>
     </mat-horizontal-stepper>
   </div>
-
-  <!-- <div class="form-signup">
-    <form (ngSubmit)="signup()">
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Name" [(ngModel)]="signUpForm.name" name="name">
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last name" formControlName="signUpForm.lastName" name="lastName">
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Gender</mat-label>
-        <mat-select placeholder="Favorite food" [(ngModel)]="signUpForm.gender" name="gender">
-          <mat-option *ngFor="let gender of genders" [value]="gender.value" name="gender">
-            {{gender.value}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Image</mat-label>
-        <input matInput placeholder="Image" [(ngModel)]="signUpForm.image" name="image">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" [(ngModel)]="signUpForm.username" name="username">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" [(ngModel)]="signUpForm.email" name="email">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input type="password" matInput placeholder="Password" [(ngModel)]="signUpForm.password" name="password">
-      </mat-form-field>
-      <br>
-      <button mat-button type="submit">Sign-up</button>
-    </form>
-  </div> -->
-
 </body>

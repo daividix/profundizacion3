@@ -21,6 +21,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SitesComponent } from './components/sites/sites.component';
 
 const routes: Routes = [
   {
@@ -49,7 +50,8 @@ const routes: Routes = [
     CategoriesComponent,
     SearchComponent,
     RegisterComponent,
-    SignupComponent
+    SignupComponent,
+    SitesComponent
   ],
   imports: [
     BrowserModule,
