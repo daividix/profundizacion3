@@ -2,6 +2,7 @@ package com.usco.project.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +27,7 @@ public class Calification implements Serializable{
 	@Id
 	@GeneratedValue
 	@Column(name="id", unique=true)
-	private long id;
+	private Long id;
 	
 	@ManyToOne
 	private Site site;
@@ -37,7 +38,18 @@ public class Calification implements Serializable{
 	//Columna calificacion que guardara la calificacion hecha por er usuario
 	@Column(name="calification_value", nullable=false, precision=3, scale=2)
 	private BigDecimal calificationValue;
+
+	@Column
+	private Date date;
 	
+
+	public Calification(Site site, User user, BigDecimal calificationValue, Date date) {
+		this.site = site;
+		this.user = user;
+		this.calificationValue = calificationValue;
+		this.date = date;
+	}
+
 	
 	public Calification () {
 		
@@ -81,6 +93,14 @@ public class Calification implements Serializable{
 	public void setCalification(BigDecimal calificationValue) {
 		this.calificationValue = calificationValue;
 	}
-	
+
+
+	public Date getDate() {
+		return this.date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	
 }

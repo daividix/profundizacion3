@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,7 +21,7 @@ public class SearchHistory implements Serializable{
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	
 	@Column(name="content", length= 100)
 	private String content;
@@ -28,10 +29,17 @@ public class SearchHistory implements Serializable{
 	@Column(name="date")
 	private Date date;
 
-	public SearchHistory(long id, String content, Date date) {
-		this.id = id;
+	@ManyToOne
+	private City city;
+
+	@ManyToOne
+	private User user;
+
+	public SearchHistory(String content, Date date, City city, User user) {
 		this.content = content;
 		this.date = date;
+		this.city = city;
+		this.user = user;
 	}
 	
 	public SearchHistory() {
@@ -62,5 +70,23 @@ public class SearchHistory implements Serializable{
 		this.date = date;
 	}
 	
+
+	public City getCity() {
+		return this.city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	
 }

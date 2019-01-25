@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 //Tabla que guarda la informacion de una imagen
 @Entity
-@Table(name="Image")
+@Table(name="image")
 public class Image implements Serializable{
 
 	/**
@@ -31,6 +31,17 @@ public class Image implements Serializable{
 	//guarda la url donde se encuentra almacenada la imagen
 	@Column(name="url", nullable=false)
 	private String url;
+
+	@Column
+	private String name;
+
+
+	public Image(Site site, String url, String name) {
+		this.site = site;
+		this.url = url;
+		this.name = name;
+	}
+
 	
 	public Image() {
 		
@@ -62,5 +73,13 @@ public class Image implements Serializable{
 		this.url = url;
 	}
 	
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 }

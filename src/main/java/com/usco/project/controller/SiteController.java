@@ -81,7 +81,7 @@ public class SiteController {
 		Hashtable<Object,Object> response = new Hashtable<Object,Object>();
 		Site newSitio = new Site(siteForm.getName(),siteForm.getAddress(), siteForm.getCity(),
 				siteForm.getLatitude(), siteForm.getLongitude(), siteForm.getPhoneNumber(),
-				siteForm.getEslogan(), siteForm.getInformation(), siteForm.getCalification(), siteForm.getClicks());
+				siteForm.getEslogan(), siteForm.getInformation(), siteForm.getCalification(), siteForm.getClicks(), 1);
 		
 		List<Category> categorias =  categoryService.getCategories();
 		List<Service> servicios = serviceService.getServices();

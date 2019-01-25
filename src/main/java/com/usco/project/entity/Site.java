@@ -24,7 +24,7 @@ public class Site implements Serializable{
 	@Id
 	@GeneratedValue
 	@Column(name="id", unique=true)
-	private long id;
+	private Long id;
 	
 	//nombre del sitio
 	@Column(name="name", nullable=false)
@@ -71,9 +71,15 @@ public class Site implements Serializable{
 	
 	@ManyToMany(targetEntity=Category.class)
 	private Set<Category> categories;
+
+	@Column
+	private int state;
+
+	@ManyToMany
+	private Set<Gallery> galleries;
 	
 	public Site(String name, String address, String city, String latitude, String longitude,
-			String phoneNumber, String eslogan, String information, float calification, long clicks) {
+			String phoneNumber, String eslogan, String information, float calification, long clicks, int state) {
 		this.name = name;
 		this.address = address;
 		this.city = city;
@@ -84,6 +90,7 @@ public class Site implements Serializable{
 		this.information = information;
 		this.calification = calification;
 		this.clicks = clicks;
+		this.state = state;
 	}
 
 	public Site() {
@@ -195,5 +202,25 @@ public class Site implements Serializable{
 	public void setCategories(Set<Category> categories) {
 		this.categories = categories;
 	}
+
+
+	public int getState() {
+		return this.state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
+
+	public Set<Gallery> getGalleries() {
+		return this.galleries;
+	}
+
+	public void setGalleries(Set<Gallery> galleries) {
+		this.galleries = galleries;
+	}
+
+
 	
 }

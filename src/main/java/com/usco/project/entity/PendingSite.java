@@ -1,6 +1,7 @@
 package com.usco.project.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,17 +21,36 @@ public class PendingSite implements Serializable{
 	@Id
 	@GeneratedValue
 	@Column(name="id", unique=true)
-	private long id;
+	private Long id;
 	
 	@ManyToOne
 	private Site site;
 	
 	@ManyToOne
 	private User user;
+
+	@Column
+	private Date date;
+
+	@Column
+	private String comment;
+
+	@Column
+	private int state;
 	
 	public PendingSite() {
 		
 	}
+
+
+	public PendingSite(Site site, User user, Date date, String comment, int state) {
+		this.site = site;
+		this.user = user;
+		this.date = date;
+		this.comment = comment;
+		this.state = state;
+	}
+
 
 	//Getters Setters
 	public long getId() {
@@ -56,9 +76,30 @@ public class PendingSite implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
 
-	
-	
-	
+	public Date getDate() {
+		return this.date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public int getState() {
+		return this.state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
 	
 }

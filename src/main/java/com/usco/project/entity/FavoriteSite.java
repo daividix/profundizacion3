@@ -19,7 +19,7 @@ public class FavoriteSite implements Serializable{
 	// id del sitio favorito, autogenerado
 	@Id
 	@GeneratedValue
-	@Column(name="Favorite_Site_id", unique=true)
+	@Column(name="id", unique=true)
 	private long id;
 	
 	@ManyToOne
