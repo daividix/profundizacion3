@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -16,33 +17,34 @@ public class Publicity {
     @Column
     private Long id;
 
-    @Column
+    @Column(nullable=false)
     private Date  startTime;
 
-    @Column
+    @Column(nullable=false)
     private Date endTime;
 
+    @JoinColumn(nullable=false)
     @ManyToOne
     private Site site;
 
-    @Column
-    private int state;
+    @Column(nullable=false)
+    private Integer state;
 
-    @Column
-    private int priority;
+    @Column(nullable=false)
+    private Integer priority;
 
-    @Column
-    private Date date_payment;
+    @Column(nullable=false)
+    private Date datePayment;
 
 
 
-    public Publicity(Date start_time, Date end_time, Site site, int state, int priority, Date date_payment) {
+    public Publicity(Date start_time, Date end_time, Site site, Integer state, Integer priority, Date datePayment) {
         this.startTime = start_time;
         this.endTime = end_time;
         this.site = site;
         this.state = state;
         this.priority = priority;
-        this.date_payment = date_payment;
+        this.datePayment = datePayment;
     }
 
     public Publicity() {
@@ -81,20 +83,29 @@ public class Publicity {
         this.site = site;
     }
 
-    public int getState() {
+    public Integer getState() {
         return this.state;
     }
 
-    public void setState(int state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 
-    public int getPriority() {
+    public Integer getPriority() {
         return this.priority;
     }
 
-    public void setPriority(int priority) {
+    public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+
+    public Date getDatePayment() {
+        return this.datePayment;
+    }
+
+    public void setDatePayment(Date datePayment) {
+        this.datePayment = datePayment;
     }
 
 }

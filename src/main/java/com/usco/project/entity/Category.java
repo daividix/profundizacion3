@@ -25,23 +25,23 @@ public class Category implements Serializable{
 	private long id;
 	
 	//Columna donde se almacenara el nombre de la categoria
-	@Column(name="name", unique=true)
+	@Column(name="name", unique=true, nullable=false)
 	private String name;
 	
 	//Se almacena la informacion de la categoria
-	@Column(name="info", length=300)
+	@Column(name="info", length=500)
 	private String info;
 	
 	
 	//Se almacena la url de la imagen del icono de la categoria
-	@Column(name="icon")
+	@Column(name="icon", nullable=false)
 	private String icon;
 	
-	@Column(name="state")
-	private String state;
+	@Column(name="state", nullable=false)
+	private Integer state;
 	
 
-	public Category(String name, String info, String icon, String state) {
+	public Category(String name, String info, String icon, Integer state) {
 		this.name = name;
 		this.info = info;
 		this.icon = icon;
@@ -86,11 +86,11 @@ public class Category implements Serializable{
 		this.icon = icon;
 	}
 
-	public String getState() {
+	public Integer getState() {
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(Integer state) {
 		this.state = state;
 	}
 	

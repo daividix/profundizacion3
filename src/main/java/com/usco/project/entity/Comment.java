@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,9 +27,11 @@ public class Comment implements Serializable{
 	@Column(name="id", unique=true)
 	private long id;
 	
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private User user;
 	
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private Site site;
 	
@@ -37,16 +40,16 @@ public class Comment implements Serializable{
 	private String content;
 	
 	//Columna que almacena el numero de reportes que tiene un comentario
-	@Column(name="reports")
-	private int reports;
+	@Column(name="reports", columnDefinition="DEFAULT 0")
+	private Integer reports;
 	
 	//Almacena el numero de likes que tiene el comentario
-	@Column(name="likes")
-	private int likes;
+	@Column(name="likes", columnDefinition="DEFAULT 0")
+	private Integer likes;
 	
 	//Almacena el numero de dislikes de un comentario
-	@Column(name="dislikes")
-	private int dislikes;
+	@Column(name="dislikes", columnDefinition="DEFAULT 0")
+	private Integer dislikes;
 	
 	public Comment() {
 		
@@ -85,27 +88,27 @@ public class Comment implements Serializable{
 		this.content = content;
 	}
 
-	public int getReports() {
+	public Integer getReports() {
 		return reports;
 	}
 
-	public void setReports(int reports) {
+	public void setReports(Integer reports) {
 		this.reports = reports;
 	}
 
-	public int getLikes() {
+	public Integer getLikes() {
 		return likes;
 	}
 
-	public void setLikes(int likes) {
+	public void setLikes(Integer likes) {
 		this.likes = likes;
 	}
 
-	public int getDislikes() {
+	public Integer getDislikes() {
 		return dislikes;
 	}
 
-	public void setDislikes(int dislikes) {
+	public void setDislikes(Integer dislikes) {
 		this.dislikes = dislikes;
 	}
 	

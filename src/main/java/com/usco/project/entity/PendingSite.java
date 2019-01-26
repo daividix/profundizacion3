@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -23,27 +24,29 @@ public class PendingSite implements Serializable{
 	@Column(name="id", unique=true)
 	private Long id;
 	
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private Site site;
 	
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private User user;
 
-	@Column
+	@Column(nullable=false)
 	private Date date;
 
-	@Column
+	@Column(nullable=true)
 	private String comment;
 
-	@Column
-	private int state;
+	@Column(nullable=false)
+	private Integer state;
 	
 	public PendingSite() {
 		
 	}
 
 
-	public PendingSite(Site site, User user, Date date, String comment, int state) {
+	public PendingSite(Site site, User user, Date date, String comment, Integer state) {
 		this.site = site;
 		this.user = user;
 		this.date = date;
@@ -94,11 +97,11 @@ public class PendingSite implements Serializable{
 		this.comment = comment;
 	}
 
-	public int getState() {
+	public Integer getState() {
 		return this.state;
 	}
 
-	public void setState(int state) {
+	public void setState(Integer state) {
 		this.state = state;
 	}
 	

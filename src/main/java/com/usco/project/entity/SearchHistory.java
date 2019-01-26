@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -23,15 +24,17 @@ public class SearchHistory implements Serializable{
 	@GeneratedValue
 	private Long id;
 	
-	@Column(name="content", length= 100)
+	@Column(name="content", length= 100, nullable=false)
 	private String content;
 	
-	@Column(name="date")
+	@Column(name="date", nullable=false)
 	private Date date;
 
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private City city;
 
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private User user;
 

@@ -35,34 +35,25 @@ public class User{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
  
-    @NotBlank
-    @Size(min=3, max = 50)
+    @Column(nullable=false, length=30)
     private String name;
     
-    @NotBlank
-    @Size(min=3, max=60)
+    @Column(nullable=false, length=40)
     private String lastName;
     
-    @NotBlank
     @Column(nullable=false)
     private String gender;
     
-    @Size(min=0, max=200)
     @Column(nullable=true)
     private String image;
  
-    @NotBlank
-    @Size(min=3, max = 50)
+    @Column(nullable=false, length=40)
     private String username;
  
-    @NaturalId
-    @NotBlank
-    @Size(max = 50)
-    @Email
+    @Column(nullable=false)
     private String email;
  
-    @NotBlank
-    @Size(min=6, max = 100)
+    @Column(nullable=false, length=60)
     private String password;
  
     @ManyToMany(fetch = FetchType.LAZY)

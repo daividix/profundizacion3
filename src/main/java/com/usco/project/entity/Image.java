@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -25,6 +26,7 @@ public class Image implements Serializable{
 	@Column(name="id", unique=true)
 	private long id;
 	
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private Site site;
 	
@@ -32,7 +34,7 @@ public class Image implements Serializable{
 	@Column(name="url", nullable=false)
 	private String url;
 
-	@Column
+	@Column(nullable=false)
 	private String name;
 
 

@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -29,9 +30,11 @@ public class Calification implements Serializable{
 	@Column(name="id", unique=true)
 	private Long id;
 	
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private Site site;
 	
+	@JoinColumn(nullable=false)
 	@ManyToOne
 	private User user;
 	

@@ -14,12 +14,12 @@ public class ServiceService {
 	@Autowired
 	@Qualifier("service_repository")
 	private ServiceRepository serviceRepository;
-	
-	public List<com.usco.project.entity.Service> getServices(){
+
+	public List<com.usco.project.entity.Service> getServices() {
 		return serviceRepository.findAll();
 	}
 
-	public com.usco.project.entity.Service getById(Long id){
+	public com.usco.project.entity.Service getById(Long id) {
 		com.usco.project.entity.Service service = serviceRepository.findById(id);
 		return service;
 	}
@@ -29,7 +29,7 @@ public class ServiceService {
 		return newService;
 	}
 
-	public Boolean deleteService (Long id) {
+	public Boolean deleteService(Long id) {
 		try {
 			com.usco.project.entity.Service service = serviceRepository.findById(id);
 			serviceRepository.delete(service);
@@ -37,7 +37,19 @@ public class ServiceService {
 		} catch (Exception e) {
 			return false;
 		}
-		
+
+	}
+
+	public com.usco.project.entity.Service updateService(Long id, com.usco.project.entity.Service serviceNewData) {
+		com.usco.project.entity.Service service = serviceRepository.findById(id);
+		if (serviceNewData.getInfo() != null) {
+			service.setInfo(serviceNewData.getInfo());
+		}
+		if (serviceNewData.getName() != null) {
+			service.setName(serviceNewData.getName());
+		}
+		serviceRepository.save(service);
+		return service;
 	}
 
 }

@@ -17,19 +17,19 @@ public class Gallery {
     @Column
     private Long id;
 
-    @Column
+    @Column(nullable=false, length=50)
     private String name;
 
-    @Column
+    @Column(nullable=false)
     private Date date;
 
-    @Column
-    private int state;
+    @Column(nullable=false)
+    private Integer state;
 
     @ManyToMany
     private Set<Image> images;
 
-    public Gallery(String name, Date date, int state, Set<Image> images) {
+    public Gallery(String name, Date date, Integer state, Set<Image> images) {
         this.name = name;
         this.date = date;
         this.state = state;
@@ -64,11 +64,11 @@ public class Gallery {
         this.date = date;
     }
 
-    public int getState() {
+    public Integer getState() {
         return this.state;
     }
 
-    public void setState(int state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 

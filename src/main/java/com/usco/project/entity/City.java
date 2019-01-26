@@ -13,10 +13,10 @@ public class City {
     @Column
     private Long id;
 
-    @Column
+    @Column(nullable=false, length=30)
     private String name;
 
-    @Column
+    @Column(nullable=false, length=40)
     private String department;
 
 

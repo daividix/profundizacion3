@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -27,15 +28,15 @@ public class Site implements Serializable{
 	private Long id;
 	
 	//nombre del sitio
-	@Column(name="name", nullable=false)
+	@Column(name="name", nullable=false, length=60)
 	private String name;
 	
 	//Direccion del sitio
-	@Column(name="address", nullable=false)
+	@Column(name="address", nullable=false, length=60)
 	private String address;
 	
 	//Ciudad donde se encuentra el sitio
-	@Column(name="city")
+	@Column(name="city", nullable=false)
 	private String city;
 	
 	//Latitud y longitud para encontrar el sitio el google maps
@@ -72,14 +73,15 @@ public class Site implements Serializable{
 	@ManyToMany(targetEntity=Category.class)
 	private Set<Category> categories;
 
-	@Column
-	private int state;
+	@Column(nullable=false)
+	private Integer state;
 
 	@ManyToMany
+	@JoinColumn(nullable=true)
 	private Set<Gallery> galleries;
 	
 	public Site(String name, String address, String city, String latitude, String longitude,
-			String phoneNumber, String eslogan, String information, float calification, long clicks, int state) {
+			String phoneNumber, String eslogan, String information, float calification, long clicks, Integer state) {
 		this.name = name;
 		this.address = address;
 		this.city = city;
@@ -204,11 +206,11 @@ public class Site implements Serializable{
 	}
 
 
-	public int getState() {
+	public Integer getState() {
 		return this.state;
 	}
 
-	public void setState(int state) {
+	public void setState(Integer state) {
 		this.state = state;
 	}
 

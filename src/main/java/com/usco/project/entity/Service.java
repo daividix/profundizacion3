@@ -28,8 +28,7 @@ public class Service implements Serializable{
 	@Column(name="info", nullable=true, length=300)
 	private String info;
 
-	public Service(long id, String name, String info) {
-		this.id = id;
+	public Service(String name, String info) {
 		this.name = name;
 		this.info = info;
 	}

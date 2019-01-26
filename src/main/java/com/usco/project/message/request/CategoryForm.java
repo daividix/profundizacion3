@@ -1,5 +1,7 @@
 package com.usco.project.message.request;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -19,11 +21,12 @@ public class CategoryForm {
     @Size(min=0, max=300)
     private String icon;
 
-    @Size(min=1, max=10)
-    private String state;
+    @Min(value=1)
+    @Max(value=10)
+    private Integer state;
 
 
-    public CategoryForm(String name, String info, String icon, String state) {
+    public CategoryForm(String name, String info, String icon, Integer state) {
         this.name = name;
         this.info = info;
         this.icon = icon;
@@ -58,11 +61,11 @@ public class CategoryForm {
         this.icon = icon;
     }
 
-    public String getState() {
+    public Integer getState() {
         return this.state;
     }
 
-    public void setState(String state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 
