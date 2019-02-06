@@ -35,8 +35,6 @@ public class EmailService {
 
     @Value("${serverinfo.url}")
     String url;
-    /* @Value("${sendgrid.info.apiKey}")
-    String apiKey;
 
     public void sendActivationEmail(String from, String to, String subject, String link) throws IOException {
         String htmlMsg = "<h3>Bienvenido a Buscapp</h3>" + "<p>Para activar tu cuenta da click <a href=\"" + url + link
@@ -47,7 +45,7 @@ public class EmailService {
         Email emailTo = new Email(to);
         Content emailContent = new Content("text/html", "<h1>Hello</h1>");
         Mail mail = new Mail(emailFrom, emailSubject, emailTo, emailContent);
-        SendGrid sg = new SendGrid(apiKey);
+        SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
 
         Request request = new Request();
 
@@ -62,7 +60,7 @@ public class EmailService {
 
         } catch (IOException e) {
             System.out.println(e);
-        } */
+        }
 
         /* MimeMessagePreparator messagePreparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
@@ -75,6 +73,6 @@ public class EmailService {
             mailSender.send(messagePreparator);
         } catch (MailException e) {
             System.out.println(e);
-        } 
-    }*/
+        } */
+    }
 }

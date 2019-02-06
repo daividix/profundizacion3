@@ -152,11 +152,11 @@ public class AuthRestAPIs {
  
 		user.setRoles(roles);
 		User newUser = userRepository.save(user);
-		/* try {
+		try {
 			emailService.sendActivationEmail("noreply@buscapp.com", newUser.getEmail(), "Activacion de cuenta", "/activation/user/"+newUser.getId());
 		} catch (Exception e) {
 			System.out.println(e.toString());
-		} */
+		}
 		
 		return new Response(true, "Usuario registrado satisfactoriamente");
 	}
