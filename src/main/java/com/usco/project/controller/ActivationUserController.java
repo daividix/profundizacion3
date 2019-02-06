@@ -20,7 +20,7 @@ public class ActivationUserController {
     private UserRepository userRepository;
 
 
-    @GetMapping(value="/activation/user/{user_id}")
+    /* @GetMapping(value="/activation/user/{user_id}")
     public String activarUsuario(@PathVariable("user_id") Long user_id) {
         User user = userRepository.findById(user_id);
         if (user != null) {
@@ -34,6 +34,6 @@ public class ActivationUserController {
         }else{
             return "forward:/activation/false";
         }
-    }
+    } */
     
 }
