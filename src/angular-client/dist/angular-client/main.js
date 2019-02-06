@@ -921,6 +921,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/auth/auth.service */ "./src/app/services/auth/auth.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -935,11 +936,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SignupComponent = /** @class */ (function () {
-    function SignupComponent(authentication, _formBuilder, snackBar) {
+    function SignupComponent(authentication, _formBuilder, snackBar, router) {
         this.authentication = authentication;
         this._formBuilder = _formBuilder;
         this.snackBar = snackBar;
+        this.router = router;
         this.form1 = {};
         this.form2 = {};
         this.genders = [{ value: 'Male' }, { value: 'Female' }];
@@ -1002,7 +1005,7 @@ var SignupComponent = /** @class */ (function () {
                         duration: 6000,
                     }).onAction().subscribe(function (action) {
                         console.log(action);
-                        window.location.assign('/login');
+                        _this.router.navigate(['/login']);
                     });
                 }
                 else {
@@ -1079,7 +1082,7 @@ var SignupComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./signup.component.css */ "./src/app/components/signup/signup.component.css")]
         }),
         __metadata("design:paramtypes", [src_app_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"]])
+            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
     ], SignupComponent);
     return SignupComponent;
 }());
@@ -1359,8 +1362,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
-        this.loginUrl = '/api/auth/signin';
-        this.signupUrl = '/api/auth/signup';
+        this.loginUrl = '/api/v1/auth/signin';
+        this.signupUrl = '/api/v1/auth/signup';
     }
     AuthService.prototype.login = function (credentials) {
         return this.http.post(this.loginUrl, credentials);
