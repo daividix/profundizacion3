@@ -153,7 +153,7 @@ public class AuthRestAPIs {
 		user.setRoles(roles);
 		User newUser = userRepository.save(user);
 		try {
-			emailService.sendActivationEmail("sandboxd5b0bcd4bbc34f3a878097ccd9ef4565.mailgun.org", newUser.getEmail(), "Activacion de cuenta", "/activation/user/"+newUser.getId());
+			emailService.sendComplexMessage(newUser.getEmail(), "/activation/user/"+newUser.getId());
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
