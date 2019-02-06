@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
+/* import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage; */
 
 import com.sendgrid.Content;
 import com.sendgrid.Email;
@@ -15,23 +15,23 @@ import com.sendgrid.Request;
 import com.sendgrid.Response;
 import com.sendgrid.SendGrid;
 
-import org.springframework.beans.factory.annotation.Autowired;
+/* import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.mail.javamail.MimeMessagePreparator;
+import org.springframework.mail.javamail.MimeMessagePreparator; */
 import org.springframework.beans.factory.annotation.Value;
 
 @Service("email_service")
 public class EmailService {
 
-    private JavaMailSender mailSender;
+    /* private JavaMailSender mailSender;
 
     @Autowired
     public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
-    }
+    } */
 
     @Value("${serverinfo.url}")
     String url;
@@ -43,7 +43,7 @@ public class EmailService {
         Email emailFrom = new Email(from);
         String emailSubject = subject;
         Email emailTo = new Email(to);
-        Content emailContent = new Content("text/html", "<h1>Hello</h1>");
+        Content emailContent = new Content("text/html", htmlMsg);
         Mail mail = new Mail(emailFrom, emailSubject, emailTo, emailContent);
         SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
 
