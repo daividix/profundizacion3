@@ -3,6 +3,7 @@ import { SignUpInfo } from 'src/app/models/signup-info';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 
 export interface Gender {
   value: string;
@@ -22,7 +23,7 @@ export class SignupComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   constructor(private authentication: AuthService, private _formBuilder: FormBuilder,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -82,7 +83,7 @@ export class SignupComponent implements OnInit {
             duration: 6000,
           }).onAction().subscribe(action => {
             console.log(action);
-            window.location.assign('/login');
+            this.router.navigate(['/login']);
           });
         } else {
           this.snackBar.open('Hubo un error al registrarse', 'Ok', {

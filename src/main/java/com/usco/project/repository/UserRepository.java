@@ -18,6 +18,8 @@ public interface UserRepository extends JpaRepository<User, Serializable>{
 	
 	Boolean existsByUsername(String username);
 	Boolean existsByEmail(String email);
+
+	Boolean existsById(Long id);
 	
 	@Query("SELECT u FROM User u WHERE u.username = ?1")
 	public abstract User getInfoUser(String username);

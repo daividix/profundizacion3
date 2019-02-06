@@ -11,8 +11,8 @@ import { SignUpResponse } from 'src/app/models/signup-response';
 })
 export class AuthService {
 
-  private loginUrl = '/api/auth/signin';
-  private signupUrl = '/api/auth/signup';
+  private loginUrl = '/api/v1/auth/signin';
+  private signupUrl = '/api/v1/auth/signup';
 
   constructor(private http: HttpClient) { }
 

@@ -13,9 +13,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  registrarSitio(event){
-    event.preventDefault()
+
+  registrarSitio(event) {
+    event.preventDefault();
     const sitio: Site = {
       id: 0,
       name: this.modelSitio.name,
@@ -30,17 +30,17 @@ export class RegisterComponent implements OnInit {
       calification: parseFloat(this.modelSitio.calification)
     }
     this.service.agregarSitio(sitio)
-    .subscribe(sitio=>{
-      this.modelSitio.name = ''
-      this.modelSitio.address = ''
-      this.modelSitio.city = ''
-      this.modelSitio.latitude = ''
-      this.modelSitio.longitude = ''
-      this.modelSitio.phoneNumber = ''
-      this.modelSitio.eslogan = ''
-      this.modelSitio.information = ''
-      this.modelSitio.category = ''
-      this.modelSitio.calification = ''
+    .subscribe(sitio=> {
+      this.modelSitio.name = '';
+      this.modelSitio.address = '';
+      this.modelSitio.city = '';
+      this.modelSitio.latitude = '';
+      this.modelSitio.longitude = '';
+      this.modelSitio.phoneNumber = '';
+      this.modelSitio.eslogan = '';
+      this.modelSitio.information = '';
+      this.modelSitio.category = '';
+      this.modelSitio.calification = '';
     })
   }
 

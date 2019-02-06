@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/category")
+@RequestMapping("/api/v1/categoria")
 public class CategoryController {
 
     @Autowired
@@ -64,7 +64,10 @@ public class CategoryController {
     @PreAuthorize("hasRole('ADMIN')")
     public Response agregarCategoria (@Valid @RequestBody CategoryForm form) {
         Category category = new Category(form.getName(), form.getInfo(), 
-            form.getIcon(), form.getState());
+            form.getIcon(), 1);
+            if (form.getState() != null) {
+                category.setState(form.getState());
+            }
         try {
             Category newCategory = categoryService.addCategory(category);
             Response response = new Response(true, "Categoria agregada");

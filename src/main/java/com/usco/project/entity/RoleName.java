@@ -2,6 +2,6 @@ package com.usco.project.entity;
 
 public enum RoleName {
 	ROLE_USER,
-	ROLE_PM,
+	ROLE_ADMIN_SITE,
 	ROLE_ADMIN
 }

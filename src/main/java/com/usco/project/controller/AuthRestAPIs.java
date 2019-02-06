@@ -5,9 +5,9 @@ import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Optional;
 import java.util.Set;
- 
+
 import javax.validation.Valid;
- 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
- 
+
 import com.usco.project.message.request.LoginForm;
 import com.usco.project.message.request.SignUpForm;
 import com.usco.project.message.response.JwtResponse;
@@ -36,10 +36,11 @@ import com.usco.project.repository.RoleRepository;
 import com.usco.project.repository.UserRepository;
 import com.usco.project.security.CryptPassword;
 import com.usco.project.security.jwt.JwtProvider;
+import com.usco.project.service.EmailService;
 import com.usco.project.service.UserServices;
  
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 public class AuthRestAPIs {
  
 	@Autowired
@@ -51,6 +52,10 @@ public class AuthRestAPIs {
 	@Autowired
 	@Qualifier("servicio_user")
 	private UserServices userService;
+
+	@Autowired
+	@Qualifier("email_service")
+	private EmailService emailService;
  
 	@Autowired
 	RoleRepository roleRepository;
@@ -109,7 +114,7 @@ public class AuthRestAPIs {
 		}
 		User user = new User(signUpRequest.getName(), signUpRequest.getLastName(),
 				signUpRequest.getGender(), image, signUpRequest.getUsername(), signUpRequest.getEmail(),
-				encoder.encode(signUpRequest.getPassword()));
+				encoder.encode(signUpRequest.getPassword()), 2);
  
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();
@@ -118,14 +123,14 @@ public class AuthRestAPIs {
 			if(signUpRequest.getSecret().equals("s3c8et")) {
 				strRoles.forEach(role -> {
 					switch (role) {
-					case "admin":
+					case "ROLE_ADMIN":
 						Role adminRole = roleRepository.findByName(RoleName.ROLE_ADMIN)
 								.orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
 						roles.add(adminRole);
 		 
 						break;
-					case "pm":
-						Role pmRole = roleRepository.findByName(RoleName.ROLE_PM)
+					case "ROLE_ADMIN_SITE":
+						Role pmRole = roleRepository.findByName(RoleName.ROLE_ADMIN_SITE)
 								.orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
 						roles.add(pmRole);
 		 
@@ -146,13 +151,18 @@ public class AuthRestAPIs {
 		}
  
 		user.setRoles(roles);
-		userRepository.save(user);
- 
+		User newUser = userRepository.save(user);
+		try {
+			emailService.sendActivationEmail("noreply@buscapp.com", newUser.getEmail(), "Activacion de cuenta", "/activation/user/"+newUser.getId());
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
 		return new Response(true, "Usuario registrado satisfactoriamente");
 	}
 	
 	@GetMapping("/getuser")
-	@PreAuthorize("hasRole('PM') or hasRole('ADMIN') or hasRole('USER')")
+	@PreAuthorize("hasRole('ADMIN_SITE') or hasRole('ADMIN') or hasRole('USER')")
 	public Hashtable<Object,Object> getUser(Principal principal) {
 		Hashtable<Object,Object> response = new Hashtable<Object, Object>();
 		User user = userService.getUserInformation(principal.getName().toString());
