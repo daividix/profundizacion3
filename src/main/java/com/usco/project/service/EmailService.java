@@ -106,7 +106,7 @@ public class EmailService {
         MultivaluedMapImpl formData = new MultivaluedMapImpl();
         formData.add("from", System.getenv("MAILGUN_SMTP_LOGIN")+" <mailgun@" + System.getenv("MAILGUN_DOMAIN") + ">");
         formData.add("to", "User "+"<"+to+">");
-        formData.add("subject", "Activacion de cuenta");
+        formData.add("subject", "Activacion de cuenta"); 
         formData.add("html", htmlMsg);
         return webResource.type(MediaType.APPLICATION_FORM_URLENCODED)
             .post(ClientResponse.class, formData);
