@@ -100,12 +100,13 @@ public class EmailService {
         client.addFilter(new HTTPBasicAuthFilter("api", System.getenv("MAILGUN_API_KEY")));
         WebResource webResource = client.resource("https://api.mailgun.net/v3/" + System.getenv("MAILGUN_DOMAIN")
             + "/messages");
-        FormDataMultiPart formData = new FormDataMultiPart();
-        formData.field("from", "<mailgun@" + System.getenv("MAILGUN_DOMAIN") + ">");
-        formData.field("to", to);
-        formData.field("subject", "Activacion de cuenta");
-        formData.field("html", htmlMsg);
-        return webResource.type(MediaType.MULTIPART_FORM_DATA_TYPE)
+        //FormDataMultiPart formData = new FormDataMultiPart();
+        MultivaluedMapImpl formData = new MultivaluedMapImpl();
+        formData.add("from", "<mailgun@" + System.getenv("MAILGUN_DOMAIN") + ">");
+        formData.add("to", to);
+        formData.add("subject", "Activacion de cuenta");
+        formData.add("html", htmlMsg);
+        return webResource.type(MediaType.APPLICATION_FORM_URLENCODED)
             .post(ClientResponse.class, formData);
       }
 }
