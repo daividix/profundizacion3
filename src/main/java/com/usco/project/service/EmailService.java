@@ -93,17 +93,19 @@ public class EmailService {
     }
 
     public ClientResponse sendComplexMessage(String to, String link) {
-        String htmlMsg = "<h3>Bienvenido a Buscapp</h3>" + "<p>Para activar tu cuenta da click <a href=\"" + url + link
+        String htmlMsg = "<html><h3>Bienvenido a Buscapp</h3>" + "<p>Para activar tu cuenta da click <a href=\"" + url + link
         + "\">aqui</a></p>" + "<br>"
-        + "<p style=\"font-style: oblique\">Si crees que es un error has caso omiso a este mensaje</p>";
+        + "<p style=\"font-style: oblique\">Si crees que es un error has caso omiso a este mensaje</p></html>";
         Client client = Client.create();
+        System.out.println("api key "+System.getenv("MAILGUN_API_KEY"));
+        System.out.println("api key "+System.getenv("MAILGUN_DOMAIN"));
         client.addFilter(new HTTPBasicAuthFilter("api", System.getenv("MAILGUN_API_KEY")));
         WebResource webResource = client.resource("https://api.mailgun.net/v3/" + System.getenv("MAILGUN_DOMAIN")
             + "/messages");
         //FormDataMultiPart formData = new FormDataMultiPart();
         MultivaluedMapImpl formData = new MultivaluedMapImpl();
-        formData.add("from", "<mailgun@" + System.getenv("MAILGUN_DOMAIN") + ">");
-        formData.add("to", to);
+        formData.add("from", System.getenv("MAILGUN_SMTP_LOGIN")+" <mailgun@" + System.getenv("MAILGUN_DOMAIN") + ">");
+        formData.add("to", "User "+"<"+to+">");
         formData.add("subject", "Activacion de cuenta");
         formData.add("html", htmlMsg);
         return webResource.type(MediaType.APPLICATION_FORM_URLENCODED)
