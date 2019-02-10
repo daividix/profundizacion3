@@ -1,0 +1,15 @@
+<header>
+  <div class="container">
+    <div class="slider-container">
+      <div class="intro-text">
+        <img src="assets/img/Logo.png" />
+        <br>
+        <div class="categoTop" *ngFor="let populares of categoriaPopular$">
+          <a *ngIf="populares.popular" routerLink="/categories-result/{{populares.id}}"><i class=" material-icons">{{populares.icono}}</i>
+          {{populares.nombre}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+

@@ -1,0 +1,27 @@
+
+a {
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  padding-right: 30px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+
+}
+a, i:hover{
+  text-decoration-line: none;
+}
+.categoTop{
+  display: inline-block;
+}
+i{
+
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  top: -.1em;
+  vertical-align: middle;
+}

@@ -10,24 +10,25 @@ import { MaterialModule} from './material-config'; // importacion modulos angula
 
 import { RegisterService } from './services/register.service';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { SiteComponent } from './components/site/site.component';
-import { CategoriesComponent } from './components/categories/categories.component';
-import { SearchComponent } from './components/search/search.component';
-import { RegisterComponent } from './components/register/register.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { SitesComponent } from './components/sites/sites.component';
+import { LoginComponent } from './components/login/login.component';
+import { AppComponent } from './app.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { SitioComponent } from './components/sitio/sitio.component';
+import { SitiosCiudadesComponent } from './components/sitios-ciudades/sitios-ciudades.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { DownloadAppComponent } from './components/download-app/download-app.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SearcherComponent } from './components/searcher/searcher.component';
+import { CategoriesResultComponent } from './components/categories-result/categories-result.component';
+import { SitiosResultComponent } from './components/sitios-result/sitios-result.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
   {
     path: 'login',
     component: LoginComponent
@@ -41,25 +42,29 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     LoginComponent,
     HeaderComponent,
-    FooterComponent,
-    ProfileComponent,
-    SiteComponent,
-    CategoriesComponent,
-    SearchComponent,
-    RegisterComponent,
     SignupComponent,
-    SitesComponent
-  ],
+    MenuComponent,
+    HomeComponent,
+    SitioComponent,
+    SitiosCiudadesComponent,
+    CategoriesComponent,
+    DownloadAppComponent,
+    FooterComponent,
+    SearcherComponent,
+    CategoriesResultComponent,
+    SitiosResultComponent
+   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MaterialModule,
+    NgbModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],

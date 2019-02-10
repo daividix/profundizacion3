@@ -1,17 +1,42 @@
-<body> 
-    <app-header [drawer]="drawer"></app-header>
-    <mat-sidenav-container class="example-container" autosize>
-        <mat-sidenav #drawer class="example-sidenav" mode="over" [fixedInViewport]="fixed">
-          <div style="text-align: right"><button mat-icon-button (click)="drawer.close()"><mat-icon>clear</mat-icon></button></div>
-          <p>Auto-resizing sidenav</p>
-          <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-          <button (click)="showFiller = !showFiller" mat-raised-button>
-            Toggle extra text
-          </button>
-        </mat-sidenav>
-          <app-sites [sitios]="sites"></app-sites>
-    </mat-sidenav-container>
-</body>
-  
+<app-searcher></app-searcher>
+<section id="lugar" class="light-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="section-title">
+          <h2>Encuentra los Mejores Lugares de la Ciudad</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let lugares of datos$">
+        <div routerLink="/sitio/{{lugares.id}}" class="lugar-item" *ngIf="lugares.ads">
+          <div id="caja" class="lugar-image">
+            <img src="assets/img/author-2.jpg" class="img-responsive lugar-radiusImg" alt="author">
+          </div>
+          <div class="lugar-text">
+            <h3> {{lugares.nombre}} </h3>
+            <div class="lugar-location"> {{lugares.categoria}} </div>
+            <div class="lugar-position">
+                    <ngb-rating [rate]="lugares.calificacion">
+                        <ng-template let-fill="fill">
+                          <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+            </div>
+            <p>{{ lugares.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<app-sitios-ciudades></app-sitios-ciudades>
+
+<app-categories></app-categories>
+
+<app-download-app></app-download-app>
+
+<app-footer></app-footer>
 

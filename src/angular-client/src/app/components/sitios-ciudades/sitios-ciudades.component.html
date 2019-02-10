@@ -1,0 +1,52 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="section-title" *ngFor="let ubicacion of ciudades$">
+          <h2 *ngIf="ubicacion.visit">BuscApp <u>{{ubicacion.ciudad}}</u></h2>
+        </div>
+      </div>
+    </div>
+          <ul class="nav justify-content-center nav-tabs">
+            <li class="nav-item" *ngFor="let menu of ciudades$">
+              <a class="nav-link active" routerLink="" *ngIf="menu.visit">{{ menu.ciudad }}</a>
+            </li>
+            <li class="nav-item" *ngFor="let menu of ciudades$">
+              <a class="nav-link disabled" routerLink="" *ngIf="!menu.visit"> {{menu.ciudad}} </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" routerLink="" ><i class="fa fa-search"></i> Más Ciudades</a>
+            </li>
+          </ul>
+            <div class="row espacioAbajo"></div>
+          <div class="row">
+            <div class="col-md-3 espacioAbajo" *ngFor="let lugares of datos$">
+                <div routerLink="/sitio/{{lugares.id}}" class="lugar-item item-border" *ngIf="!lugares.ads">
+                <div id="caja" class="lugar-image">
+                  <img src="assets/img/author-2.jpg" class="img-responsive lugar-radiusImg" alt="author">
+                </div>
+                <div class="lugar-text">
+                  <h3> {{lugares.nombre}} </h3>
+                  <div class="lugar-location"> {{lugares.categoria}} </div>
+                  <div class="lugar-position">
+                    <ngb-rating [rate]="lugares.calificacion">
+                      <ng-template let-fill="fill">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+                  </div>
+                  <p>{{ lugares.descripcion }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <div class="section-title">
+                <a class="verMas" routerLink="sitios-result">Ver más lugares<i class="material-icons">keyboard_arrow_right</i></a>
+              </div>
+            </div>
+          </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<h2>{{result$.nombre}}</h2>
+<ng-container *ngFor="let categoList of category$ ">
+<div *ngIf="categoList.categoria == result$.nombre">
+
+    <h1>{{categoList.nombre}}</h1>
+
+
+    <p></p>
+
+
+
+  </div>
+</ng-container>
+
+<!--
+
+  *ngIf=" categoList.categoria == 'Restaurante' "
+  *ngIf="result$.nombre === categoList.categoria"
+
+
+-->
