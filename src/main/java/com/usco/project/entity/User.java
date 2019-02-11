@@ -14,12 +14,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
-import javax.validation.constraints.Size;
- 
-import org.hibernate.annotations.NaturalId;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
  
 @Entity
 @Table(name = "users", uniqueConstraints = {
@@ -55,6 +49,9 @@ public class User{
  
     @Column(nullable=false, length=60)
     private String password;
+
+    @Column(nullable=false)
+    private Integer state;
  
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles", 
@@ -64,7 +61,7 @@ public class User{
  
     public User() {}
  
-    public User(String name, String lastName, String gender, String image, String username, String email, String password) {
+    public User(String name, String lastName, String gender, String image, String username, String email, String password, Integer state) {
         this.name = name;
         this.lastName = lastName;
         this.gender = gender;
@@ -72,6 +69,7 @@ public class User{
         this.username = username;
         this.email = email;
         this.password = password;
+        this.state = state;
     }
  
     public Long getId() {
@@ -146,4 +144,14 @@ public class User{
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
+    public Integer getState() {
+        return this.state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
 }
