@@ -80,7 +80,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "   .example-sidenav-content {\n    display: flex;\n    height: 100%;\n    align-items: center;\n    justify-content: center;\n  }\n  \n  .example-sidenav {\n    padding: 20px;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkdBQUc7SUFDQyxhQUFhO0lBQ2IsWUFBWTtJQUNaLG1CQUFtQjtJQUNuQix1QkFBdUI7RUFDekI7O0VBRUE7SUFDRSxhQUFhO0VBQ2YiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiAgIC5leGFtcGxlLXNpZGVuYXYtY29udGVudCB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgfVxuICBcbiAgLmV4YW1wbGUtc2lkZW5hdiB7XG4gICAgcGFkZGluZzogMjBweDtcbiAgfSJdfQ== */"
+module.exports = "   .example-sidenav-content {\r\n    display: flex;\r\n    height: 100%;\r\n    align-items: center;\r\n    justify-content: center;\r\n  }\r\n  \r\n  .example-sidenav {\r\n    padding: 20px;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkdBQUc7SUFDQyxhQUFhO0lBQ2IsWUFBWTtJQUNaLG1CQUFtQjtJQUNuQix1QkFBdUI7RUFDekI7O0VBRUE7SUFDRSxhQUFhO0VBQ2YiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiAgIC5leGFtcGxlLXNpZGVuYXYtY29udGVudCB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIH1cclxuICBcclxuICAuZXhhbXBsZS1zaWRlbmF2IHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgfSJdfQ== */"
 
 /***/ }),
 
@@ -281,7 +281,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2>{{result$.nombre}}</h2>\n<ng-container *ngFor=\"let categoList of category$ \">\n<div *ngIf=\"categoList.categoria == result$.nombre\">\n\n    <h1>{{categoList.nombre}}</h1>\n\n\n    <p></p>\n\n\n\n  </div>\n</ng-container>\n\n<!--\n\n  *ngIf=\" categoList.categoria == 'Restaurante' \"\n  *ngIf=\"result$.nombre === categoList.categoria\"\n\n\n-->\n"
+module.exports = "<h2>{{result$.nombre}}</h2>\r\n<ng-container *ngFor=\"let categoList of category$ \">\r\n<div *ngIf=\"categoList.categoria == result$.nombre\">\r\n\r\n    <h1>{{categoList.nombre}}</h1>\r\n\r\n\r\n    <p></p>\r\n\r\n\r\n\r\n  </div>\r\n</ng-container>\r\n\r\n<!--\r\n\r\n  *ngIf=\" categoList.categoria == 'Restaurante' \"\r\n  *ngIf=\"result$.nombre === categoList.categoria\"\r\n\r\n\r\n-->\r\n"
 
 /***/ }),
 
@@ -355,7 +355,7 @@ var CategoriesResultComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"lugar\" class=\"light-bg\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 text-center\">\n        <div class=\"section-title\">\n          <h2>Buscar Lugares por Categorías</h2>\n        </div>\n      </div>\n    </div>\n    <div class=\"row space\">\n      <div class=\"col-md-3 espacioAbajo\" *ngFor=\" let categorias of categories$ \">\n        <button type=\"button\" routerLink=\"/categories-result/{{categorias.id}}\" class=\"btn\" *ngIf=\"categorias.login\">\n        <i class=\"material-icons md-60\">{{categorias.icono}}</i><br />\n          {{categorias.nombre}}</button>\n\n      </div>\n    </div>\n  </div>\n</section>\n<!--\n<button type=\"button\" routerLink=\" \" class=\"btn btnMas\"><i class=\"material-icons md-60\">more_horiz</i><br />Más\n  Categorías</button>\n-->\n"
+module.exports = "<section id=\"lugar\" class=\"light-bg\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\">\r\n          <h2>Buscar Lugares por Categorías</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row space\">\r\n      <div class=\"col-md-3 espacioAbajo\" *ngFor=\" let categorias of categories$ \">\r\n        <button type=\"button\" routerLink=\"/categories-result/{{categorias.id}}\" class=\"btn\" *ngIf=\"categorias.login\">\r\n        <i class=\"material-icons md-60\">{{categorias.icono}}</i><br />\r\n          {{categorias.nombre}}</button>\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n<!--\r\n<button type=\"button\" routerLink=\" \" class=\"btn btnMas\"><i class=\"material-icons md-60\">more_horiz</i><br />Más\r\n  Categorías</button>\r\n-->\r\n"
 
 /***/ }),
 
@@ -423,7 +423,7 @@ var CategoriesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 text-center\">\n        <div class=\"section-title\">\n          <h2>Llevanos en tu celular</h2>\n        </div>\n      </div>\n    </div>\n    <div class=\"row espacioAbajo\"></div>\n    <br>\n    <div class=\"row\">\n      <div class=\"col-lg-12 text-center\">\n        <div class=\"section-title\">\n          <img class=\"store\" src=\"assets/img/AppStore.png\" href=\"#\" />\n          <img class=\"store\" src=\"assets/img/PlayStore.png\" href=\"#\" />\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n"
+module.exports = "<section>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\">\r\n          <h2>Llevanos en tu celular</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row espacioAbajo\"></div>\r\n    <br>\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\">\r\n          <img class=\"store\" src=\"assets/img/AppStore.png\" href=\"#\" />\r\n          <img class=\"store\" src=\"assets/img/PlayStore.png\" href=\"#\" />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -434,7 +434,7 @@ module.exports = "<section>\n  <div class=\"container\">\n    <div class=\"row\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".store {\n  margin-left: 66%;\n  padding-bottom: 20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9kb3dubG9hZC1hcHAvQzpcXFVzZXJzXFxTb21ldGhpbmdcXGdpdFxccHJvZnVuZGl6YWNpb24zXFxzcmNcXGFuZ3VsYXItY2xpZW50L3NyY1xcYXBwXFxjb21wb25lbnRzXFxkb3dubG9hZC1hcHBcXGRvd25sb2FkLWFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixvQkFBb0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZG93bmxvYWQtYXBwL2Rvd25sb2FkLWFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdG9yZXtcbiAgbWFyZ2luLWxlZnQ6IDY2JTtcbiAgcGFkZGluZy1ib3R0b206IDIwcHg7XG59XG4iXX0= */"
+module.exports = ".store {\n  margin-left: 66%;\n  padding-bottom: 20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9kb3dubG9hZC1hcHAvQzpcXFVzZXJzXFxEYWl2aWRpeFxcZ2l0XFxwcm9mdW5kaXphY2lvbjNcXHNyY1xcYW5ndWxhci1jbGllbnQvc3JjXFxhcHBcXGNvbXBvbmVudHNcXGRvd25sb2FkLWFwcFxcZG93bmxvYWQtYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQWdCO0VBQ2hCLG9CQUFvQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9kb3dubG9hZC1hcHAvZG93bmxvYWQtYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnN0b3Jle1xyXG4gIG1hcmdpbi1sZWZ0OiA2NiU7XHJcbiAgcGFkZGluZy1ib3R0b206IDIwcHg7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -486,7 +486,7 @@ var DownloadAppComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"lugar\" class=\"light-bg\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-3\">\n        <h4 class=\"titleFooter\">Sobre Nosotros</h4>\n        <ul class=\"listFooter\">\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n        </ul>\n      </div>\n      <div class=\"col-lg-3\">\n        <h4 class=\"titleFooter\">Servicios</h4>\n          <ul class=\"listFooter\">\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\n          </ul>\n      </div>\n      <div class=\"col-lg-3\">\n        <h4 class=\"titleFooter\">Negocios</h4>\n        <ul class=\"listFooter\">\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n        </ul>\n      </div>\n      <div class=\"col-lg-3\">\n        <h4 class=\"titleFooter\">Politicas</h4>\n        <ul class=\"listFooter\">\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</section>\n"
+module.exports = "<section id=\"lugar\" class=\"light-bg\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-3\">\r\n        <h4 class=\"titleFooter\">Sobre Nosotros</h4>\r\n        <ul class=\"listFooter\">\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"col-lg-3\">\r\n        <h4 class=\"titleFooter\">Servicios</h4>\r\n          <ul class=\"listFooter\">\r\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n            <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          </ul>\r\n      </div>\r\n      <div class=\"col-lg-3\">\r\n        <h4 class=\"titleFooter\">Negocios</h4>\r\n        <ul class=\"listFooter\">\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"col-lg-3\">\r\n        <h4 class=\"titleFooter\">Politicas</h4>\r\n        <ul class=\"listFooter\">\r\n          <li><a routerLink=\"#\">Hector juanito</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n          <li><a routerLink=\"#\">Lorem impsum</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -497,7 +497,7 @@ module.exports = "<section id=\"lugar\" class=\"light-bg\">\n  <div class=\"cont
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".titleFooter {\n  text-align: left !important;\n  color: #21ce99;\n  font-weight: 100;\n  font-size: 18px; }\n\nul, li {\n  list-style: none;\n  vertical-align: baseline !important;\n  text-align: left !important;\n  padding: 0 !important;\n  margin: 0 !important; }\n\na {\n  text-align: left !important;\n  color: #0073bb; }\n\na:hover {\n  -webkit-text-decoration-line: none;\n          text-decoration-line: none; }\n\n.row {\n  padding-left: 100px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvQzpcXFVzZXJzXFxTb21ldGhpbmdcXGdpdFxccHJvZnVuZGl6YWNpb24zXFxzcmNcXGFuZ3VsYXItY2xpZW50L3NyY1xcYXBwXFxjb21wb25lbnRzXFxmb290ZXJcXGZvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDJCQUEyQjtFQUMzQixjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLGVBQWUsRUFBQTs7QUFHakI7RUFDRSxnQkFBZ0I7RUFDaEIsbUNBQW1DO0VBQ25DLDJCQUEyQjtFQUMzQixxQkFBcUI7RUFDckIsb0JBQW9CLEVBQUE7O0FBRXRCO0VBQ0UsMkJBQTJCO0VBQzNCLGNBQWMsRUFBQTs7QUFFaEI7RUFDRSxrQ0FBMEI7VUFBMUIsMEJBQTBCLEVBQUE7O0FBRzVCO0VBQ0UsOEJBQThCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGl0bGVGb290ZXJ7XG4gIHRleHQtYWxpZ246IGxlZnQgIWltcG9ydGFudDtcbiAgY29sb3I6ICMyMWNlOTk7XG4gIGZvbnQtd2VpZ2h0OiAxMDA7XG4gIGZvbnQtc2l6ZTogMThweDtcbn1cblxudWwsIGxpe1xuICBsaXN0LXN0eWxlOiBub25lO1xuICB2ZXJ0aWNhbC1hbGlnbjogYmFzZWxpbmUgIWltcG9ydGFudDtcbiAgdGV4dC1hbGlnbjogbGVmdCAhaW1wb3J0YW50O1xuICBwYWRkaW5nOiAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbjogMCAhaW1wb3J0YW50O1xufVxuYXtcbiAgdGV4dC1hbGlnbjogbGVmdCAhaW1wb3J0YW50O1xuICBjb2xvcjogIzAwNzNiYjtcbn1cbmE6aG92ZXJ7XG4gIHRleHQtZGVjb3JhdGlvbi1saW5lOiBub25lO1xufVxuXG4ucm93e1xuICBwYWRkaW5nLWxlZnQ6IDEwMHB4ICFpbXBvcnRhbnQ7XG59XG4iXX0= */"
+module.exports = ".titleFooter {\n  text-align: left !important;\n  color: #21ce99;\n  font-weight: 100;\n  font-size: 18px; }\n\nul, li {\n  list-style: none;\n  vertical-align: baseline !important;\n  text-align: left !important;\n  padding: 0 !important;\n  margin: 0 !important; }\n\na {\n  text-align: left !important;\n  color: #0073bb; }\n\na:hover {\n  -webkit-text-decoration-line: none;\n          text-decoration-line: none; }\n\n.row {\n  padding-left: 100px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvQzpcXFVzZXJzXFxEYWl2aWRpeFxcZ2l0XFxwcm9mdW5kaXphY2lvbjNcXHNyY1xcYW5ndWxhci1jbGllbnQvc3JjXFxhcHBcXGNvbXBvbmVudHNcXGZvb3RlclxcZm9vdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMkJBQTJCO0VBQzNCLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsZUFBZSxFQUFBOztBQUdqQjtFQUNFLGdCQUFnQjtFQUNoQixtQ0FBbUM7RUFDbkMsMkJBQTJCO0VBQzNCLHFCQUFxQjtFQUNyQixvQkFBb0IsRUFBQTs7QUFFdEI7RUFDRSwyQkFBMkI7RUFDM0IsY0FBYyxFQUFBOztBQUVoQjtFQUNFLGtDQUEwQjtVQUExQiwwQkFBMEIsRUFBQTs7QUFHNUI7RUFDRSw4QkFBOEIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50aXRsZUZvb3RlcntcclxuICB0ZXh0LWFsaWduOiBsZWZ0ICFpbXBvcnRhbnQ7XHJcbiAgY29sb3I6ICMyMWNlOTk7XHJcbiAgZm9udC13ZWlnaHQ6IDEwMDtcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuXHJcbnVsLCBsaXtcclxuICBsaXN0LXN0eWxlOiBub25lO1xyXG4gIHZlcnRpY2FsLWFsaWduOiBiYXNlbGluZSAhaW1wb3J0YW50O1xyXG4gIHRleHQtYWxpZ246IGxlZnQgIWltcG9ydGFudDtcclxuICBwYWRkaW5nOiAwICFpbXBvcnRhbnQ7XHJcbiAgbWFyZ2luOiAwICFpbXBvcnRhbnQ7XHJcbn1cclxuYXtcclxuICB0ZXh0LWFsaWduOiBsZWZ0ICFpbXBvcnRhbnQ7XHJcbiAgY29sb3I6ICMwMDczYmI7XHJcbn1cclxuYTpob3ZlcntcclxuICB0ZXh0LWRlY29yYXRpb24tbGluZTogbm9uZTtcclxufVxyXG5cclxuLnJvd3tcclxuICBwYWRkaW5nLWxlZnQ6IDEwMHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -549,7 +549,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".space-header {\n    /* This fills the remaining space, by using flexbox. \n       Every toolbar row uses a flexbox row layout. */\n    flex: 1 1 auto;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSTtxREFDaUQ7SUFDakQsY0FBYztFQUNoQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNwYWNlLWhlYWRlciB7XG4gICAgLyogVGhpcyBmaWxscyB0aGUgcmVtYWluaW5nIHNwYWNlLCBieSB1c2luZyBmbGV4Ym94LiBcbiAgICAgICBFdmVyeSB0b29sYmFyIHJvdyB1c2VzIGEgZmxleGJveCByb3cgbGF5b3V0LiAqL1xuICAgIGZsZXg6IDEgMSBhdXRvO1xuICB9Il19 */"
+module.exports = ".space-header {\r\n    /* This fills the remaining space, by using flexbox. \r\n       Every toolbar row uses a flexbox row layout. */\r\n    flex: 1 1 auto;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSTtxREFDaUQ7SUFDakQsY0FBYztFQUNoQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNwYWNlLWhlYWRlciB7XHJcbiAgICAvKiBUaGlzIGZpbGxzIHRoZSByZW1haW5pbmcgc3BhY2UsIGJ5IHVzaW5nIGZsZXhib3guIFxyXG4gICAgICAgRXZlcnkgdG9vbGJhciByb3cgdXNlcyBhIGZsZXhib3ggcm93IGxheW91dC4gKi9cclxuICAgIGZsZXg6IDEgMSBhdXRvO1xyXG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -627,7 +627,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-searcher></app-searcher>\n<section id=\"lugar\" class=\"light-bg\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 text-center\">\n        <div class=\"section-title\">\n          <h2>Encuentra los Mejores Lugares de la Ciudad</h2>\n        </div>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-3\" *ngFor=\"let lugares of datos$\">\n        <div routerLink=\"/sitio/{{lugares.id}}\" class=\"lugar-item\" *ngIf=\"lugares.ads\">\n          <div id=\"caja\" class=\"lugar-image\">\n            <img src=\"assets/img/author-2.jpg\" class=\"img-responsive lugar-radiusImg\" alt=\"author\">\n          </div>\n          <div class=\"lugar-text\">\n            <h3> {{lugares.nombre}} </h3>\n            <div class=\"lugar-location\"> {{lugares.categoria}} </div>\n            <div class=\"lugar-position\">\n                    <ngb-rating [rate]=\"lugares.calificacion\">\n                        <ng-template let-fill=\"fill\">\n                          <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\n                        </ng-template>\n                    </ngb-rating>\n            </div>\n            <p>{{ lugares.descripcion }}</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<app-sitios-ciudades></app-sitios-ciudades>\n\n<app-categories></app-categories>\n\n<app-download-app></app-download-app>\n\n<app-footer></app-footer>\n\n"
+module.exports = "<app-searcher></app-searcher>\r\n<section id=\"lugar\" class=\"light-bg\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\">\r\n          <h2>Encuentra los Mejores Lugares de la Ciudad</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-3\" *ngFor=\"let lugares of datos$\">\r\n        <div routerLink=\"/sitio/{{lugares.id}}\" class=\"lugar-item\" *ngIf=\"lugares.ads\">\r\n          <div id=\"caja\" class=\"lugar-image\">\r\n            <img src=\"assets/img/author-2.jpg\" class=\"img-responsive lugar-radiusImg\" alt=\"author\">\r\n          </div>\r\n          <div class=\"lugar-text\">\r\n            <h3> {{lugares.nombre}} </h3>\r\n            <div class=\"lugar-location\"> {{lugares.categoria}} </div>\r\n            <div class=\"lugar-position\">\r\n                    <ngb-rating [rate]=\"lugares.calificacion\">\r\n                        <ng-template let-fill=\"fill\">\r\n                          <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\r\n                        </ng-template>\r\n                    </ngb-rating>\r\n            </div>\r\n            <p>{{ lugares.descripcion }}</p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n\r\n<app-sitios-ciudades></app-sitios-ciudades>\r\n\r\n<app-categories></app-categories>\r\n\r\n<app-download-app></app-download-app>\r\n\r\n<app-footer></app-footer>\r\n\r\n"
 
 /***/ }),
 
@@ -700,7 +700,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".form-signup {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixTQUFTO0lBQ1QsdUNBQStCO1lBQS9CLCtCQUErQjtBQUNuQyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb3JtLXNpZ251cCB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLC01MCUpO1xufSJdfQ== */"
+module.exports = ".center-div {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n}\r\n.body-login {\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-image: url('https://res.cloudinary.com/daividix/image/upload/v1549929464/pexels-photo-874629.jpg');\r\n    background-size: cover;\r\n}\r\n.login-circulo {\r\n    width: 60px;\r\n    height: 60px;\r\n    margin: auto;\r\n    position: relative;\r\n  }\r\n.login-circulo-c1, .login-circulo-c2 {\r\n    width: 100%;\r\n    height: 100%;\r\n    position: absolute;\r\n    background: #7f8c8d;\r\n    border-radius: 50%;\r\n    opacity: 0.6;\r\n    -webkit-animation: loginC 2s infinite ease-in-out;\r\n            animation: loginC 2s infinite ease-in-out;\r\n  }\r\n.login-circulo-c2 {\r\n    -webkit-animation-delay: -1s;\r\n            animation-delay: -1s;\r\n  }\r\n@-webkit-keyframes loginC {\r\n    0%, 100% {\r\n      -webkit-transform: scale(0);\r\n              transform: scale(0);\r\n    }\r\n    50% {\r\n      -webkit-transform: scale(1);\r\n              transform: scale(1);\r\n    }\r\n  }\r\n@keyframes loginC {\r\n    0%, 100% {\r\n      -webkit-transform: scale(0);\r\n              transform: scale(0);\r\n    }\r\n    50% {\r\n      -webkit-transform: scale(1);\r\n              transform: scale(1);\r\n    }\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixTQUFTO0lBQ1QsdUNBQStCO1lBQS9CLCtCQUErQjtBQUNuQztBQUNBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7SUFDYiw2R0FBNkc7SUFDN0csc0JBQXNCO0FBQzFCO0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLFlBQVk7SUFDWixrQkFBa0I7RUFDcEI7QUFFQTtJQUNFLFdBQVc7SUFDWCxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLGlEQUF5QztZQUF6Qyx5Q0FBeUM7RUFDM0M7QUFFQTtJQUNFLDRCQUFvQjtZQUFwQixvQkFBb0I7RUFDdEI7QUFFQTtJQUNFO01BQ0UsMkJBQW1CO2NBQW5CLG1CQUFtQjtJQUNyQjtJQUNBO01BQ0UsMkJBQW1CO2NBQW5CLG1CQUFtQjtJQUNyQjtFQUNGO0FBUEE7SUFDRTtNQUNFLDJCQUFtQjtjQUFuQixtQkFBbUI7SUFDckI7SUFDQTtNQUNFLDJCQUFtQjtjQUFuQixtQkFBbUI7SUFDckI7RUFDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jZW50ZXItZGl2IHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTAlO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwtNTAlKTtcclxufVxyXG4uYm9keS1sb2dpbiB7XHJcbiAgICB3aWR0aDogMTAwdnc7XHJcbiAgICBoZWlnaHQ6IDEwMHZoO1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCdodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYWl2aWRpeC9pbWFnZS91cGxvYWQvdjE1NDk5Mjk0NjQvcGV4ZWxzLXBob3RvLTg3NDYyOS5qcGcnKTtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbn1cclxuXHJcbi5sb2dpbi1jaXJjdWxvIHtcclxuICAgIHdpZHRoOiA2MHB4O1xyXG4gICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIH1cclxuICBcclxuICAubG9naW4tY2lyY3Vsby1jMSwgLmxvZ2luLWNpcmN1bG8tYzIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBiYWNrZ3JvdW5kOiAjN2Y4YzhkO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgb3BhY2l0eTogMC42O1xyXG4gICAgYW5pbWF0aW9uOiBsb2dpbkMgMnMgaW5maW5pdGUgZWFzZS1pbi1vdXQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5sb2dpbi1jaXJjdWxvLWMyIHtcclxuICAgIGFuaW1hdGlvbi1kZWxheTogLTFzO1xyXG4gIH1cclxuICBcclxuICBAa2V5ZnJhbWVzIGxvZ2luQyB7XHJcbiAgICAwJSwgMTAwJSB7XHJcbiAgICAgIHRyYW5zZm9ybTogc2NhbGUoMCk7XHJcbiAgICB9XHJcbiAgICA1MCUge1xyXG4gICAgICB0cmFuc2Zvcm06IHNjYWxlKDEpO1xyXG4gICAgfVxyXG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -711,7 +711,7 @@ module.exports = ".form-signup {\n    position: absolute;\n    top: 50%;\n    le
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body style=\"height: 100vmax; background: #3F51B5\">\n  <div class=\"form-signup\">\n    <mat-card>\n      <mat-card-header>\n        <div mat-card-avatar><mat-icon style=\"font-size: 40px;\">input</mat-icon></div>\n        <mat-card-title style=\"text-align: center; margin: 7px;\">Login</mat-card-title>\n      </mat-card-header>\n      <br>\n      <mat-card-content>\n          <form (ngSubmit)=\"login()\" [formGroup]=\"loginForm\">\n              <div>\n                <span><mat-icon style=\"margin-bottom: 0;\">perm_identity</mat-icon></span>\n                <mat-form-field style=\"width: 80%\">\n                  <input matInput placeholder=\"Username\" formControlName=\"username\" name=\"username\">\n                  <mat-error *ngIf=\"loginForm.controls['username'].errors != null\">{{getErrorMessageUsername()}}</mat-error>\n                </mat-form-field>\n              </div>\n              <div>\n                <mat-icon>lock</mat-icon>\n                <mat-form-field style=\"width: 80%\">\n                  <input #password type=\"password\" matInput placeholder=\"Password\" formControlName=\"password\" name=\"password\">\n                  <mat-error *ngIf=\"loginForm.controls['password'].errors != null\">{{getErrorMessagePassword()}}</mat-error>\n                </mat-form-field>\n              </div>\n              <br>\n              <mat-card-actions>\n                  <div style=\"text-align: center; min-width: 300px;\">\n                    <button mat-button type=\"submit\">Log-in</button> \n                  </div>   \n              </mat-card-actions>\n            </form>\n      </mat-card-content> \n    </mat-card>\n    \n  </div>\n</body>\n"
+module.exports = "<body class=\"body-login\">\n  <div class=\"center-div col-md-6\">\n    <h5 class=\"display-4 text-center\">Login</h5>\n    <div class=\"card\">\n      <div class=\"card-body\">\n        <ngb-alert *ngIf=\"openAlert\" [type]=\"'danger'\" (close)=\"openAlert = false\">{{messageAlert}}</ngb-alert>\n        <form (ngSubmit)=\"login()\" [formGroup]=\"loginForm\" class=\"mt-5\">\n          <div class=\"form-group w-75 mx-auto\">\n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\">\n                    <mat-icon style=\"margin-bottom: 0;\">perm_identity</mat-icon>\n                </div>\n              </div>\n              <input class=\"form-control\" placeholder=\"Username\" formControlName=\"username\" name=\"username\" (keyup)=\"keyupUsername = true\">\n            </div>\n            <small class=\"form-text text-danger\" *ngIf=\"keyupUsername && loginForm.controls['username'].errors != null\">{{getErrorMessageUsername()}}</small>\n          </div>\n          <div class=\"form-group w-75 mx-auto\">\n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\">\n                    <mat-icon>lock</mat-icon>\n                </div>\n              </div>\n                <input #password type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\" name=\"password\" (keyup)=\"keyupPassword = true\">\n            </div>\n            <small class=\"form-text text-danger\" *ngIf=\"keyupPassword && loginForm.controls['password'].errors != null\">{{getErrorMessagePassword()}}</small> \n          </div>\n          <br>\n          <div *ngIf=\"onLogin\">\n              <div style=\"text-align: center\">Espera un momento</div>\n              <div class=\"login-circulo\">\n                  <span class=\"login-circulo-c1\"></span>\n                  <span class=\"login-circulo-c2\"></span>\n                </div>\n          </div>\n          <div *ngIf=\"!onLogin\">\n              <div style=\"text-align: center; min-width: 300px;\">\n                <button placement=\"bottom\" ngbTooltip=\"{{(loginForm.controls['password'].errors != null || loginForm.controls['username'].errors != null) ? 'Corrige los campos': ''}}\" mat-button type=\"submit\" [disabled]=\"loginForm.controls['password'].errors != null || loginForm.controls['username'].errors != null\">Log-in</button> \n              </div>\n              <div class=\"text-right\">\n                  <a mat-button routerLink=\"/signup\">No tengo cuenta</a>\n                </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</body>\n"
 
 /***/ }),
 
@@ -731,6 +731,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/token/token-storage.service */ "./src/app/services/token/token-storage.service.ts");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -746,32 +747,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(authentication, tokenService, snackBar, _formBuilder) {
+    function LoginComponent(authentication, tokenService, snackBar, _formBuilder, router) {
         this.authentication = authentication;
         this.tokenService = tokenService;
         this.snackBar = snackBar;
         this._formBuilder = _formBuilder;
+        this.router = router;
         this.errorLogin = false;
-        this.errorForm = {
-            username: {
-                value: false,
-                msg: ''
-            },
-            password: {
-                value: false,
-                msg: ''
-            }
-        };
+        this.keyupUsername = false;
+        this.keyupPassword = false;
+        this.openAlert = false;
+        this.messageAlert = '';
+        this.onLogin = false;
     }
     LoginComponent.prototype.ngOnInit = function () {
         this.loginForm = this._formBuilder.group({
             username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required],
             password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(8)]]
         });
+        console.log(this.loginForm.controls['username'].errors);
+        console.log(this.keyupUsername);
     };
     LoginComponent.prototype.login = function () {
         var _this = this;
+        this.onLogin = true;
         var form = new src_app_models_login_info__WEBPACK_IMPORTED_MODULE_1__["AuthLoginInfo"]();
         if (!this.loginForm.getRawValue().username) {
             return this.snackBar.open('El username es requerido', 'Ok', {
@@ -792,17 +793,18 @@ var LoginComponent = /** @class */ (function () {
                 _this.tokenService.saveToken(res.result.accessToken);
                 _this.tokenService.saveAuthorities(res.result.authorities);
                 _this.tokenService.saveUsername(res.result.username);
-                window.location.assign('/');
+                _this.router.navigate(['/']);
+                _this.onLogin = false;
             }
             else {
-                _this.snackBar.open(res.message, 'Ok', {
-                    duration: 4000,
-                });
+                _this.onLogin = false;
+                _this.messageAlert = res.message;
+                _this.openAlert = true;
             }
         });
     };
     LoginComponent.prototype.getErrorMessageUsername = function () {
-        if (this.loginForm.controls['password'].errors == null) {
+        if (this.loginForm.controls['username'].errors == null) {
             return;
         }
         return this.loginForm.controls['username'].errors.required ? 'Username requerido' :
@@ -824,7 +826,8 @@ var LoginComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [src_app_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
             src_app_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_3__["TokenStorageService"], _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"]])
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -840,7 +843,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n\n  <ul>\n    <li>\n      <a routerLink=\"/\" [class.activated]=\"currentUrl == '/'\" ><i class=\"material-icons\">supervised_user_circle</i></a>\n    </li>\n    <li>\n      <a routerLink=\"posts\" [class.activated]=\"currentUrl == '/posts'\"><i class=\"material-icons\">message</i> </a>\n    </li>\n  </ul>\n\n</nav>"
+module.exports = "<nav>\r\n\r\n  <ul>\r\n    <li>\r\n      <a routerLink=\"/\" [class.activated]=\"currentUrl == '/'\" ><i class=\"material-icons\">supervised_user_circle</i></a>\r\n    </li>\r\n    <li>\r\n      <a routerLink=\"posts\" [class.activated]=\"currentUrl == '/posts'\"><i class=\"material-icons\">message</i> </a>\r\n    </li>\r\n  </ul>\r\n\r\n</nav>"
 
 /***/ }),
 
@@ -851,7 +854,7 @@ module.exports = "<nav>\n\n  <ul>\n    <li>\n      <a routerLink=\"/\" [class.ac
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "nav {\n  background: #2D2E2E;\n  height: 100%; }\n  nav ul {\n    list-style-type: none;\n    padding: 0;\n    margin: 0; }\n  nav ul li a {\n      color: #fff;\n      padding: 20px;\n      display: block; }\n  nav ul li .activated {\n      background-color: #00a8ff; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZW51L0M6XFxVc2Vyc1xcU29tZXRoaW5nXFxnaXRcXHByb2Z1bmRpemFjaW9uM1xcc3JjXFxhbmd1bGFyLWNsaWVudC9zcmNcXGFwcFxcY29tcG9uZW50c1xcbWVudVxcbWVudS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixZQUFZLEVBQUE7RUFGZDtJQUtJLHFCQUFxQjtJQUNyQixVQUFVO0lBQ1YsU0FBUyxFQUFBO0VBUGI7TUFZUSxXQUFXO01BQ1gsYUFBYTtNQUNiLGNBQWMsRUFBQTtFQWR0QjtNQWtCUSx5QkFBeUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVudS9tZW51LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsibmF2IHtcbiAgYmFja2dyb3VuZDogIzJEMkUyRTtcbiAgaGVpZ2h0OiAxMDAlO1xuXG4gIHVsIHtcbiAgICBsaXN0LXN0eWxlLXR5cGU6IG5vbmU7XG4gICAgcGFkZGluZzogMDtcbiAgICBtYXJnaW46IDA7XG5cbiAgICBsaSB7XG5cbiAgICAgIGEge1xuICAgICAgICBjb2xvcjogI2ZmZjtcbiAgICAgICAgcGFkZGluZzogMjBweDtcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICB9XG5cbiAgICAgIC5hY3RpdmF0ZWQge1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDBhOGZmO1xuICAgICAgfVxuICAgIH1cbiAgfVxuXG59Il19 */"
+module.exports = "nav {\n  background: #2D2E2E;\n  height: 100%; }\n  nav ul {\n    list-style-type: none;\n    padding: 0;\n    margin: 0; }\n  nav ul li a {\n      color: #fff;\n      padding: 20px;\n      display: block; }\n  nav ul li .activated {\n      background-color: #00a8ff; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZW51L0M6XFxVc2Vyc1xcRGFpdmlkaXhcXGdpdFxccHJvZnVuZGl6YWNpb24zXFxzcmNcXGFuZ3VsYXItY2xpZW50L3NyY1xcYXBwXFxjb21wb25lbnRzXFxtZW51XFxtZW51LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CO0VBQ25CLFlBQVksRUFBQTtFQUZkO0lBS0kscUJBQXFCO0lBQ3JCLFVBQVU7SUFDVixTQUFTLEVBQUE7RUFQYjtNQVlRLFdBQVc7TUFDWCxhQUFhO01BQ2IsY0FBYyxFQUFBO0VBZHRCO01Ba0JRLHlCQUF5QixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9tZW51L21lbnUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJuYXYge1xyXG4gIGJhY2tncm91bmQ6ICMyRDJFMkU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG5cclxuICB1bCB7XHJcbiAgICBsaXN0LXN0eWxlLXR5cGU6IG5vbmU7XHJcbiAgICBwYWRkaW5nOiAwO1xyXG4gICAgbWFyZ2luOiAwO1xyXG5cclxuICAgIGxpIHtcclxuXHJcbiAgICAgIGEge1xyXG4gICAgICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICAgIH1cclxuXHJcbiAgICAgIC5hY3RpdmF0ZWQge1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMGE4ZmY7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcblxyXG59Il19 */"
 
 /***/ }),
 
@@ -908,7 +911,7 @@ var MenuComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <div class=\"container\">\n    <div class=\"slider-container\">\n      <div class=\"intro-text\">\n        <img src=\"assets/img/Logo.png\" />\n        <br>\n        <div class=\"categoTop\" *ngFor=\"let populares of categoriaPopular$\">\n          <a *ngIf=\"populares.popular\" routerLink=\"/categories-result/{{populares.id}}\"><i class=\" material-icons\">{{populares.icono}}</i>\n          {{populares.nombre}}</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n\n"
+module.exports = "<header>\r\n  <div class=\"container\">\r\n    <div class=\"slider-container\">\r\n      <div class=\"intro-text\">\r\n        <img src=\"assets/img/Logo.png\" />\r\n        <br>\r\n        <div class=\"categoTop\" *ngFor=\"let populares of categoriaPopular$\">\r\n          <a *ngIf=\"populares.popular\" routerLink=\"/categories-result/{{populares.id}}\"><i class=\" material-icons\">{{populares.icono}}</i>\r\n          {{populares.nombre}}</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</header>\r\n\r\n"
 
 /***/ }),
 
@@ -919,7 +922,7 @@ module.exports = "<header>\n  <div class=\"container\">\n    <div class=\"slider
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "a {\n  font-size: 20px;\n  font-weight: bold;\n  color: #ffffff;\n  margin: 0;\n  padding-right: 30px;\n  text-align: center;\n  display: inline-block;\n  white-space: nowrap; }\n\na, i:hover {\n  -webkit-text-decoration-line: none;\n          text-decoration-line: none; }\n\n.categoTop {\n  display: inline-block; }\n\ni {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  top: -.1em;\n  vertical-align: middle; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zZWFyY2hlci9DOlxcVXNlcnNcXFNvbWV0aGluZ1xcZ2l0XFxwcm9mdW5kaXphY2lvbjNcXHNyY1xcYW5ndWxhci1jbGllbnQvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHNlYXJjaGVyXFxzZWFyY2hlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUVFLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsY0FBYztFQUNkLFNBQVM7RUFDVCxtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixtQkFBbUIsRUFBQTs7QUFHckI7RUFDRSxrQ0FBMEI7VUFBMUIsMEJBQTBCLEVBQUE7O0FBRTVCO0VBQ0UscUJBQXFCLEVBQUE7O0FBRXZCO0VBRUUscUJBQXFCO0VBQ3JCLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLHNCQUFzQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zZWFyY2hlci9zZWFyY2hlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuYSB7XG5cbiAgZm9udC1zaXplOiAyMHB4O1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgY29sb3I6ICNmZmZmZmY7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZy1yaWdodDogMzBweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG5cbn1cbmEsIGk6aG92ZXJ7XG4gIHRleHQtZGVjb3JhdGlvbi1saW5lOiBub25lO1xufVxuLmNhdGVnb1RvcHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuaXtcblxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiAtLjFlbTtcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbn1cbiJdfQ== */"
+module.exports = "a {\n  font-size: 20px;\n  font-weight: bold;\n  color: #ffffff;\n  margin: 0;\n  padding-right: 30px;\n  text-align: center;\n  display: inline-block;\n  white-space: nowrap; }\n\na, i:hover {\n  -webkit-text-decoration-line: none;\n          text-decoration-line: none; }\n\n.categoTop {\n  display: inline-block; }\n\ni {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  top: -.1em;\n  vertical-align: middle; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zZWFyY2hlci9DOlxcVXNlcnNcXERhaXZpZGl4XFxnaXRcXHByb2Z1bmRpemFjaW9uM1xcc3JjXFxhbmd1bGFyLWNsaWVudC9zcmNcXGFwcFxcY29tcG9uZW50c1xcc2VhcmNoZXJcXHNlYXJjaGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBRUUsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixjQUFjO0VBQ2QsU0FBUztFQUNULG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIscUJBQXFCO0VBQ3JCLG1CQUFtQixFQUFBOztBQUdyQjtFQUNFLGtDQUEwQjtVQUExQiwwQkFBMEIsRUFBQTs7QUFFNUI7RUFDRSxxQkFBcUIsRUFBQTs7QUFFdkI7RUFFRSxxQkFBcUI7RUFDckIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1Ysc0JBQXNCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3NlYXJjaGVyL3NlYXJjaGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbmEge1xyXG5cclxuICBmb250LXNpemU6IDIwcHg7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgbWFyZ2luOiAwO1xyXG4gIHBhZGRpbmctcmlnaHQ6IDMwcHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG5cclxufVxyXG5hLCBpOmhvdmVye1xyXG4gIHRleHQtZGVjb3JhdGlvbi1saW5lOiBub25lO1xyXG59XHJcbi5jYXRlZ29Ub3B7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG59XHJcbml7XHJcblxyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB0b3A6IC0uMWVtO1xyXG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -1031,7 +1034,7 @@ var DataService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';\n.signup-form {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaWdudXAvc2lnbnVwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsK0VBQStFO0FBQy9FO0lBQ0ksa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixTQUFTO0lBQ1QsdUNBQStCO1lBQS9CLCtCQUErQjtFQUNqQyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvNC4wLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzJztcbi5zaWdudXAtZm9ybSB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLC01MCUpO1xuICB9Il19 */"
+module.exports = ".signup-body {\r\n  width: 100vw;\r\n  height: 100vh;\r\n  z-index: -1;\r\n  background-image: url('https://res.cloudinary.com/daividix/image/upload/v1549936257/building-chairs-city-157213.jpg');\r\n  background-size: cover;\r\n  -webkit-filter: blur(2px);\r\n  -moz-filter: blur(2px);\r\n  -o-filter: blur(2px);\r\n  -ms-filter: blur(2px);\r\n  filter: blur(2px);\r\n}\r\n.btn-register {\r\n  height: 30px;\r\n  width: 50%;\r\n}\r\n.signup-center-div {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n  }\r\n.signup-circulo {\r\n  width: 60px;\r\n  height: 60px;\r\n  margin: auto;\r\n  position: relative;\r\n}\r\n.signup-circulo-c1, .signup-circulo-c2 {\r\n  width: 100%;\r\n  height: 100%;\r\n  position: absolute;\r\n  background: #7f8c8d;\r\n  border-radius: 50%;\r\n  opacity: 0.6;\r\n  -webkit-animation: signupC 2s infinite ease-in-out;\r\n          animation: signupC 2s infinite ease-in-out;\r\n}\r\n.signup-circulo-c2 {\r\n  -webkit-animation-delay: -1s;\r\n          animation-delay: -1s;\r\n}\r\n@-webkit-keyframes signupC {\r\n  0%, 100% {\r\n    -webkit-transform: scale(0);\r\n            transform: scale(0);\r\n  }\r\n  50% {\r\n    -webkit-transform: scale(1);\r\n            transform: scale(1);\r\n  }\r\n}\r\n@keyframes signupC {\r\n  0%, 100% {\r\n    -webkit-transform: scale(0);\r\n            transform: scale(0);\r\n  }\r\n  50% {\r\n    -webkit-transform: scale(1);\r\n            transform: scale(1);\r\n  }\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaWdudXAvc2lnbnVwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osYUFBYTtFQUNiLFdBQVc7RUFDWCxxSEFBcUg7RUFDckgsc0JBQXNCO0VBQ3RCLHlCQUF5QjtFQUN6QixzQkFBc0I7RUFDdEIsb0JBQW9CO0VBQ3BCLHFCQUFxQjtFQUNyQixpQkFBaUI7QUFDbkI7QUFDQTtFQUNFLFlBQVk7RUFDWixVQUFVO0FBQ1o7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixRQUFRO0lBQ1IsU0FBUztJQUNULHVDQUErQjtZQUEvQiwrQkFBK0I7RUFDakM7QUFDRjtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osWUFBWTtFQUNaLGtCQUFrQjtBQUNwQjtBQUVBO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osa0RBQTBDO1VBQTFDLDBDQUEwQztBQUM1QztBQUVBO0VBQ0UsNEJBQW9CO1VBQXBCLG9CQUFvQjtBQUN0QjtBQUVBO0VBQ0U7SUFDRSwyQkFBbUI7WUFBbkIsbUJBQW1CO0VBQ3JCO0VBQ0E7SUFDRSwyQkFBbUI7WUFBbkIsbUJBQW1CO0VBQ3JCO0FBQ0Y7QUFQQTtFQUNFO0lBQ0UsMkJBQW1CO1lBQW5CLG1CQUFtQjtFQUNyQjtFQUNBO0lBQ0UsMkJBQW1CO1lBQW5CLG1CQUFtQjtFQUNyQjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zaWdudXAvc2lnbnVwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2lnbnVwLWJvZHkge1xyXG4gIHdpZHRoOiAxMDB2dztcclxuICBoZWlnaHQ6IDEwMHZoO1xyXG4gIHotaW5kZXg6IC0xO1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFpdmlkaXgvaW1hZ2UvdXBsb2FkL3YxNTQ5OTM2MjU3L2J1aWxkaW5nLWNoYWlycy1jaXR5LTE1NzIxMy5qcGcnKTtcclxuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG4gIC13ZWJraXQtZmlsdGVyOiBibHVyKDJweCk7XHJcbiAgLW1vei1maWx0ZXI6IGJsdXIoMnB4KTtcclxuICAtby1maWx0ZXI6IGJsdXIoMnB4KTtcclxuICAtbXMtZmlsdGVyOiBibHVyKDJweCk7XHJcbiAgZmlsdGVyOiBibHVyKDJweCk7XHJcbn1cclxuLmJ0bi1yZWdpc3RlciB7XHJcbiAgaGVpZ2h0OiAzMHB4O1xyXG4gIHdpZHRoOiA1MCU7XHJcbn1cclxuXHJcbi5zaWdudXAtY2VudGVyLWRpdiB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsLTUwJSk7XHJcbiAgfVxyXG4uc2lnbnVwLWNpcmN1bG8ge1xyXG4gIHdpZHRoOiA2MHB4O1xyXG4gIGhlaWdodDogNjBweDtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uc2lnbnVwLWNpcmN1bG8tYzEsIC5zaWdudXAtY2lyY3Vsby1jMiB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBiYWNrZ3JvdW5kOiAjN2Y4YzhkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBvcGFjaXR5OiAwLjY7XHJcbiAgYW5pbWF0aW9uOiBzaWdudXBDIDJzIGluZmluaXRlIGVhc2UtaW4tb3V0O1xyXG59XHJcblxyXG4uc2lnbnVwLWNpcmN1bG8tYzIge1xyXG4gIGFuaW1hdGlvbi1kZWxheTogLTFzO1xyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIHNpZ251cEMge1xyXG4gIDAlLCAxMDAlIHtcclxuICAgIHRyYW5zZm9ybTogc2NhbGUoMCk7XHJcbiAgfVxyXG4gIDUwJSB7XHJcbiAgICB0cmFuc2Zvcm06IHNjYWxlKDEpO1xyXG4gIH1cclxufSJdfQ== */"
 
 /***/ }),
 
@@ -1042,7 +1045,7 @@ module.exports = "@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body style=\"height: 100vmax; background: #3F51B5\">\n  <div class=\"signup-form col-md-6 col-sm-12\">\n    <p class=\"display-4\">Registrarse</p>\n    <mat-horizontal-stepper [linear]=\"isLinear\" #stepper style=\"border-radius: 5px\">\n      <mat-step [stepControl]=\"firstFormGroup\">\n        <form [formGroup]=\"firstFormGroup\">\n          <ng-template matStepLabel>Info-Usuario</ng-template>\n          <div class=\"w-50 mx-auto\">\n            <mat-form-field class=\"w-100\">\n              <input matInput placeholder=\"Username\" name=\"username\" formControlName=\"username\"\n                required>\n                <mat-error *ngIf=\"firstFormGroup.controls['username'].errors != null\">{{firstFormError('username')}}</mat-error>\n            </mat-form-field>\n            <br>\n            <mat-form-field class=\"w-100\">\n              <input matInput placeholder=\"Email\" name=\"email\" formControlName=\"email\"\n                required>\n                <mat-error *ngIf=\"firstFormGroup.controls['email'].errors != null\">{{firstFormError('email')}}</mat-error>\n            </mat-form-field>\n            <br>\n            <mat-form-field class=\"w-100\">\n              <input type=\"password\" matInput placeholder=\"Password\" name=\"password\"\n                formControlName=\"password\" required>\n                <mat-error *ngIf=\"firstFormGroup.controls['password'].errors != null\">{{firstFormError('password')}}</mat-error>\n            </mat-form-field>\n          </div>\n          <div class=\"text-center\">\n            <button mat-button matStepperNext (click)=\"$event.preventDefault()\">Siguiente</button>\n          </div>\n        </form>\n      </mat-step>\n      <mat-step [stepControl]=\"secondFormGroup\">\n        <form [formGroup]=\"secondFormGroup\">\n          <ng-template matStepLabel>Info-personal</ng-template>\n          <div class=\"mx-auto w-50\">\n            <mat-form-field class=\"w-100\">\n              <input matInput placeholder=\"Nombre\" name=\"name\" formControlName=\"name\"\n                required>\n                <mat-error *ngIf=\"secondFormGroup.controls['name'].errors != null\">{{secondFormError('name')}}</mat-error>\n            </mat-form-field>\n            <br>\n            <mat-form-field class=\"w-100\">\n              <input matInput placeholder=\"Apellidos\" name=\"lastName\" formControlName=\"lastName\"\n                required>\n                <mat-error *ngIf=\"secondFormGroup.controls['lastName'].errors != null\">{{secondFormError('lastName')}}</mat-error>\n            </mat-form-field>\n            <br>\n            <mat-form-field class=\"w-100\">\n              <mat-label>Gender</mat-label>\n              <mat-select placeholder=\"Genero\" formControlName=\"gender\" name=\"gender\">\n                <mat-option *ngFor=\"let genero of genders\" [value]=\"genero.value\" name=\"gender\">\n                  {{genero.value}}\n                </mat-option>\n              </mat-select>\n              <mat-error *ngIf=\"secondFormGroup.controls['gender'].errors != null\">{{secondFormError('gender')}}</mat-error>\n            </mat-form-field>\n          </div>\n          <div class=\"text-center\">\n            <button mat-button matStepperPrevious>Volver</button>\n            <button mat-button matStepperNext>Siguiente</button>\n          </div>\n        </form>\n      </mat-step>\n      <mat-step>\n        <ng-template matStepLabel>Hecho</ng-template>\n        <div class=\"text-center\">\n            Seguro de querer registrarse?\n            <div>\n              <button mat-button matStepperPrevious>Volver</button>\n              <button mat-button (click)=\"signup()\">Si</button>\n            </div>\n        </div>\n        \n      </mat-step>\n    </mat-horizontal-stepper>\n  </div>\n</body>\n"
+module.exports = "<body class=\"signup-body\">\n</body>\n<div class=\"signup-center-div col-md-6\">\n    <h5 class=\"display-4 text-center\">Registrarse</h5>\n    <div class=\"card\">\n      <div class=\"card-body\">\n        <ngb-alert *ngIf=\"openAlert\" [type]=\"alert.type\" (close)=\"openAlert = false\">{{alert.message}}</ngb-alert>\n        <form (ngSubmit)=\"signup()\" [formGroup]=\"firstFormGroup\" class=\"mt-5\">\n          <div class=\"form-group w-75 mx-auto\">\n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\">\n                  <mat-icon style=\"margin-bottom: 0;\">perm_identity</mat-icon>\n                </div>\n              </div>\n              <input class=\"form-control\" placeholder=\"Nombre\" formControlName=\"name\" name=\"name\" (keyup)=\"keyup.name = true\">\n            </div>\n            <small class=\"form-text text-danger\" *ngIf=\"keyup.name && firstFormGroup.controls['name'].errors != null\">{{firstFormError('name')}}</small>\n          </div>\n          <div class=\"form-group w-75 mx-auto\">\n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\">\n                  <mat-icon style=\"margin-bottom: 0;\">perm_identity</mat-icon>\n                </div>\n              </div>\n              <input class=\"form-control\" placeholder=\"Username\" formControlName=\"username\" name=\"username\" (keyup)=\"keyup.username = true\">\n            </div>\n            <small class=\"form-text text-danger\" *ngIf=\"keyup.username && firstFormGroup.controls['username'].errors != null\">{{firstFormError('username')}}</small>\n          </div>\n          <div class=\"form-group w-75 mx-auto\">\n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\">\n                  @\n                </div>\n              </div>\n              <input class=\"form-control\" placeholder=\"Email\" formControlName=\"email\" name=\"email\" (keyup)=\"keyup.email = true\">\n            </div>\n            <small class=\"form-text text-danger\" *ngIf=\"keyup.email && firstFormGroup.controls['email'].errors != null\">{{firstFormError('email')}}</small>\n          </div>\n          <div class=\"form-group w-75 mx-auto\">\n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\">\n                  <mat-icon>lock</mat-icon>\n                </div>\n              </div>\n              <input #password type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\"\n                name=\"password\" (keyup)=\"keyup.password = true\">\n            </div>\n            <small class=\"form-text text-danger\" *ngIf=\"keyup.password && firstFormGroup.controls['password'].errors != null\">{{firstFormError('password')}}</small>\n          </div>\n          <br>\n          <div *ngIf=\"onRegister\">\n              <div style=\"text-align: center\">Espera un momento</div>\n              <div class=\"signup-circulo\">\n                  <span class=\"signup-circulo-c1\"></span>\n                  <span class=\"signup-circulo-c2\"></span>\n                </div>\n          </div>\n          <div>\n            <div *ngIf=\"!onRegister\" style=\"text-align: center; min-width: 300px;\">\n              <button placement=\"bottom\" ngbTooltip=\"{{(firstFormGroup.controls['password'].errors != null || firstFormGroup.controls['username'].errors != null) ? 'Corrige los campos': ''}}\"\n                mat-button type=\"submit\" [disabled]=\"firstFormGroup.controls['password'].errors != null || firstFormGroup.controls['username'].errors != null\">Registrarme</button>\n            </div>\n            <div class=\"text-right\">\n              <a mat-button routerLink=\"/login\">Ya tengo cuenta</a>\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n"
 
 /***/ }),
 
@@ -1087,52 +1090,40 @@ var SignupComponent = /** @class */ (function () {
         this.form2 = {};
         this.genders = [{ value: 'Male' }, { value: 'Female' }];
         this.isLinear = false;
+        this.onRegister = false;
+        this.keyup = {
+            name: false,
+            username: false,
+            password: false,
+            email: false
+        };
+        this.openAlert = false;
+        this.alert = {
+            message: '',
+            type: ''
+        };
     }
     SignupComponent.prototype.ngOnInit = function () {
         this.firstFormGroup = this._formBuilder.group({
+            name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(30)]],
             username: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(20)]],
             email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(60)]],
             password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(40)]]
         });
-        this.secondFormGroup = this._formBuilder.group({
-            name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(40)]],
-            lastName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(60)]],
-            gender: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
-        });
     };
     SignupComponent.prototype.signup = function () {
         var _this = this;
-        var form1 = this.firstFormGroup.getRawValue();
-        var form2 = this.secondFormGroup.getRawValue();
-        var form = Object.assign(form1, form2);
+        this.onRegister = true;
+        var form = this.firstFormGroup.getRawValue();
         this.signUpForm = new src_app_models_signup_info__WEBPACK_IMPORTED_MODULE_1__["SignUpInfo"](form.name, form.lastName, form.gender, form.image, form.username, form.email, form.password);
         for (var key in form) {
             if (form.hasOwnProperty(key)) {
                 var element = form[key];
                 if (!element) {
-                    return this.snackBar.open("El campo \"" + key + "\" es requerido", 'Ok', {
-                        duration: 3000,
-                    });
-                }
-            }
-        }
-        for (var key in this.firstFormGroup.controls) {
-            if (this.firstFormGroup.controls.hasOwnProperty(key)) {
-                var element = this.firstFormGroup.controls[key];
-                if (element.errors) {
-                    return this.snackBar.open("Porfavor revisa el campo \"" + key + "\"", 'Ok', {
-                        duration: 3000,
-                    });
-                }
-            }
-        }
-        for (var key in this.secondFormGroup.controls) {
-            if (this.secondFormGroup.controls.hasOwnProperty(key)) {
-                var element = this.secondFormGroup.controls[key];
-                if (element.errors) {
-                    return this.snackBar.open("Porfavor revisa el campo \"" + key + "\"", 'Ok', {
-                        duration: 3000,
-                    });
+                    this.alert.message = 'Porfavor revisa que esten bien todos los campos';
+                    this.alert.type = 'danger';
+                    this.openAlert = true;
+                    return;
                 }
             }
         }
@@ -1141,22 +1132,34 @@ var SignupComponent = /** @class */ (function () {
             console.log(res);
             if (res) {
                 if (res.isOk) {
-                    return _this.snackBar.open('Te has registrado correctamente', 'Login', {
-                        duration: 6000,
-                    }).onAction().subscribe(function (action) {
-                        console.log(action);
+                    _this.alert.type = 'success';
+                    _this.alert.message = 'Ya puedes iniciar sesion';
+                    _this.openAlert = true;
+                    setTimeout(function () {
                         _this.router.navigate(['/login']);
-                    });
+                    }, 1000);
+                    _this.onRegister = false;
                 }
                 else {
-                    _this.snackBar.open('Hubo un error al registrarse', 'Ok', {
-                        duration: 3000,
-                    });
+                    _this.alert.type = 'danger';
+                    _this.alert.message = res.message;
+                    _this.openAlert = true;
+                    _this.onRegister = false;
+                    return;
                 }
             }
         });
     };
     SignupComponent.prototype.firstFormError = function (input) {
+        if (input === 'name') {
+            if (this.firstFormGroup.controls['name'].errors == null) {
+                return;
+            }
+            return this.firstFormGroup.controls['name'].errors.required ? 'Nombre requerido' :
+                this.firstFormGroup.controls['name'].errors.minlength ? 'Minimo 2 caracteres' :
+                    this.firstFormGroup.controls['name'].errors.maxlength ? 'Maximo 40 caracteres' :
+                        '';
+        }
         if (input === 'username') {
             if (this.firstFormGroup.controls['username'].errors == null) {
                 return;
@@ -1185,36 +1188,6 @@ var SignupComponent = /** @class */ (function () {
                         '';
         }
     };
-    SignupComponent.prototype.secondFormError = function (input) {
-        if (input === 'name') {
-            if (this.secondFormGroup.controls['name'].errors == null) {
-                return;
-            }
-            return this.secondFormGroup.controls['name'].errors.required ? 'Nombre requerido' :
-                this.secondFormGroup.controls['name'].errors.minlength ? 'Minimo 2 caracteres' :
-                    this.secondFormGroup.controls['name'].errors.maxlength ? 'Maximo 40 caracteres' :
-                        '';
-        }
-        if (input === 'lastName') {
-            if (this.secondFormGroup.controls['lastName'].errors == null) {
-                return;
-            }
-            return this.secondFormGroup.controls['lastName'].errors.required ? 'Apellidos requerido' :
-                this.secondFormGroup.controls['lastName'].errors.minlength ? 'Minimo 2 caracteres' :
-                    this.secondFormGroup.controls['lastName'].errors.maxlength ? 'Maximo 60 caracteres' :
-                        '';
-        }
-        if (input === 'gender') {
-            if (this.secondFormGroup.controls['gender'].errors == null) {
-                return;
-            }
-            return this.secondFormGroup.controls['gender'].errors.required ? 'Elije tu genero' :
-                '';
-        }
-    };
-    SignupComponent.prototype.logger = function () {
-        console.log(this.firstFormGroup.getRawValue());
-    };
     SignupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-signup',
@@ -1238,7 +1211,7 @@ var SignupComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"bg-light\">\n    <div class=\"container shadow p-3 mb-5 bg-white rounded mx-auto ancho\">\n        <div class=\"row\">\n            <div class=\"col-md-10\">\n                <h1> {{ sitio$.nombre }} </h1>\n            </div>\n            <div class=\"col-md-3\">\n                <div class=\"tituloCategoria\">Calificación</div><div class=\"descripcion\"> {{ sitio$.calificacion }} </div>\n            </div>\n            <div class=\"col-md-3\">\n                <div class=\"tituloCategoria\">Categoría</div><div class=\"descripcion\"> {{ sitio$.categoria }} </div>\n            </div>\n            <div class=\"col-md-3\">\n                <div class=\"tituloCategoria\">descripción</div><div class=\"descripcion\"> {{ sitio$.descripcion }} </div>\n            </div>\n        </div>\n    </div>\n\n\n\n</section>\n<!--\n<div class=\"media\">\n  <img src=\"https://via.placeholder.com/110/92c952\" alt=\"Logo\" class=\"rounded\">\n</div>\n-->\n"
+module.exports = "<section class=\"bg-light\">\r\n    <div class=\"container shadow p-3 mb-5 bg-white rounded mx-auto ancho\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-10\">\r\n                <h1> {{ sitio$.nombre }} </h1>\r\n            </div>\r\n            <div class=\"col-md-3\">\r\n                <div class=\"tituloCategoria\">Calificación</div><div class=\"descripcion\"> {{ sitio$.calificacion }} </div>\r\n            </div>\r\n            <div class=\"col-md-3\">\r\n                <div class=\"tituloCategoria\">Categoría</div><div class=\"descripcion\"> {{ sitio$.categoria }} </div>\r\n            </div>\r\n            <div class=\"col-md-3\">\r\n                <div class=\"tituloCategoria\">descripción</div><div class=\"descripcion\"> {{ sitio$.descripcion }} </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n\r\n</section>\r\n<!--\r\n<div class=\"media\">\r\n  <img src=\"https://via.placeholder.com/110/92c952\" alt=\"Logo\" class=\"rounded\">\r\n</div>\r\n-->\r\n"
 
 /***/ }),
 
@@ -1249,7 +1222,7 @@ module.exports = "<section class=\"bg-light\">\n    <div class=\"container shado
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h1 {\n  font-weight: 700;\n  font-size: 2rem;\n  font-family: Montserrat, 'Helvetica Neue', Arial, Helvetica, sans-serif; }\n\n.ancho {\n  width: 100%; }\n\n.tituloCategoria {\n  font-size: 15px;\n  font-weight: 300;\n  line-height: 23px;\n  letter-spacing: 0.2px;\n  color: #797979; }\n\n.descripcion {\n  font-weight: 700; }\n\n.post {\n  border: 1px solid rgba(0, 0, 0, 0.125); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaXRpby9DOlxcVXNlcnNcXFNvbWV0aGluZ1xcZ2l0XFxwcm9mdW5kaXphY2lvbjNcXHNyY1xcYW5ndWxhci1jbGllbnQvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHNpdGlvXFxzaXRpby5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNJLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsdUVBQXVFLEVBQUE7O0FBRTNFO0VBQ0ksV0FBVyxFQUFBOztBQUlmO0VBQ00sZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIscUJBQXFCO0VBQ3JCLGNBQWMsRUFBQTs7QUFHcEI7RUFDSSxnQkFBZ0IsRUFBQTs7QUFHcEI7RUFDSSxzQ0FBcUMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2l0aW8vc2l0aW8uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbmgxe1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgZm9udC1zaXplOiAycmVtO1xuICAgIGZvbnQtZmFtaWx5OiBNb250c2VycmF0LCAnSGVsdmV0aWNhIE5ldWUnLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xufVxuLmFuY2hvIHtcbiAgICB3aWR0aDogMTAwJTtcbn1cblxuXG4udGl0dWxvQ2F0ZWdvcmlhIHtcbiAgICAgIGZvbnQtc2l6ZTogMTVweDtcbiAgICAgIGZvbnQtd2VpZ2h0OiAzMDA7XG4gICAgICBsaW5lLWhlaWdodDogMjNweDtcbiAgICAgIGxldHRlci1zcGFjaW5nOiAwLjJweDtcbiAgICAgIGNvbG9yOiAjNzk3OTc5O1xufVxuXG4uZGVzY3JpcGNpb24ge1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG59XG5cbi5wb3N0IHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIC4xMjUpO1xufSJdfQ== */"
+module.exports = "h1 {\n  font-weight: 700;\n  font-size: 2rem;\n  font-family: Montserrat, 'Helvetica Neue', Arial, Helvetica, sans-serif; }\n\n.ancho {\n  width: 100%; }\n\n.tituloCategoria {\n  font-size: 15px;\n  font-weight: 300;\n  line-height: 23px;\n  letter-spacing: 0.2px;\n  color: #797979; }\n\n.descripcion {\n  font-weight: 700; }\n\n.post {\n  border: 1px solid rgba(0, 0, 0, 0.125); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaXRpby9DOlxcVXNlcnNcXERhaXZpZGl4XFxnaXRcXHByb2Z1bmRpemFjaW9uM1xcc3JjXFxhbmd1bGFyLWNsaWVudC9zcmNcXGFwcFxcY29tcG9uZW50c1xcc2l0aW9cXHNpdGlvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0ksZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZix1RUFBdUUsRUFBQTs7QUFFM0U7RUFDSSxXQUFXLEVBQUE7O0FBSWY7RUFDTSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixxQkFBcUI7RUFDckIsY0FBYyxFQUFBOztBQUdwQjtFQUNJLGdCQUFnQixFQUFBOztBQUdwQjtFQUNJLHNDQUFxQyxFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zaXRpby9zaXRpby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5oMXtcclxuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbiAgICBmb250LXNpemU6IDJyZW07XHJcbiAgICBmb250LWZhbWlseTogTW9udHNlcnJhdCwgJ0hlbHZldGljYSBOZXVlJywgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcclxufVxyXG4uYW5jaG8ge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcblxyXG4udGl0dWxvQ2F0ZWdvcmlhIHtcclxuICAgICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgICBmb250LXdlaWdodDogMzAwO1xyXG4gICAgICBsaW5lLWhlaWdodDogMjNweDtcclxuICAgICAgbGV0dGVyLXNwYWNpbmc6IDAuMnB4O1xyXG4gICAgICBjb2xvcjogIzc5Nzk3OTtcclxufVxyXG5cclxuLmRlc2NyaXBjaW9uIHtcclxuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbn1cclxuXHJcbi5wb3N0IHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgLjEyNSk7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1311,7 +1284,7 @@ var SitioComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 text-center\">\n        <div class=\"section-title\" *ngFor=\"let ubicacion of ciudades$\">\n          <h2 *ngIf=\"ubicacion.visit\">BuscApp <u>{{ubicacion.ciudad}}</u></h2>\n        </div>\n      </div>\n    </div>\n          <ul class=\"nav justify-content-center nav-tabs\">\n            <li class=\"nav-item\" *ngFor=\"let menu of ciudades$\">\n              <a class=\"nav-link active\" routerLink=\"\" *ngIf=\"menu.visit\">{{ menu.ciudad }}</a>\n            </li>\n            <li class=\"nav-item\" *ngFor=\"let menu of ciudades$\">\n              <a class=\"nav-link disabled\" routerLink=\"\" *ngIf=\"!menu.visit\"> {{menu.ciudad}} </a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link disabled\" routerLink=\"\" ><i class=\"fa fa-search\"></i> Más Ciudades</a>\n            </li>\n          </ul>\n            <div class=\"row espacioAbajo\"></div>\n          <div class=\"row\">\n            <div class=\"col-md-3 espacioAbajo\" *ngFor=\"let lugares of datos$\">\n                <div routerLink=\"/sitio/{{lugares.id}}\" class=\"lugar-item item-border\" *ngIf=\"!lugares.ads\">\n                <div id=\"caja\" class=\"lugar-image\">\n                  <img src=\"assets/img/author-2.jpg\" class=\"img-responsive lugar-radiusImg\" alt=\"author\">\n                </div>\n                <div class=\"lugar-text\">\n                  <h3> {{lugares.nombre}} </h3>\n                  <div class=\"lugar-location\"> {{lugares.categoria}} </div>\n                  <div class=\"lugar-position\">\n                    <ngb-rating [rate]=\"lugares.calificacion\">\n                      <ng-template let-fill=\"fill\">\n                        <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\n                      </ng-template>\n                    </ngb-rating>\n                  </div>\n                  <p>{{ lugares.descripcion }}</p>\n                </div>\n              </div>\n            </div>\n          </div>\n          <br>\n          <div class=\"row\">\n            <div class=\"col-lg-12 text-center\">\n              <div class=\"section-title\">\n                <a class=\"verMas\" routerLink=\"sitios-result\">Ver más lugares<i class=\"material-icons\">keyboard_arrow_right</i></a>\n              </div>\n            </div>\n          </div>\n  </div>\n</section>\n"
+module.exports = "<section>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\" *ngFor=\"let ubicacion of ciudades$\">\r\n          <h2 *ngIf=\"ubicacion.visit\">BuscApp <u>{{ubicacion.ciudad}}</u></h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n          <ul class=\"nav justify-content-center nav-tabs\">\r\n            <li class=\"nav-item\" *ngFor=\"let menu of ciudades$\">\r\n              <a class=\"nav-link active\" routerLink=\"\" *ngIf=\"menu.visit\">{{ menu.ciudad }}</a>\r\n            </li>\r\n            <li class=\"nav-item\" *ngFor=\"let menu of ciudades$\">\r\n              <a class=\"nav-link disabled\" routerLink=\"\" *ngIf=\"!menu.visit\"> {{menu.ciudad}} </a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link disabled\" routerLink=\"\" ><i class=\"fa fa-search\"></i> Más Ciudades</a>\r\n            </li>\r\n          </ul>\r\n            <div class=\"row espacioAbajo\"></div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-3 espacioAbajo\" *ngFor=\"let lugares of datos$\">\r\n                <div routerLink=\"/sitio/{{lugares.id}}\" class=\"lugar-item item-border\" *ngIf=\"!lugares.ads\">\r\n                <div id=\"caja\" class=\"lugar-image\">\r\n                  <img src=\"assets/img/author-2.jpg\" class=\"img-responsive lugar-radiusImg\" alt=\"author\">\r\n                </div>\r\n                <div class=\"lugar-text\">\r\n                  <h3> {{lugares.nombre}} </h3>\r\n                  <div class=\"lugar-location\"> {{lugares.categoria}} </div>\r\n                  <div class=\"lugar-position\">\r\n                    <ngb-rating [rate]=\"lugares.calificacion\">\r\n                      <ng-template let-fill=\"fill\">\r\n                        <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\r\n                      </ng-template>\r\n                    </ngb-rating>\r\n                  </div>\r\n                  <p>{{ lugares.descripcion }}</p>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <br>\r\n          <div class=\"row\">\r\n            <div class=\"col-lg-12 text-center\">\r\n              <div class=\"section-title\">\r\n                <a class=\"verMas\" routerLink=\"sitios-result\">Ver más lugares<i class=\"material-icons\">keyboard_arrow_right</i></a>\r\n              </div>\r\n            </div>\r\n          </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -1322,7 +1295,7 @@ module.exports = "<section>\n  <div class=\"container\">\n    <div class=\"row\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "i {\n  color: #21ce99;\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  vertical-align: middle; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaXRpb3MtY2l1ZGFkZXMvQzpcXFVzZXJzXFxTb21ldGhpbmdcXGdpdFxccHJvZnVuZGl6YWNpb24zXFxzcmNcXGFuZ3VsYXItY2xpZW50L3NyY1xcYXBwXFxjb21wb25lbnRzXFxzaXRpb3MtY2l1ZGFkZXNcXHNpdGlvcy1jaXVkYWRlcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7RUFDckIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUVsQixzQkFBc0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2l0aW9zLWNpdWRhZGVzL3NpdGlvcy1jaXVkYWRlcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIml7XG4gIGNvbG9yOiAjMjFjZTk5O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgLy90b3A6IC0uMWVtO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xufVxuIl19 */"
+module.exports = "i {\n  color: #21ce99;\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  vertical-align: middle; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaXRpb3MtY2l1ZGFkZXMvQzpcXFVzZXJzXFxEYWl2aWRpeFxcZ2l0XFxwcm9mdW5kaXphY2lvbjNcXHNyY1xcYW5ndWxhci1jbGllbnQvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHNpdGlvcy1jaXVkYWRlc1xcc2l0aW9zLWNpdWRhZGVzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBYztFQUNkLHFCQUFxQjtFQUNyQixnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBRWxCLHNCQUFzQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zaXRpb3MtY2l1ZGFkZXMvc2l0aW9zLWNpdWRhZGVzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaXtcclxuICBjb2xvcjogIzIxY2U5OTtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgLy90b3A6IC0uMWVtO1xyXG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -1380,7 +1353,7 @@ var SitiosCiudadesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngFor=\"let allList of sitiosAll$\">\n\n  {{allList.nombre}}\n\n</div>\n"
+module.exports = "<div *ngFor=\"let allList of sitiosAll$\">\r\n\r\n  {{allList.nombre}}\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1785,7 +1758,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Something\git\profundizacion3\src\angular-client\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Daividix\git\profundizacion3\src\angular-client\src\main.ts */"./src/main.ts");
 
 
 /***/ })
