@@ -1,7 +1,52 @@
-@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
-.signup-form {
+.signup-body {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('https://res.cloudinary.com/daividix/image/upload/v1549936257/building-chairs-city-157213.jpg');
+  background-size: cover;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+.btn-register {
+  height: 30px;
+  width: 50%;
+}
+
+.signup-center-div {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
   }
+.signup-circulo {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  position: relative;
+}
+
+.signup-circulo-c1, .signup-circulo-c2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #7f8c8d;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: signupC 2s infinite ease-in-out;
+}
+
+.signup-circulo-c2 {
+  animation-delay: -1s;
+}
+
+@keyframes signupC {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}

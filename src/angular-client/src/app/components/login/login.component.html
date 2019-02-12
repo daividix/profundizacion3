@@ -1,36 +1,50 @@
-<body style="height: 100vmax; background: #3F51B5">
-  <div class="form-signup">
-    <mat-card>
-      <mat-card-header>
-        <div mat-card-avatar><mat-icon style="font-size: 40px;">input</mat-icon></div>
-        <mat-card-title style="text-align: center; margin: 7px;">Login</mat-card-title>
-      </mat-card-header>
-      <br>
-      <mat-card-content>
-          <form (ngSubmit)="login()" [formGroup]="loginForm">
-              <div>
-                <span><mat-icon style="margin-bottom: 0;">perm_identity</mat-icon></span>
-                <mat-form-field style="width: 80%">
-                  <input matInput placeholder="Username" formControlName="username" name="username">
-                  <mat-error *ngIf="loginForm.controls['username'].errors != null">{{getErrorMessageUsername()}}</mat-error>
-                </mat-form-field>
+<body class="body-login">
+  <div class="center-div col-md-6">
+    <h5 class="display-4 text-center">Login</h5>
+    <div class="card">
+      <div class="card-body">
+        <ngb-alert *ngIf="openAlert" [type]="'danger'" (close)="openAlert = false">{{messageAlert}}</ngb-alert>
+        <form (ngSubmit)="login()" [formGroup]="loginForm" class="mt-5">
+          <div class="form-group w-75 mx-auto">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <mat-icon style="margin-bottom: 0;">perm_identity</mat-icon>
+                </div>
               </div>
-              <div>
-                <mat-icon>lock</mat-icon>
-                <mat-form-field style="width: 80%">
-                  <input #password type="password" matInput placeholder="Password" formControlName="password" name="password">
-                  <mat-error *ngIf="loginForm.controls['password'].errors != null">{{getErrorMessagePassword()}}</mat-error>
-                </mat-form-field>
+              <input class="form-control" placeholder="Username" formControlName="username" name="username" (keyup)="keyupUsername = true">
+            </div>
+            <small class="form-text text-danger" *ngIf="keyupUsername && loginForm.controls['username'].errors != null">{{getErrorMessageUsername()}}</small>
+          </div>
+          <div class="form-group w-75 mx-auto">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <mat-icon>lock</mat-icon>
+                </div>
               </div>
-              <br>
-              <mat-card-actions>
-                  <div style="text-align: center; min-width: 300px;">
-                    <button mat-button type="submit">Log-in</button> 
-                  </div>   
-              </mat-card-actions>
-            </form>
-      </mat-card-content> 
-    </mat-card>
-    
+                <input #password type="password" class="form-control" placeholder="Password" formControlName="password" name="password" (keyup)="keyupPassword = true">
+            </div>
+            <small class="form-text text-danger" *ngIf="keyupPassword && loginForm.controls['password'].errors != null">{{getErrorMessagePassword()}}</small> 
+          </div>
+          <br>
+          <div *ngIf="onLogin">
+              <div style="text-align: center">Espera un momento</div>
+              <div class="login-circulo">
+                  <span class="login-circulo-c1"></span>
+                  <span class="login-circulo-c2"></span>
+                </div>
+          </div>
+          <div *ngIf="!onLogin">
+              <div style="text-align: center; min-width: 300px;">
+                <button placement="bottom" ngbTooltip="{{(loginForm.controls['password'].errors != null || loginForm.controls['username'].errors != null) ? 'Corrige los campos': ''}}" mat-button type="submit" [disabled]="loginForm.controls['password'].errors != null || loginForm.controls['username'].errors != null">Log-in</button> 
+              </div>
+              <div class="text-right">
+                  <a mat-button routerLink="/signup">No tengo cuenta</a>
+                </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </body>

@@ -22,55 +22,43 @@ export class SignupComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  onRegister = false;
+  keyup = {
+    name: false,
+    username: false,
+    password: false,
+    email: false
+  };
+  openAlert = false;
+  alert = {
+    message: '',
+    type: ''
+  };
   constructor(private authentication: AuthService, private _formBuilder: FormBuilder,
     private snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email, Validators.maxLength(60)]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(40)]]
     });
-    this.secondFormGroup = this._formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
-      lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
-      gender: ['', Validators.required]
-    });
   }
 
   signup() {
-    const form1 = this.firstFormGroup.getRawValue();
-    const form2 = this.secondFormGroup.getRawValue();
-    const form = Object.assign(form1, form2);
+    this.onRegister = true;
+    const form = this.firstFormGroup.getRawValue();
     this.signUpForm = new SignUpInfo(form.name, form.lastName, form.gender,
       form.image, form.username, form.email, form.password);
       for (const key in form) {
         if (form.hasOwnProperty(key)) {
           const element = form[key];
           if (!element) {
-            return this.snackBar.open(`El campo "${key}" es requerido`, 'Ok', {
-              duration: 3000,
-            });
-          }
-        }
-      }
-      for (const key in this.firstFormGroup.controls) {
-        if (this.firstFormGroup.controls.hasOwnProperty(key)) {
-          const element = this.firstFormGroup.controls[key];
-          if (element.errors) {
-            return this.snackBar.open(`Porfavor revisa el campo "${key}"`, 'Ok', {
-              duration: 3000,
-            });
-          }
-        }
-      }
-      for (const key in this.secondFormGroup.controls) {
-        if (this.secondFormGroup.controls.hasOwnProperty(key)) {
-          const element = this.secondFormGroup.controls[key];
-          if (element.errors) {
-            return this.snackBar.open(`Porfavor revisa el campo "${key}"`, 'Ok', {
-              duration: 3000,
-            });
+            this.alert.message = 'Porfavor revisa que esten bien todos los campos';
+            this.alert.type = 'danger';
+            this.openAlert = true;
+            return;
           }
         }
       }
@@ -79,22 +67,34 @@ export class SignupComponent implements OnInit {
       console.log(res);
       if (res) {
         if (res.isOk) {
-          return this.snackBar.open('Te has registrado correctamente', 'Login', {
-            duration: 6000,
-          }).onAction().subscribe(action => {
-            console.log(action);
+          this.alert.type = 'success';
+          this.alert.message = 'Ya puedes iniciar sesion';
+          this.openAlert = true;
+          setTimeout(() => {
             this.router.navigate(['/login']);
-          });
+          }, 1000);
+          this.onRegister = false;
         } else {
-          this.snackBar.open('Hubo un error al registrarse', 'Ok', {
-            duration: 3000,
-          });
+          this.alert.type = 'danger';
+          this.alert.message = res.message;
+          this.openAlert = true;
+          this.onRegister = false;
+          return;
         }
       }
     });
   }
 
   firstFormError(input: string) {
+    if (input === 'name') {
+      if (this.firstFormGroup.controls['name'].errors == null) {
+        return;
+      }
+      return this.firstFormGroup.controls['name'].errors.required ? 'Nombre requerido' :
+      this.firstFormGroup.controls['name'].errors.minlength ? 'Minimo 2 caracteres' :
+      this.firstFormGroup.controls['name'].errors.maxlength ? 'Maximo 40 caracteres' :
+      '';
+    }
     if (input === 'username') {
       if (this.firstFormGroup.controls['username'].errors == null) {
         return;
@@ -122,37 +122,5 @@ export class SignupComponent implements OnInit {
       this.firstFormGroup.controls['password'].errors.maxlength ? 'Maximo 40 caracteres' :
       '';
     }
-  }
-
-  secondFormError(input: string) {
-    if (input === 'name') {
-      if (this.secondFormGroup.controls['name'].errors == null) {
-        return;
-      }
-      return this.secondFormGroup.controls['name'].errors.required ? 'Nombre requerido' :
-      this.secondFormGroup.controls['name'].errors.minlength ? 'Minimo 2 caracteres' :
-      this.secondFormGroup.controls['name'].errors.maxlength ? 'Maximo 40 caracteres' :
-      '';
-    }
-    if (input === 'lastName') {
-      if (this.secondFormGroup.controls['lastName'].errors == null) {
-        return;
-      }
-      return this.secondFormGroup.controls['lastName'].errors.required ? 'Apellidos requerido' :
-      this.secondFormGroup.controls['lastName'].errors.minlength ?  'Minimo 2 caracteres' :
-      this.secondFormGroup.controls['lastName'].errors.maxlength ? 'Maximo 60 caracteres' :
-      '';
-    }
-    if (input === 'gender') {
-      if (this.secondFormGroup.controls['gender'].errors == null) {
-        return;
-      }
-      return this.secondFormGroup.controls['gender'].errors.required ? 'Elije tu genero' :
-      '';
-    }
-  }
-
-  logger() {
-    console.log(this.firstFormGroup.getRawValue());
   }
 }

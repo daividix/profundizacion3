@@ -167,6 +167,7 @@ public class AuthRestAPIs {
 	public Hashtable<Object,Object> getUser(Principal principal) {
 		Hashtable<Object,Object> response = new Hashtable<Object, Object>();
 		User user = userService.getUserInformation(principal.getName().toString());
+		response.put("isOk", true);
 		response.put("user", user);
 		return response;
 	}

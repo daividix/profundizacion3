@@ -32,10 +32,10 @@ public class User{
     @Column(nullable=false, length=30)
     private String name;
     
-    @Column(nullable=false, length=40)
+    @Column(nullable=true, length=40)
     private String lastName;
     
-    @Column(nullable=false)
+    @Column(nullable=true)
     private String gender;
     
     @Column(nullable=true)

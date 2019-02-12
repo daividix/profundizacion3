@@ -12,12 +12,10 @@ public class SignUpForm {
     @Size(min = 2, max = 30)
     private String name;
     
-    @NotBlank
-    @Size(min=2, max=40)
+    @Size(min=0, max=40)
     private String lastName;
     
-    @NotBlank
-    @Size(min=3, max=20)
+    @Size(min=0, max=20)
     private String gender;
     
     @Size(min=0, max=200)

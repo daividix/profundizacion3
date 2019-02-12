@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import { MatSnackBar } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,28 +15,27 @@ export class LoginComponent implements OnInit {
   errorLogin: Boolean = false;
   errorMessage: String;
   loginForm: FormGroup;
-  errorForm = {
-    username: {
-      value: false,
-      msg: ''
-    },
-    password: {
-      value: false,
-      msg: ''
-    }
-  };
+  keyupUsername = false;
+  keyupPassword = false;
+  openAlert = false;
+  messageAlert = '';
+  onLogin = false;
   constructor(private authentication: AuthService,
     private tokenService: TokenStorageService, private snackBar: MatSnackBar,
-    private _formBuilder: FormBuilder) { }
+    private _formBuilder: FormBuilder,
+    private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this._formBuilder.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]]
     });
+    console.log(this.loginForm.controls['username'].errors);
+    console.log(this.keyupUsername);
   }
 
   login() {
+    this.onLogin = true;
     const form = new AuthLoginInfo();
     if (!this.loginForm.getRawValue().username) {
       return this.snackBar.open('El username es requerido', 'Ok', {
@@ -56,18 +56,19 @@ export class LoginComponent implements OnInit {
         this.tokenService.saveToken(res.result.accessToken);
         this.tokenService.saveAuthorities(res.result.authorities);
         this.tokenService.saveUsername(res.result.username);
-        window.location.assign('/');
+        this.router.navigate(['/']);
+        this.onLogin = false;
       } else {
-        this.snackBar.open(res.message, 'Ok', {
-          duration: 4000,
-        });
+        this.onLogin = false;
+        this.messageAlert = res.message;
+        this.openAlert = true;
       }
 
     });
   }
 
   getErrorMessageUsername() {
-    if (this.loginForm.controls['password'].errors == null) {
+    if (this.loginForm.controls['username'].errors == null) {
       return;
     }
     return this.loginForm.controls['username'].errors.required ? 'Username requerido' :

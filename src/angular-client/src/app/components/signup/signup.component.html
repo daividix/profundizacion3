@@ -1,77 +1,74 @@
-<body style="height: 100vmax; background: #3F51B5">
-  <div class="signup-form col-md-6 col-sm-12">
-    <p class="display-4">Registrarse</p>
-    <mat-horizontal-stepper [linear]="isLinear" #stepper style="border-radius: 5px">
-      <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Info-Usuario</ng-template>
-          <div class="w-50 mx-auto">
-            <mat-form-field class="w-100">
-              <input matInput placeholder="Username" name="username" formControlName="username"
-                required>
-                <mat-error *ngIf="firstFormGroup.controls['username'].errors != null">{{firstFormError('username')}}</mat-error>
-            </mat-form-field>
-            <br>
-            <mat-form-field class="w-100">
-              <input matInput placeholder="Email" name="email" formControlName="email"
-                required>
-                <mat-error *ngIf="firstFormGroup.controls['email'].errors != null">{{firstFormError('email')}}</mat-error>
-            </mat-form-field>
-            <br>
-            <mat-form-field class="w-100">
-              <input type="password" matInput placeholder="Password" name="password"
-                formControlName="password" required>
-                <mat-error *ngIf="firstFormGroup.controls['password'].errors != null">{{firstFormError('password')}}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="text-center">
-            <button mat-button matStepperNext (click)="$event.preventDefault()">Siguiente</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Info-personal</ng-template>
-          <div class="mx-auto w-50">
-            <mat-form-field class="w-100">
-              <input matInput placeholder="Nombre" name="name" formControlName="name"
-                required>
-                <mat-error *ngIf="secondFormGroup.controls['name'].errors != null">{{secondFormError('name')}}</mat-error>
-            </mat-form-field>
-            <br>
-            <mat-form-field class="w-100">
-              <input matInput placeholder="Apellidos" name="lastName" formControlName="lastName"
-                required>
-                <mat-error *ngIf="secondFormGroup.controls['lastName'].errors != null">{{secondFormError('lastName')}}</mat-error>
-            </mat-form-field>
-            <br>
-            <mat-form-field class="w-100">
-              <mat-label>Gender</mat-label>
-              <mat-select placeholder="Genero" formControlName="gender" name="gender">
-                <mat-option *ngFor="let genero of genders" [value]="genero.value" name="gender">
-                  {{genero.value}}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="secondFormGroup.controls['gender'].errors != null">{{secondFormError('gender')}}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="text-center">
-            <button mat-button matStepperPrevious>Volver</button>
-            <button mat-button matStepperNext>Siguiente</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Hecho</ng-template>
-        <div class="text-center">
-            Seguro de querer registrarse?
-            <div>
-              <button mat-button matStepperPrevious>Volver</button>
-              <button mat-button (click)="signup()">Si</button>
-            </div>
-        </div>
-        
-      </mat-step>
-    </mat-horizontal-stepper>
-  </div>
+<body class="signup-body">
 </body>
+<div class="signup-center-div col-md-6">
+    <h5 class="display-4 text-center">Registrarse</h5>
+    <div class="card">
+      <div class="card-body">
+        <ngb-alert *ngIf="openAlert" [type]="alert.type" (close)="openAlert = false">{{alert.message}}</ngb-alert>
+        <form (ngSubmit)="signup()" [formGroup]="firstFormGroup" class="mt-5">
+          <div class="form-group w-75 mx-auto">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <mat-icon style="margin-bottom: 0;">perm_identity</mat-icon>
+                </div>
+              </div>
+              <input class="form-control" placeholder="Nombre" formControlName="name" name="name" (keyup)="keyup.name = true">
+            </div>
+            <small class="form-text text-danger" *ngIf="keyup.name && firstFormGroup.controls['name'].errors != null">{{firstFormError('name')}}</small>
+          </div>
+          <div class="form-group w-75 mx-auto">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <mat-icon style="margin-bottom: 0;">perm_identity</mat-icon>
+                </div>
+              </div>
+              <input class="form-control" placeholder="Username" formControlName="username" name="username" (keyup)="keyup.username = true">
+            </div>
+            <small class="form-text text-danger" *ngIf="keyup.username && firstFormGroup.controls['username'].errors != null">{{firstFormError('username')}}</small>
+          </div>
+          <div class="form-group w-75 mx-auto">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  @
+                </div>
+              </div>
+              <input class="form-control" placeholder="Email" formControlName="email" name="email" (keyup)="keyup.email = true">
+            </div>
+            <small class="form-text text-danger" *ngIf="keyup.email && firstFormGroup.controls['email'].errors != null">{{firstFormError('email')}}</small>
+          </div>
+          <div class="form-group w-75 mx-auto">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <mat-icon>lock</mat-icon>
+                </div>
+              </div>
+              <input #password type="password" class="form-control" placeholder="Password" formControlName="password"
+                name="password" (keyup)="keyup.password = true">
+            </div>
+            <small class="form-text text-danger" *ngIf="keyup.password && firstFormGroup.controls['password'].errors != null">{{firstFormError('password')}}</small>
+          </div>
+          <br>
+          <div *ngIf="onRegister">
+              <div style="text-align: center">Espera un momento</div>
+              <div class="signup-circulo">
+                  <span class="signup-circulo-c1"></span>
+                  <span class="signup-circulo-c2"></span>
+                </div>
+          </div>
+          <div>
+            <div *ngIf="!onRegister" style="text-align: center; min-width: 300px;">
+              <button placement="bottom" ngbTooltip="{{(firstFormGroup.controls['password'].errors != null || firstFormGroup.controls['username'].errors != null) ? 'Corrige los campos': ''}}"
+                mat-button type="submit" [disabled]="firstFormGroup.controls['password'].errors != null || firstFormGroup.controls['username'].errors != null">Registrarme</button>
+            </div>
+            <div class="text-right">
+              <a mat-button routerLink="/login">Ya tengo cuenta</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
