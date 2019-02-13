@@ -51,3 +51,30 @@
 .lugar-radiusImg {
   border-radius: 13px 13px 0px 0px !important;
 }
+
+/* Estrellas */
+.star {
+  font-size: 1.3rem;
+  color: #b0c4de;
+}
+
+.filled {
+  color: #ffcc00;
+}
+
+.bad {
+  color: #deb0b0;
+}
+
+.filled.bad {
+  color: #ff1e1e;
+}
+
+.espacioAbajo {
+  padding-bottom: 20px;
+}
+
+.space {
+  padding-left: 75px;
+  padding-right: 70px;
+}
