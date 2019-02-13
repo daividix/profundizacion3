@@ -167,69 +167,6 @@ section {
 }
 */
 
-/* Header */
-
-header {
-  background-image: url(assets/img/header.png);
-  background-repeat: none;
-  background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  text-align: center;
-  color: #fff;
-
-}
-
-header .intro-text {
-  padding-top: 180px;
-  padding-bottom: 50px;
-}
-
-@media (min-width: 768px) {
-  header .intro-text {
-    padding-top: 180px;
-    padding-bottom: 200px;
-  }
-}
-
-header .intro-text .intro-lead-in {
-  font-family: "Helvetica", Arial, Sans-serif;
-  font-style: italic;
-  font-size: 22px;
-  line-height: 22px;
-  margin-bottom: 25px;
-}
-
-@media (min-width: 768px) {
-  header .intro-text .intro-lead-in {
-    font-family: "Helvetica", Arial, Sans-serif;
-    font-style: italic;
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 25px;
-  }
-}
-
-header .intro-text .intro-heading {
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 50px;
-  margin-bottom: 25px;
-}
-
-@media (min-width: 768px) {
-  header .intro-text .intro-heading {
-    /* text-transform: uppercase; */
-    font-weight: 700;
-    font-size: 75px;
-    line-height: 75px;
-    margin-bottom: 50px;
-  }
-}
-
 /* Sections */
 
 .section-title h2 {
