@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-sitios-result',
@@ -10,12 +9,13 @@ export class SitiosResultComponent implements OnInit {
 
   sitiosAll$: object;
 
-  constructor(private data: DataService) { }
+  constructor() { }
 
   ngOnInit() {
+    /*
     this.data.getSitios().subscribe(
       data => this.sitiosAll$ = data
-    );
+    ); */
   }
 
 }

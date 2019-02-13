@@ -20,13 +20,13 @@
           </ul>
             <div class="row espacioAbajo"></div>
           <div class="row">
-            <div class="col-md-3 espacioAbajo" *ngFor="let lugares of datos$">
+            <div class="col-md-3 espacioAbajo" *ngFor="let lugares of sitos$">
                 <div routerLink="/sitio/{{lugares.id}}" class="lugar-item item-border" *ngIf="!lugares.ads">
                 <div id="caja" class="lugar-image">
                   <img src="assets/img/author-2.jpg" class="img-responsive lugar-radiusImg" alt="author">
                 </div>
                 <div class="lugar-text">
-                  <h3> {{lugares.nombre}} </h3>
+                  <h3> {{lugares.name}} </h3>
                   <div class="lugar-location"> {{lugares.categoria}} </div>
                   <div class="lugar-position">
                     <ngb-rating [rate]="lugares.calificacion">

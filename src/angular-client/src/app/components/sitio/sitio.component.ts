@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../services/data.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,14 +11,14 @@ export class SitioComponent implements OnInit {
 
   sitio$: Object;
 
-  constructor(private route: ActivatedRoute, private data: DataService ) {
+  constructor(private route: ActivatedRoute) {
    this.route.params.subscribe( params => this.sitio$ = params.id);
   }
 
   ngOnInit() {
-    this.data.getSitio(this.sitio$).subscribe(
+    /*this.data.getSitio(this.sitio$).subscribe(
       data => this.sitio$ = data
-    );
+    );*/
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -11,7 +10,7 @@ import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 export class HomeComponent implements OnInit {
 
-  constructor(private data: DataService, config: NgbRatingConfig) {
+  constructor( config: NgbRatingConfig ) {
     config.max = 5;
     config.readonly = true;
    }
@@ -19,9 +18,10 @@ export class HomeComponent implements OnInit {
   datos$: object;
 
   ngOnInit() {
+    /*
     this.data.getSitios().subscribe(
       data => this.datos$ = data
-    );
+    ); */
   }
 
 }

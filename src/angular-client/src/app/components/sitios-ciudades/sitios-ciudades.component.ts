@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { SiteService } from '../../services/site.service';
 
 @Component({
   selector: 'app-sitios-ciudades',
@@ -9,18 +9,25 @@ import { DataService } from '../services/data.service';
 })
 export class SitiosCiudadesComponent implements OnInit {
 
-  constructor(private data: DataService) { }
+  constructor(private data: SiteService) { }
 
-  datos$: object;
+  sitos$: object;
   ciudades$: object;
 
   ngOnInit() {
+
+    this.data.verSitios().subscribe(
+      data => this.sitos$ = data
+    );
+
+    /*
     this.data.getSitios().subscribe(
       data => this.datos$ = data
     );
     this.data.getCiudades().subscribe(
       data => this.ciudades$ = data
-    );
+    );*/
+
   }
 
 }
