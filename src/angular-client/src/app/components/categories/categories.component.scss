@@ -1,0 +1,98 @@
+
+/* Iconos Material Design */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-60 {
+  font-size: 60px;
+}
+
+/* Botones */
+
+.btn-xl:hover,
+.btn-xl:focus,
+.btn-xl:active,
+.btn-xl.active,
+.open .dropdown-toggle.btn-xl {
+  color: #21ce99;
+  background-color: #fff;
+  border-color: #21ce99;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(217, 217, 217, 1);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(217, 217, 217, 1);
+  box-shadow: 0px 5px 10px 2px rgba(217, 217, 217, 1);
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.open .dropdown-toggle.btn {
+  color: #21ce99;
+  background-color: #fff;
+  border-color: #21ce99;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(217, 217, 217, 1);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(217, 217, 217, 1);
+  box-shadow: 0px 5px 10px 2px rgba(217, 217, 217, 1);
+}
+
+.btn {
+  display: inline-block;
+  color: #a6a6a6;
+  background-color: #fff;
+  height: 140px;
+  width: 215px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.btn i {
+  padding-top: 10px;
+}
+
+.btn-xl {
+  color: #fff;
+  background-color: #726FB9;
+  border-color: #726FB9;
+  font-family: "Helvetica", Arial, Sans-serif;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.btn1 {
+  border-color: #fff !important;
+
+}
+
+.btn1:hover {
+  border-color: #21ce99 !important;
+}
