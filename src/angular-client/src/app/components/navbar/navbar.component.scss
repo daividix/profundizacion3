@@ -1,0 +1,11 @@
+.cnavbar-brand {
+    font-weight: 800;
+}
+
+.cnavbar-btn {
+    background: none;
+    &:hover {
+        text-decoration: none;
+        color: black;
+    }
+}

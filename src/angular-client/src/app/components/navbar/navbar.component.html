@@ -1,0 +1,22 @@
+<nav class="navbar cnavbar-nav bg-light">
+  <a class="navbar-brand cnavbar-brand" routerLink="/">Buscapp</a>
+  <div>
+    <form (submit)="searchSite()" class="form-inline">
+        <input [(ngModel)]="searchContent" name="searchContent" type="text" class="form-control" placeholder="Buscar sitio">
+        <button class="btn btn-light btn-sm ml-2" type="submit"><mat-icon>search</mat-icon></button>
+    </form>
+  </div>
+  <div *ngIf="!isLoggued; else divLoggued">
+    <a class="btn btn-light" style="margin-right: 5px" routerLink="/login">Iniciar session</a>
+    <a class="btn btn-light" routerLink="/signup">Registrarse</a>
+  </div>
+  <ng-template #divLoggued>
+    <div ngbDropdown>
+      <button class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle>{{username}}</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="w-auto">
+        <a routerLink="/profile" class="dropdown-item">Perfil</a>
+        <button class="dropdown-item" (click)="logout($event)">Logout</button>
+      </div>
+    </div>
+  </ng-template>
+</nav>

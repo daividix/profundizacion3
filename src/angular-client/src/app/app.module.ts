@@ -27,6 +27,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearcherComponent } from './components/searcher/searcher.component';
 import { CategoriesResultComponent } from './components/categories-result/categories-result.component';
 import { SitiosResultComponent } from './components/sitios-result/sitios-result.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'navbar',
+    component: NavbarComponent
   }
 ];
 
@@ -54,7 +59,8 @@ const routes: Routes = [
     FooterComponent,
     SearcherComponent,
     CategoriesResultComponent,
-    SitiosResultComponent
+    SitiosResultComponent,
+    NavbarComponent
    ],
   imports: [
     BrowserModule,
@@ -65,7 +71,7 @@ const routes: Routes = [
     AppRoutingModule,
     MaterialModule,
     NgbModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   exports: [RouterModule],
   providers: [RegisterService],

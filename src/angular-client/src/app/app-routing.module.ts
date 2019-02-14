@@ -6,7 +6,7 @@ import { CategoriesResultComponent } from './components/categories-result/catego
 import { SitiosResultComponent } from './components/sitios-result/sitios-result.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, runGuardsAndResolvers: 'always' },
   { path: 'sitio/:id', component: SitioComponent },
   { path: 'categories-result/:id', component: CategoriesResultComponent },
   { path: 'sitios-result', component: SitiosResultComponent },

@@ -14,4 +14,8 @@ export class SiteService {
   public verSitios(): Observable<any> {
     return this.http.get(`${this.domain}/verSitios`);
   }
+
+  public buscarSitios(nombre: String): Observable<any> {
+    return this.http.get(`${this.domain}/buscarPorNombre/${nombre}`);
+  }
 }

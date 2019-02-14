@@ -7,7 +7,7 @@ import { TokenStorageService } from 'src/app/services/token/token-storage.servic
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input('drawer') drawer;
+  @Input() drawer;
   isLogged: Boolean = false;
   constructor(public tokenService: TokenStorageService) { }
 
