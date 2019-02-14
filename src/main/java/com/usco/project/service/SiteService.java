@@ -32,5 +32,12 @@ public class SiteService {
 			return false;
 		}
 	}
+
+	public List<Site> getUserLikeName(String name) {
+		name = name.toLowerCase();
+		name = "%"+name+"%";
+		List<Site> sites = siteRepository.getLikeName(name);
+		return sites;
+	}
 	
 }

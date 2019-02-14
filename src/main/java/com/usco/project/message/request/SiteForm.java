@@ -35,7 +35,7 @@ public class SiteForm {
 	private String phoneNumber;
 	
 	@NotBlank
-	@Size(min=3, max=20)
+	@Size(min=3, max=40)
 	private String eslogan;
 
 	@NotBlank

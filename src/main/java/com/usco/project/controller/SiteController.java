@@ -21,6 +21,7 @@ import com.usco.project.entity.Category;
 import com.usco.project.entity.Service;
 import com.usco.project.entity.Site;
 import com.usco.project.message.request.SiteForm;
+import com.usco.project.message.response.Response;
 import com.usco.project.service.CategoryService;
 import com.usco.project.service.ServiceService;
 import com.usco.project.service.SiteService;
@@ -119,6 +120,19 @@ public class SiteController {
 		}else {
 			response.put("isOk", false);
 			response.put("message", "No se pudo crear el sitio");
+			return response;
+		}
+	}
+
+	@GetMapping(value="/buscarPorNombre/{name}")
+	public Response postMethodName(@PathVariable("name") String name) {
+		if (name != null) {
+			List<Site> sites = siteService.getUserLikeName(name);
+			Response response = new Response(true, "Sitios encontrados");
+			response.setResults(sites);
+			return response;
+		}else{
+			Response response = new Response(false, "No escribio un nombre");
 			return response;
 		}
 	}
