@@ -20,6 +20,8 @@ export class SitiosCiudadesComponent implements OnInit {
       data => this.sitos$ = data
     );
 
+    console.log(this.sitos$);
+
     /*
     this.data.getSitios().subscribe(
       data => this.datos$ = data
