@@ -17,6 +17,7 @@ export class SitiosCiudadesComponent implements OnInit {
   ngOnInit() {
 
     this.data.verSitios().subscribe(res => {
+      console.log(res);
       if (res.isOk) {
         this.sitios$ = res.sitios;
       }
