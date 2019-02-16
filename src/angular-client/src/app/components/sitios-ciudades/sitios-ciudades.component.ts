@@ -11,24 +11,20 @@ export class SitiosCiudadesComponent implements OnInit {
 
   constructor(private data: SiteService) { }
 
-  sitos$: object;
+  sitios$: object;
   ciudades$: object;
 
   ngOnInit() {
 
-    this.data.verSitios().subscribe(
-      data => this.sitos$ = data
-    );
+    this.data.verSitios().subscribe(res => {
+      console.log(res);
+      if (res.isOk) {
+        this.sitios$ = res.sitios;
+      }
+    });
 
-    console.log(this.sitos$);
+    //console.log(this.sitos$);
 
-    /*
-    this.data.getSitios().subscribe(
-      data => this.datos$ = data
-    );
-    this.data.getCiudades().subscribe(
-      data => this.ciudades$ = data
-    );*/
 
   }
 
