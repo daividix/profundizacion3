@@ -139,9 +139,22 @@ public class SiteController {
 	}
 	
 	@DeleteMapping("/eliminarSitio/{id}")
-	public void delete(@PathVariable Long id) {
-		Site sitio = siteService.verSitioPorId(id);
-		siteService.delete(sitio);
+	@PreAuthorize("hasRole('ADMIN')")
+	public Response eliminarSitio(@PathVariable("id") Long id) {
+
+		try {
+            Site sitio = siteService.verSitioPorId(id);
+			siteService.delete(sitio);
+             Response response = new Response();        
+             response.setIsOk(true);
+			 response.setMessage("El Sitio se ha eliminado correctamente");  
+			 return response;          
+            
+        } catch (Exception e) {
+            Response response = new Response(false, "Hubo un error al eliminar el Sitio");
+			response.setError(e.toString());
+			return response;
+        }
 		
 	}
 	

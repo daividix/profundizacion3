@@ -65,7 +65,7 @@ public class Site implements Serializable{
 	private float calification;
 	
 	@Column(name="clicks")
-	private long clicks;
+	private Long clicks;
 	
 	@ManyToMany(targetEntity=Service.class)
 	private Set<Service> services;
@@ -100,11 +100,11 @@ public class Site implements Serializable{
 	}
 
 	//Getters y Setters
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

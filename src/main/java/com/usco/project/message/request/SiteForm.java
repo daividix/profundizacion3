@@ -46,7 +46,7 @@ public class SiteForm {
 	@Max(value = 5)
 	private float calification;
 		
-	private long clicks;
+	private Long clicks;
 		
 	private Set<Long> services;
 
