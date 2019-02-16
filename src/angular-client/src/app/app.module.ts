@@ -28,6 +28,7 @@ import { SearcherComponent } from './components/searcher/searcher.component';
 import { CategoriesResultComponent } from './components/categories-result/categories-result.component';
 import { SitiosResultComponent } from './components/sitios-result/sitios-result.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SitioregistroComponent } from './components/sitioregistro/sitioregistro.component';
 
 const routes: Routes = [
   {
@@ -60,7 +61,8 @@ const routes: Routes = [
     SearcherComponent,
     CategoriesResultComponent,
     SitiosResultComponent,
-    NavbarComponent
+    NavbarComponent,
+    SitioregistroComponent
    ],
   imports: [
     BrowserModule,

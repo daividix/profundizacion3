@@ -1,3 +1,31 @@
+<nav class="navbar navbar-light">
+  <a class="navbar-brand cnavbar-logo" routerLink="/">
+    <img src="https://res.cloudinary.com/hcarvajal/image/upload/v1550171480/sitios/Logo-nav.png"
+    class="d-inline-block align-top" alt="BuscApp">
+  </a>
+  <div *ngIf="!isLoggued; else divLoggued">
+    <ul class="nav navbar-right cnavbar-positionBtn">
+      <li>
+        <a class="btn cnavbar-login" routerLink="/login">Ingresar</a>
+      </li>
+      <li>
+        <a class="btn btn-outline-success cnavbar-register" routerLink="/signup">Regístrate</a>
+      </li>
+    </ul>
+  </div>
+  <ng-template #divLoggued>
+    <div ngbDropdown>
+      <button class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle>{{username}}</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="w-auto">
+        <a routerLink="/profile" class="dropdown-item">Perfil</a>
+        <button class="dropdown-item" (click)="logout($event)">Logout</button>
+      </div>
+    </div>
+  </ng-template>
+</nav>
+
+
+<!--
 <nav class="navbar cnavbar-nav bg-light">
 <a class="navbar-brand cnavbar-brand" routerLink="/"><img class="cnavbar-logo" src="https://res.cloudinary.com/hcarvajal/image/upload/v1550171480/sitios/Logo-nav.png"
     alt="BuscApp"></a>
@@ -21,3 +49,5 @@
     </div>
   </ng-template>
 </nav>
+
+-->

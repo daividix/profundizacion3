@@ -1,3 +1,10 @@
+nav a {
+    font-family: "Helvetica", Arial, sans-serif;
+    font-weight: bold !important;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+}
 .cnavbar-brand {
     font-weight: 800;
 }
@@ -12,4 +19,21 @@
 
 .cnavbar-logo{
   padding-left: 90px;
+}
+
+.cnavbar-register{
+  border: 2px solid #fff;
+  border-radius: 6px;
+  transition: background-color 3s ease;
+}
+
+.cnavbar-register:hover{
+  background-color: #fff;
+  color: #21CE99 !important;
+
+}
+
+.cnavbar-positionBtn{
+  padding-right: 90px;
+
 }
