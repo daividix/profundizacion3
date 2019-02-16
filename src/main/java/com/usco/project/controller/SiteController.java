@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -138,6 +139,7 @@ public class SiteController {
 		}
 	}
 	
+	
 	@DeleteMapping("/eliminarSitio/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
 	public Response eliminarSitio(@PathVariable("id") Long id) {
@@ -145,10 +147,10 @@ public class SiteController {
 		try {
             Site sitio = siteService.verSitioPorId(id);
 			siteService.delete(sitio);
-             Response response = new Response();        
-             response.setIsOk(true);
-			 response.setMessage("El Sitio se ha eliminado correctamente");  
-			 return response;          
+            Response response = new Response();        
+            response.setIsOk(true);
+			response.setMessage("El Sitio se ha eliminado correctamente");  
+			return response;          
             
         } catch (Exception e) {
             Response response = new Response(false, "Hubo un error al eliminar el Sitio");
@@ -157,6 +159,55 @@ public class SiteController {
         }
 		
 	}
+	
+	@PutMapping("/actualizarSitio/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
+	public Response actualizarSitio(@RequestBody Site sitio ,@PathVariable Long id,SiteForm siteForm) {
+		
+		try{
+		Site site = siteService.verSitioPorId(id);
+		site.setName(sitio.getName());
+		site.setAddress(sitio.getAddress());
+		site.setCity(sitio.getCity());
+		site.setLatitude(sitio.getLatitude());
+		site.setLongitude(sitio.getLongitude());
+		site.setPhoneNumber(sitio.getPhoneNumber());
+		site.setEslogan(sitio.getEslogan());
+		site.setInformation(sitio.getInformation());
+		site.setCalification(sitio.getCalification());
+		
+		
+		siteService.crearSitio(site);
+		Response response = new Response(true, "Se ha actualizado correctamente el Sitio");
+		response.setIsOk(true);
+		response.setMessage("El Sitio se ha actualizado correctamente");  
+        response.setResult(site);
+        return response;
+		}catch(Exception e){
+			 Response response = new Response(false, "Hubo un error al actualizar el Sitio");
+	            response.setError(e.toString());
+	            return response;
+			
+		}
+		
+		
+	}
+	
+	@GetMapping("/SitiosPopulares")
+	public Hashtable<Object,Object> Populares(){
+		Hashtable<Object,Object> response = new Hashtable<Object,Object>();
+		
+		try {
+			
+			return response;
+		}catch(Exception e) {
+			response.put("isOk", false);
+			response.put("message", e.toString());
+			return response;
+		}
+	}
+	
+	
 	
 	
 	
