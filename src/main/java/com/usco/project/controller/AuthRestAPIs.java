@@ -6,6 +6,7 @@ import java.util.Hashtable;
 import java.util.Optional;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,8 @@ public class AuthRestAPIs {
 	JwtProvider jwtProvider;
  
 	@PostMapping("/signin")
-	public Response authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
+	public Response authenticateUser(@Valid @RequestBody LoginForm loginRequest, HttpServletRequest req) {
+		System.out.print("Ip = "+req.getRemoteAddr());
 		User user = userRepository.getInfoUser(loginRequest.getUsername());
 		if (user == null) {
 			return new Response(false, "Usuario o contraseña incorrecta");
