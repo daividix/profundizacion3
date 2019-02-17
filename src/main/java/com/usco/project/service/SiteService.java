@@ -41,6 +41,11 @@ public class SiteService {
 		return sites;
 	}
 	
+	public List<Site> getUserLikeCalification() {
+		List<Site> sites = siteRepository.getLikeCalification();
+		return sites;
+	}
+	
 	public void delete(Site sitio) {
 		siteRepository.delete(sitio);
 	}

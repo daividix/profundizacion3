@@ -185,27 +185,29 @@ public class SiteController {
         return response;
 		}catch(Exception e){
 			 Response response = new Response(false, "Hubo un error al actualizar el Sitio");
-	            response.setError(e.toString());
-	            return response;
+	         response.setError(e.toString());
+	         return response;
 			
 		}
 		
 		
 	}
 	
-	@GetMapping("/SitiosPopulares")
-	public Hashtable<Object,Object> Populares(){
-		Hashtable<Object,Object> response = new Hashtable<Object,Object>();
+	@GetMapping(value="/SitiosPolulares")
+	public Response populares() {
+			try {
+				List<Site> sites = siteService.getUserLikeCalification();
+				Response response = new Response(true, "Sitios encontrados");
+				response.setResults(sites);
+				return response;
+			}catch(Exception e){
+				Response response = new Response(false, "Sitios no encontrados");
+				response.setError(e.toString());
+				return response;
+			}
 		
-		try {
-			
-			return response;
-		}catch(Exception e) {
-			response.put("isOk", false);
-			response.put("message", e.toString());
-			return response;
-		}
 	}
+	
 	
 	
 	
