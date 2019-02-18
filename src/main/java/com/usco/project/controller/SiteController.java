@@ -1,10 +1,13 @@
 package com.usco.project.controller;
 
+import java.security.Principal;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +25,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.usco.project.entity.Category;
 import com.usco.project.entity.Service;
 import com.usco.project.entity.Site;
+import com.usco.project.entity.SiteTrasing;
+import com.usco.project.entity.User;
 import com.usco.project.message.request.SiteForm;
 import com.usco.project.message.response.Response;
+import com.usco.project.repository.SiteRepository;
 import com.usco.project.service.CategoryService;
 import com.usco.project.service.ServiceService;
 import com.usco.project.service.SiteService;
+import com.usco.project.service.SiteTrasingService;
+import com.usco.project.service.UserServices;
 
 @RestController
 @RequestMapping("/api/v1/sitio")
@@ -35,6 +43,14 @@ public class SiteController {
 	@Autowired
 	@Qualifier("site_service")
 	private SiteService siteService;
+
+	@Autowired
+	@Qualifier("site_repository")
+	private SiteRepository siteRepository;
+
+	@Autowired
+	@Qualifier("servicio_user")
+	private UserServices userService;
 	
 	@Autowired
 	@Qualifier("category_service")
@@ -43,6 +59,10 @@ public class SiteController {
 	@Autowired
 	@Qualifier("service_service")
 	private ServiceService serviceService;
+
+	@Autowired
+	@Qualifier("site_trasing_service")
+	private SiteTrasingService siteTrasingService;
 	
 	@GetMapping("/verSitio/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
@@ -80,7 +100,7 @@ public class SiteController {
 	
 	@PostMapping("/agregarSitio")
 	@PreAuthorize("hasRole('ADMIN')")
-	public Hashtable<Object,Object> agregarSitio(@Valid @RequestBody SiteForm siteForm){
+	public Hashtable<Object,Object> agregarSitio(@Valid @RequestBody SiteForm siteForm, Principal principal, HttpServletRequest req){
 		Hashtable<Object,Object> response = new Hashtable<Object,Object>();
 		Site newSitio = new Site(siteForm.getName(),siteForm.getAddress(), siteForm.getCity(),
 				siteForm.getLatitude(), siteForm.getLongitude(), siteForm.getPhoneNumber(),
@@ -113,11 +133,21 @@ public class SiteController {
 		newSitio.setCategories(categories);
 		newSitio.setServices(services);
 		
-		Boolean sitioFueCreado = siteService.crearSitio(newSitio);
+		Site sitioCreado = siteRepository.save(newSitio);
 		
-		if(sitioFueCreado) {
-			response.put("isOk", true);
-			response.put("message", "El sitio fue creado satisfactoriamente");
+		if(sitioCreado != null) {
+			User userLoggued = userService.getUserInformation(principal.getName().toString());
+			SiteTrasing siteTrasing = new SiteTrasing(newSitio.getId(), userLoggued, "CREATE", new Date(), req.getRemoteAddr());
+			Boolean siteTrasingIsCreated = siteTrasingService.addSiteTrasing(siteTrasing);
+			if (siteTrasingIsCreated) {
+				response.put("isOk", true);
+				response.put("message", "El sitio fue creado satisfactoriamente");
+			} else {
+				siteService.delete(sitioCreado);
+				response.put("isOk", false);
+				response.put("message", "No se pudo hacer seguimiento a la tabla sitios");
+			}
+			
 			return response;
 		}else {
 			response.put("isOk", false);
@@ -142,11 +172,14 @@ public class SiteController {
 	
 	@DeleteMapping("/eliminarSitio/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public Response eliminarSitio(@PathVariable("id") Long id) {
-
+	public Response eliminarSitio(@PathVariable("id") Long id, Principal principal, HttpServletRequest req) {
+		User userLoggued = userService.getUserInformation(principal.getName().toString());
 		try {
             Site sitio = siteService.verSitioPorId(id);
 			siteService.delete(sitio);
+			SiteTrasing siteTrasing = new SiteTrasing(sitio.getId(), userLoggued, "DELETE", new Date(), req.getRemoteAddr());
+			siteTrasingService.addSiteTrasing(siteTrasing);
+
             Response response = new Response();        
             response.setIsOk(true);
 			response.setMessage("El Sitio se ha eliminado correctamente");  
@@ -162,8 +195,9 @@ public class SiteController {
 	
 	@PutMapping("/actualizarSitio/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public Response actualizarSitio(@RequestBody Site sitio ,@PathVariable Long id,SiteForm siteForm) {
-		
+	public Response actualizarSitio(@RequestBody SiteForm sitio ,@PathVariable Long id,SiteForm siteForm,
+	Principal principal, HttpServletRequest req) {
+		User userLoggued = userService.getUserInformation(principal.getName().toString());
 		try{
 		Site site = siteService.verSitioPorId(id);
 		site.setName(sitio.getName());
@@ -178,6 +212,8 @@ public class SiteController {
 		
 		
 		siteService.crearSitio(site);
+		SiteTrasing siteTrasing = new SiteTrasing(site.getId(), userLoggued, "UPDATE", new Date(), req.getRemoteAddr());
+			siteTrasingService.addSiteTrasing(siteTrasing);
 		Response response = new Response(true, "Se ha actualizado correctamente el Sitio");
 		response.setIsOk(true);
 		response.setMessage("El Sitio se ha actualizado correctamente");  

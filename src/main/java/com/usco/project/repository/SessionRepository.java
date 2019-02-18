@@ -1,5 +1,6 @@
 package com.usco.project.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import com.usco.project.entity.Session;
@@ -16,4 +17,5 @@ public interface SessionRepository extends JpaRepository<Session, Long>{
 
     @Query("SELECT s FROM Session s WHERE s.date BETWEEN ?1 AND ?2")
     public abstract List<Session> findByDate(String date1, String date2);
+
 }
