@@ -18,4 +18,7 @@ export class SiteService {
   public buscarSitios(nombre: String): Observable<any> {
     return this.http.get(`${this.domain}/buscarPorNombre/${nombre}`);
   }
+  public crearSitio(sitio): Observable<any> {
+    return this.http.post(`${this.domain}/agregarSitio`, sitio);
+  }
 }
