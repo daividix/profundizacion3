@@ -18,4 +18,8 @@ export class SiteService {
   public buscarSitios(nombre: String): Observable<any> {
     return this.http.get(`${this.domain}/buscarPorNombre/${nombre}`);
   }
+
+  public verSitioID(id) {
+    return this.http.get(`/api/v1/sitio/verSitio/${id}`);
+  }
 }
