@@ -12,7 +12,7 @@ export class SitiosCiudadesComponent implements OnInit {
   constructor(private data: SiteService) { }
 
   sitios$: object;
-  ciudades$: object;
+  ciudades$: object; // variable para alojar el objeto de ciudades (falta el servicio)
 
   ngOnInit() {
 
@@ -22,8 +22,6 @@ export class SitiosCiudadesComponent implements OnInit {
         this.sitios$ = res.sitios;
       }
     });
-
-    //console.log(this.sitos$);
 
 
   }

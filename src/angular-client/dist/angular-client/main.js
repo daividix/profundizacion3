@@ -646,7 +646,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-searcher></app-searcher>\r\n<section id=\"lugar\" class=\"light-bg\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\">\r\n          <h2>Encuentra los Mejores Lugares de la Ciudad</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-3\" *ngFor=\"let lugares of datos$\">\r\n        <div routerLink=\"/sitio/{{lugares.id}}\" class=\"lugar-item\" *ngIf=\"lugares.ads\">\r\n          <div id=\"caja\" class=\"lugar-image\">\r\n            <img src=\"assets/img/author-2.jpg\" class=\"img-responsive lugar-radiusImg\" alt=\"author\">\r\n          </div>\r\n          <div class=\"lugar-text\">\r\n            <h3> {{lugares.nombre}} </h3>\r\n            <div class=\"lugar-location\"> {{lugares.categoria}} </div>\r\n            <div class=\"lugar-position\">\r\n                    <ngb-rating [rate]=\"lugares.calificacion\">\r\n                        <ng-template let-fill=\"fill\">\r\n                          <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\r\n                        </ng-template>\r\n                    </ngb-rating>\r\n            </div>\r\n            <p>{{ lugares.descripcion }}</p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n\r\n<app-sitios-ciudades></app-sitios-ciudades>\r\n\r\n<app-categories></app-categories>\r\n\r\n<app-download-app></app-download-app>\r\n\r\n<app-footer></app-footer>\r\n\r\n"
+module.exports = "<app-searcher></app-searcher>\r\n<section id=\"lugar\" class=\"light-bg\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\">\r\n          <h2>Encuentra los Mejores Lugares de la Ciudad</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-3\" *ngFor=\"let lugares of datos$\">\r\n        <div routerLink=\"/sitio/{{lugares.id}}\" class=\"lugar-item\" *ngIf=\"lugares.ads\">\r\n          <div id=\"caja\" class=\"lugar-image\">\r\n            <img src=\"https://res.cloudinary.com/hcarvajal/image/upload/v1550603532/sitios/foto_sitio.jpg\" class=\"img-responsive lugar-radiusImg\" alt=\"author\">\r\n          </div>\r\n          <div class=\"lugar-text\">\r\n            <h3> {{lugares.nombre}} </h3>\r\n            <div class=\"lugar-location\"> {{lugares.categoria}} </div>\r\n            <div class=\"lugar-position\">\r\n                    <ngb-rating [rate]=\"lugares.calificacion\">\r\n                        <ng-template let-fill=\"fill\">\r\n                          <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\r\n                        </ng-template>\r\n                    </ngb-rating>\r\n            </div>\r\n            <p>{{ lugares.descripcion }}</p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n\r\n<app-sitios-ciudades></app-sitios-ciudades>\r\n\r\n<app-categories></app-categories>\r\n\r\n<app-download-app></app-download-app>\r\n\r\n<app-footer></app-footer>\r\n\r\n"
 
 /***/ }),
 
@@ -674,6 +674,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var src_app_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/token/token-storage.service */ "./src/app/services/token/token-storage.service.ts");
+/* harmony import */ var _services_site_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/site.service */ "./src/app/services/site.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -686,8 +687,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(config, tokenService) {
+    function HomeComponent(data, config, tokenService) {
+        this.data = data;
         this.tokenService = tokenService;
         config.max = 5;
         config.readonly = true;
@@ -696,10 +699,13 @@ var HomeComponent = /** @class */ (function () {
         }
     }
     HomeComponent.prototype.ngOnInit = function () {
-        /*
-        this.data.getSitios().subscribe(
-          data => this.datos$ = data
-        ); */
+        var _this = this;
+        this.data.verSitios().subscribe(function (res) {
+            console.log(res);
+            if (res.isOk) {
+                _this.sitiosPagados$ = res.sitios;
+            }
+        });
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -708,7 +714,7 @@ var HomeComponent = /** @class */ (function () {
             providers: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbRatingConfig"]],
             styles: [__webpack_require__(/*! ./home.component.scss */ "./src/app/components/home/home.component.scss")]
         }),
-        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbRatingConfig"],
+        __metadata("design:paramtypes", [_services_site_service__WEBPACK_IMPORTED_MODULE_3__["SiteService"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbRatingConfig"],
             src_app_services_token_token_storage_service__WEBPACK_IMPORTED_MODULE_2__["TokenStorageService"]])
     ], HomeComponent);
     return HomeComponent;
@@ -1425,7 +1431,7 @@ var SitioregistroComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\" *ngFor=\"let ubicacion of ciudades$\">\r\n          <h2 *ngIf=\"ubicacion.visit\">BuscApp <u>{{ubicacion.ciudad}}</u></h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n          <ul class=\"nav justify-content-center nav-tabs\">\r\n            <li class=\"nav-item\" *ngFor=\"let menu of ciudades$\">\r\n              <a class=\"nav-link active\" routerLink=\"\" *ngIf=\"menu.visit\">{{ menu.ciudad }}</a>\r\n            </li>\r\n            <li class=\"nav-item\" *ngFor=\"let menu of ciudades$\">\r\n              <a class=\"nav-link disabled\" routerLink=\"\" *ngIf=\"!menu.visit\"> {{menu.ciudad}} </a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link disabled\" routerLink=\"\" ><i class=\"fa fa-search\"></i> Más Ciudades</a>\r\n            </li>\r\n          </ul>\r\n            <div class=\"row espacioAbajo\"></div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-3 espacioAbajo\" *ngFor=\"let lugares of sitios$\">\r\n                <div routerLink=\"/sitio/{{lugares.id}}\" class=\"lugar-item item-border\" *ngIf=\"!lugares.ads\">\r\n                <div id=\"caja\" class=\"lugar-image\">\r\n                  <img src=\"assets/img/author-2.jpg\" class=\"img-responsive lugar-radiusImg\" alt=\"author\">\r\n                </div>\r\n                <div class=\"lugar-text\">\r\n                  <h3> {{lugares.name}} </h3>\r\n                  <div class=\"lugar-location\"> {{lugares.categoria}} </div>\r\n                  <div class=\"lugar-position\">\r\n                    <ngb-rating [rate]=\"lugares.calification\">\r\n                      <ng-template let-fill=\"fill\">\r\n                        <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\r\n                      </ng-template>\r\n                    </ngb-rating>\r\n                  </div>\r\n                  <p>{{ lugares.descripcion }}</p>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <br>\r\n          <div class=\"row\">\r\n            <div class=\"col-lg-12 text-center\">\r\n              <div class=\"section-title\">\r\n                <a class=\"verMas\" routerLink=\"sitios-result\">Ver más lugares<i class=\"material-icons\">keyboard_arrow_right</i></a>\r\n              </div>\r\n            </div>\r\n          </div>\r\n  </div>\r\n</section>\r\n"
+module.exports = "<section>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 text-center\">\r\n        <div class=\"section-title\" *ngFor=\"let ubicacion of ciudades$\">\r\n          <h2 *ngIf=\"ubicacion.visit\">BuscApp <u>{{ubicacion.ciudad}}</u></h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n          <ul class=\"nav justify-content-center nav-tabs\">\r\n            <li class=\"nav-item\" *ngFor=\"let menu of ciudades$\">\r\n              <a class=\"nav-link active\" routerLink=\"\" *ngIf=\"menu.visit\">{{ menu.ciudad }}</a>\r\n            </li>\r\n            <li class=\"nav-item\" *ngFor=\"let menu of ciudades$\">\r\n              <a class=\"nav-link disabled\" routerLink=\"\" *ngIf=\"!menu.visit\"> {{menu.ciudad}} </a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link disabled\" routerLink=\"\" ><i class=\"fa fa-search\"></i> Más Ciudades</a>\r\n            </li>\r\n          </ul>\r\n            <div class=\"row espacioAbajo\"></div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-3 espacioAbajo\" *ngFor=\"let lugares of sitios$\">\r\n                <div routerLink=\"/sitio/{{lugares.id}}\" class=\"lugar-item item-border\" *ngIf=\"!lugares.ads\">\r\n                <div id=\"caja\" class=\"lugar-image\">\r\n                  <img src=\"https://res.cloudinary.com/hcarvajal/image/upload/v1550603532/sitios/foto_sitio.jpg\" class=\"img-responsive lugar-radiusImg\" alt=\"author\">\r\n                </div>\r\n                <div class=\"lugar-text\">\r\n                  <h3> {{lugares.name}} </h3>\r\n                  <div class=\"lugar-location\"> {{lugares.categoria}} </div>\r\n                  <div class=\"lugar-position\">\r\n                    <ngb-rating [rate]=\"lugares.calification\">\r\n                      <ng-template let-fill=\"fill\">\r\n                        <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\r\n                      </ng-template>\r\n                    </ngb-rating>\r\n                  </div>\r\n                  <p>{{ lugares.descripcion }}</p>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <br>\r\n          <div class=\"row\">\r\n            <div class=\"col-lg-12 text-center\">\r\n              <div class=\"section-title\">\r\n                <a class=\"verMas\" routerLink=\"sitios-result\">Ver más lugares<i class=\"material-icons\">keyboard_arrow_right</i></a>\r\n              </div>\r\n            </div>\r\n          </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -1475,7 +1481,6 @@ var SitiosCiudadesComponent = /** @class */ (function () {
                 _this.sitios$ = res.sitios;
             }
         });
-        //console.log(this.sitos$);
     };
     SitiosCiudadesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
