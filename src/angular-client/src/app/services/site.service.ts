@@ -19,7 +19,9 @@ export class SiteService {
     return this.http.get(`${this.domain}/buscarPorNombre/${nombre}`);
   }
 
-  public verSitioID(id) {
-    return this.http.get(`/api/v1/sitio/verSitio/${id}`);
+
+  public crearSitio(sitio): Observable<any> {
+    return this.http.post(`${this.domain}/agregarSitio`, sitio);
   }
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SiteService } from 'src/app/services/site.service';
 
 @Component({
   selector: 'app-sitioregistro',
@@ -6,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sitioregistro.component.scss']
 })
 export class SitioregistroComponent implements OnInit {
+  newSitio: any = {
+    name: '',
+    address: '',
+    calification: '',
+    information: '',
+    phone_number: '',
+    eslogan: '',
+    city: '',
+    categories: [],
+    services: [],
+    longitude: '',
+    latitude: ''
+  };
 
   latitude: Number = 2.944286;
   longitude: Number = -75.298305;
@@ -18,9 +32,20 @@ export class SitioregistroComponent implements OnInit {
     console.log(this.latitude, this.longitude);
   }
 
-  constructor() { }
+  constructor(private siteService: SiteService) { }
 
   ngOnInit() {
   }
 
+  crearSitio() {
+
+  this.newSitio.latitude = this.latitude;
+  this.newSitio.longitude = this.longitude;
+  console.log(this.newSitio);
+  this.siteService.crearSitio(this.newSitio)
+  .subscribe(res => {
+    console.log(res);
+  });
+
+  }
 }
