@@ -15,6 +15,7 @@ export class SitioregistroComponent implements OnInit {
     this.latitude = event.coords.lat;
     this.longitude = event.coords.lng;
     this.locationChosen = true;
+    console.log(this.latitude, this.longitude);
   }
 
   constructor() { }
