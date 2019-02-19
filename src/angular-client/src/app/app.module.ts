@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { AgmCoreModule } from '@agm/core';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +21,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SitioComponent } from './components/sitio/sitio.component';
 import { SitiosCiudadesComponent } from './components/sitios-ciudades/sitios-ciudades.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // Modulo de Widgets Bootstrap
 import { CategoriesComponent } from './components/categories/categories.component';
 import { DownloadAppComponent } from './components/download-app/download-app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -73,6 +74,9 @@ const routes: Routes = [
     AppRoutingModule,
     MaterialModule,
     NgbModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCfNb47O_qK3GpT38IuASUksgXy5S3_1bQ'
+    }),
     RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   exports: [RouterModule],
