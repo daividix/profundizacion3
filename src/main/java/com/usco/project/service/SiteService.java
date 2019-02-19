@@ -46,6 +46,11 @@ public class SiteService {
 		return sites;
 	}
 	
+	public List<Site> getLikeClicks() {
+		List<Site> sites = siteRepository.getLikeClicks();
+		return sites;
+	}
+	
 	public void delete(Site sitio) {
 		siteRepository.delete(sitio);
 	}

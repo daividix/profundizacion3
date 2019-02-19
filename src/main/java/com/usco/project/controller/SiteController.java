@@ -229,8 +229,8 @@ public class SiteController {
 		
 	}
 	
-	@GetMapping(value="/SitiosPolulares")
-	public Response populares() {
+	@GetMapping(value="/sitiosMejorCalificados")
+	public Response mejorCalificados() {
 			try {
 				List<Site> sites = siteService.getUserLikeCalification();
 				Response response = new Response(true, "Sitios encontrados");
@@ -244,6 +244,20 @@ public class SiteController {
 		
 	}
 	
+	@GetMapping(value="/sitiosPopulares")
+	public Response Populares() {
+			try {
+				List<Site> sites = siteService.getLikeClicks();
+				Response response = new Response(true, "Sitios Populares encontrados");
+				response.setResults(sites);
+				return response;
+			}catch(Exception e){
+				Response response = new Response(false, "Sitios Populares no encontrados");
+				response.setError(e.toString());
+				return response;
+			}
+		
+	}
 	
 	
 	
