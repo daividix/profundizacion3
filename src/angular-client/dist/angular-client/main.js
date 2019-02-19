@@ -39,6 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_sitio_sitio_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/sitio/sitio.component */ "./src/app/components/sitio/sitio.component.ts");
 /* harmony import */ var _components_categories_result_categories_result_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/categories-result/categories-result.component */ "./src/app/components/categories-result/categories-result.component.ts");
 /* harmony import */ var _components_sitios_result_sitios_result_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sitios-result/sitios-result.component */ "./src/app/components/sitios-result/sitios-result.component.ts");
+/* harmony import */ var _components_sitioregistro_sitioregistro_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/sitioregistro/sitioregistro.component */ "./src/app/components/sitioregistro/sitioregistro.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -51,8 +52,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"], runGuardsAndResolvers: 'always' },
+    { path: 'sitioregistro', component: _components_sitioregistro_sitioregistro_component__WEBPACK_IMPORTED_MODULE_6__["SitioregistroComponent"] },
     { path: 'sitio/:id', component: _components_sitio_sitio_component__WEBPACK_IMPORTED_MODULE_3__["SitioComponent"] },
     { path: 'categories-result/:id', component: _components_categories_result_categories_result_component__WEBPACK_IMPORTED_MODULE_4__["CategoriesResultComponent"] },
     { path: 'sitios-result', component: _components_sitios_result_sitios_result_component__WEBPACK_IMPORTED_MODULE_5__["SitiosResultComponent"] },
@@ -171,32 +174,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _material_config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./material-config */ "./src/app/material-config.ts");
-/* harmony import */ var _services_register_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/register.service */ "./src/app/services/register.service.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _components_header_header_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/header/header.component */ "./src/app/components/header/header.component.ts");
-/* harmony import */ var _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/signup/signup.component */ "./src/app/components/signup/signup.component.ts");
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/menu/menu.component */ "./src/app/components/menu/menu.component.ts");
-/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
-/* harmony import */ var _components_sitio_sitio_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/sitio/sitio.component */ "./src/app/components/sitio/sitio.component.ts");
-/* harmony import */ var _components_sitios_ciudades_sitios_ciudades_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/sitios-ciudades/sitios-ciudades.component */ "./src/app/components/sitios-ciudades/sitios-ciudades.component.ts");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
-/* harmony import */ var _components_categories_categories_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/categories/categories.component */ "./src/app/components/categories/categories.component.ts");
-/* harmony import */ var _components_download_app_download_app_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/download-app/download-app.component */ "./src/app/components/download-app/download-app.component.ts");
-/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/footer/footer.component */ "./src/app/components/footer/footer.component.ts");
-/* harmony import */ var _components_searcher_searcher_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/searcher/searcher.component */ "./src/app/components/searcher/searcher.component.ts");
-/* harmony import */ var _components_categories_result_categories_result_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/categories-result/categories-result.component */ "./src/app/components/categories-result/categories-result.component.ts");
-/* harmony import */ var _components_sitios_result_sitios_result_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/sitios-result/sitios-result.component */ "./src/app/components/sitios-result/sitios-result.component.ts");
-/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _material_config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./material-config */ "./src/app/material-config.ts");
+/* harmony import */ var _services_register_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/register.service */ "./src/app/services/register.service.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _components_header_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/header/header.component */ "./src/app/components/header/header.component.ts");
+/* harmony import */ var _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/signup/signup.component */ "./src/app/components/signup/signup.component.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/menu/menu.component */ "./src/app/components/menu/menu.component.ts");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _components_sitio_sitio_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/sitio/sitio.component */ "./src/app/components/sitio/sitio.component.ts");
+/* harmony import */ var _components_sitios_ciudades_sitios_ciudades_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/sitios-ciudades/sitios-ciudades.component */ "./src/app/components/sitios-ciudades/sitios-ciudades.component.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _components_categories_categories_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/categories/categories.component */ "./src/app/components/categories/categories.component.ts");
+/* harmony import */ var _components_download_app_download_app_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/download-app/download-app.component */ "./src/app/components/download-app/download-app.component.ts");
+/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/footer/footer.component */ "./src/app/components/footer/footer.component.ts");
+/* harmony import */ var _components_searcher_searcher_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/searcher/searcher.component */ "./src/app/components/searcher/searcher.component.ts");
+/* harmony import */ var _components_categories_result_categories_result_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/categories-result/categories-result.component */ "./src/app/components/categories-result/categories-result.component.ts");
+/* harmony import */ var _components_sitios_result_sitios_result_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/sitios-result/sitios-result.component */ "./src/app/components/sitios-result/sitios-result.component.ts");
+/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var _components_sitioregistro_sitioregistro_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/sitioregistro/sitioregistro.component */ "./src/app/components/sitioregistro/sitioregistro.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -214,6 +220,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+ // Modulo de Widgets Bootstrap
 
 
 
@@ -225,15 +232,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var routes = [
     {
         path: 'login',
-        component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_11__["LoginComponent"]
+        component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"]
     },
     {
         path: 'signup',
-        component: _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_10__["SignupComponent"]
+        component: _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_11__["SignupComponent"]
     },
     {
         path: 'navbar',
-        component: _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_24__["NavbarComponent"]
+        component: _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_25__["NavbarComponent"]
     }
 ];
 var AppModule = /** @class */ (function () {
@@ -242,36 +249,40 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"],
-                _components_login_login_component__WEBPACK_IMPORTED_MODULE_11__["LoginComponent"],
-                _components_header_header_component__WEBPACK_IMPORTED_MODULE_9__["HeaderComponent"],
-                _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_10__["SignupComponent"],
-                _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_13__["MenuComponent"],
-                _components_home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"],
-                _components_sitio_sitio_component__WEBPACK_IMPORTED_MODULE_15__["SitioComponent"],
-                _components_sitios_ciudades_sitios_ciudades_component__WEBPACK_IMPORTED_MODULE_16__["SitiosCiudadesComponent"],
-                _components_categories_categories_component__WEBPACK_IMPORTED_MODULE_18__["CategoriesComponent"],
-                _components_download_app_download_app_component__WEBPACK_IMPORTED_MODULE_19__["DownloadAppComponent"],
-                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_20__["FooterComponent"],
-                _components_searcher_searcher_component__WEBPACK_IMPORTED_MODULE_21__["SearcherComponent"],
-                _components_categories_result_categories_result_component__WEBPACK_IMPORTED_MODULE_22__["CategoriesResultComponent"],
-                _components_sitios_result_sitios_result_component__WEBPACK_IMPORTED_MODULE_23__["SitiosResultComponent"],
-                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_24__["NavbarComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"],
+                _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"],
+                _components_header_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"],
+                _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_11__["SignupComponent"],
+                _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_14__["MenuComponent"],
+                _components_home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"],
+                _components_sitio_sitio_component__WEBPACK_IMPORTED_MODULE_16__["SitioComponent"],
+                _components_sitios_ciudades_sitios_ciudades_component__WEBPACK_IMPORTED_MODULE_17__["SitiosCiudadesComponent"],
+                _components_categories_categories_component__WEBPACK_IMPORTED_MODULE_19__["CategoriesComponent"],
+                _components_download_app_download_app_component__WEBPACK_IMPORTED_MODULE_20__["DownloadAppComponent"],
+                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_21__["FooterComponent"],
+                _components_searcher_searcher_component__WEBPACK_IMPORTED_MODULE_22__["SearcherComponent"],
+                _components_categories_result_categories_result_component__WEBPACK_IMPORTED_MODULE_23__["CategoriesResultComponent"],
+                _components_sitios_result_sitios_result_component__WEBPACK_IMPORTED_MODULE_24__["SitiosResultComponent"],
+                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_25__["NavbarComponent"],
+                _components_sitioregistro_sitioregistro_component__WEBPACK_IMPORTED_MODULE_26__["SitioregistroComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
-                _material_config__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_17__["NgbModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
+                _material_config__WEBPACK_IMPORTED_MODULE_7__["MaterialModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_18__["NgbModule"],
+                _agm_core__WEBPACK_IMPORTED_MODULE_5__["AgmCoreModule"].forRoot({
+                    apiKey: 'AIzaSyCfNb47O_qK3GpT38IuASUksgXy5S3_1bQ'
+                }),
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(routes, { onSameUrlNavigation: 'reload' })
             ],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]],
-            providers: [_services_register_service__WEBPACK_IMPORTED_MODULE_7__["RegisterService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]]
+            providers: [_services_register_service__WEBPACK_IMPORTED_MODULE_8__["RegisterService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -1329,6 +1340,78 @@ var SitioComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
     ], SitioComponent);
     return SitioComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/sitioregistro/sitioregistro.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/sitioregistro/sitioregistro.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"signup-center-div container\">\r\n  <div class=\"row\">\r\n    <div class=\"offset-lg-2 col-lg-8 col-sm-8 col-8 border rounded main-section\">\r\n      <h3 class=\"text-center text-inverse\">Registra tu sitio</h3>\r\n      <form class=\"container\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-6 col-12\">\r\n             <div class=\"form-group\">\r\n              <label class=\"text-inverse\" for=\"validationCustom01\">Nombre del sitio</label>\r\n              <input type=\"text\" class=\"form-control\" id=\"validationCustom01\" placeholder=\"Nombre del sitio\" value=\"\" required>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-sm-6 col-12\">\r\n            <div class=\"form-group\">\r\n              <label class=\"text-inverse\" for=\"validationCustom02\">Calificacion</label>\r\n              <input type=\"text\" class=\"form-control\" id=\"validationCustom02\" placeholder=\"Calificacion\" value='' required>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-md-6 col-sm-12 col-12\">\r\n            <div class=\"form-group\">\r\n              <label class=\"text-inverse\" for=\"inputphone\">Telefono</label>\r\n              <input type=\"number\" class=\"form-control\" id=\"inputphone\" placeholder=\"Telefono\" required>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-lg-6 col-sm-6 col-12\">\r\n            <div class=\"form-group\">\r\n              <label class=\"text-inverse\" for=\"inputpassword\">Eslogan</label>\r\n              <input type=\"text\" class=\"form-control\" id=\"inputeslogan\" placeholder=\"Eslogan\" required>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-lg-6 col-sm-6 col-12\">\r\n            <div class=\"form-group\">\r\n              <label class=\"text-inverse\" for=\"validationCustom03\">Ciudad</label>\r\n              <input type=\"text\" class=\"form-control\" id=\"validationCustom03\" placeholder=\"Ciudad\" required>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-lg-6 col-sm-6 col-12\">\r\n            <div class=\"form-group\">\r\n              <label class=\"text-inverse\" for=\"validationCustom03\">Direccion</label>\r\n              <input type=\"text\" class=\"form-control\" id=\"validationCustom03\" placeholder=\"Direccion\" required>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label class=\"text-inverse\" for=\"validationCustom03\">Elige la Ubicación</label>\r\n          <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" (mapClick)=\"onChoseLocation($event)\">\r\n            <agm-marker\r\n            [latitude]=\"latitude\"\r\n            [longitude]=\"longitude\"\r\n            *ngIf=\"locationChosen\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <div class=\"col-lg-12 col-sm-12 col-12 text-center\">\r\n              <button class=\"btn btn-info color\" type=\"submit\">Crear</button>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/sitioregistro/sitioregistro.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/sitioregistro/sitioregistro.component.scss ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".color {\n  background-color: #21CE99;\n  border: none; }\n\n.diva {\n  padding-top: 80px; }\n\n.signup-center-div {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%); }\n\nagm-map {\n  width: 350px;\n  height: 200px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaXRpb3JlZ2lzdHJvL0M6XFxVc2Vyc1xcaF9jYXJcXE9uZURyaXZlXFxFc2NyaXRvcmlvXFxwcm95ZWN0b1xccHJvZnVuZGl6YWNpb24zXFxzcmNcXGFuZ3VsYXItY2xpZW50L3NyY1xcYXBwXFxjb21wb25lbnRzXFxzaXRpb3JlZ2lzdHJvXFxzaXRpb3JlZ2lzdHJvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kseUJBQXlCO0VBQ3pCLFlBQVksRUFBQTs7QUFHaEI7RUFDSSxpQkFBaUIsRUFBQTs7QUFHckI7RUFDSSxrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFDVCx3Q0FBK0I7VUFBL0IsZ0NBQStCLEVBQUE7O0FBR25DO0VBQ0ksWUFBWTtFQUNaLGFBQWEsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2l0aW9yZWdpc3Ryby9zaXRpb3JlZ2lzdHJvLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbG9ye1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIxQ0U5OTtcclxuICAgIGJvcmRlcjogbm9uZTtcclxufVxyXG5cclxuLmRpdmF7XHJcbiAgICBwYWRkaW5nLXRvcDogODBweDtcclxufVxyXG5cclxuLnNpZ251cC1jZW50ZXItZGl2IHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTAlO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwtNTAlKTtcclxuICB9XHJcblxyXG5hZ20tbWFwIHtcclxuICAgIHdpZHRoOiAzNTBweDtcclxuICAgIGhlaWdodDogMjAwcHg7XHJcbiAgfVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/sitioregistro/sitioregistro.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/sitioregistro/sitioregistro.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: SitioregistroComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SitioregistroComponent", function() { return SitioregistroComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SitioregistroComponent = /** @class */ (function () {
+    function SitioregistroComponent() {
+        this.latitude = 2.944286;
+        this.longitude = -75.298305;
+        this.locationChosen = false;
+    }
+    SitioregistroComponent.prototype.onChoseLocation = function (event) {
+        this.latitude = event.coords.lat;
+        this.longitude = event.coords.lng;
+        this.locationChosen = true;
+        console.log(this.latitude, this.longitude);
+    };
+    SitioregistroComponent.prototype.ngOnInit = function () {
+    };
+    SitioregistroComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-sitioregistro',
+            template: __webpack_require__(/*! ./sitioregistro.component.html */ "./src/app/components/sitioregistro/sitioregistro.component.html"),
+            styles: [__webpack_require__(/*! ./sitioregistro.component.scss */ "./src/app/components/sitioregistro/sitioregistro.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SitioregistroComponent);
+    return SitioregistroComponent;
 }());
 
 
