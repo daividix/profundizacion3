@@ -16,4 +16,10 @@ public interface SiteRepository extends JpaRepository<Site, Long>{
 
 	@Query("SELECT s from Site s WHERE LOWER(s.name) LIKE ?1")
 	public abstract List<Site> getLikeName(String name);
+	
+	@Query("SELECT s from Site s order by (s.calification)desc")
+	public abstract List<Site> getLikeCalification();
+	
+	@Query("SELECT s from Site s order by (s.clicks)desc")
+	public abstract List<Site> getLikeClicks();
 }

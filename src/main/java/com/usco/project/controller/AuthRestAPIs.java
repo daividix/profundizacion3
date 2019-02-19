@@ -1,11 +1,13 @@
 package com.usco.project.controller;
 
 import java.security.Principal;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Optional;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +33,14 @@ import com.usco.project.message.response.JwtResponse;
 import com.usco.project.message.response.Response;
 import com.usco.project.entity.Role;
 import com.usco.project.entity.RoleName;
+import com.usco.project.entity.Session;
 import com.usco.project.entity.User;
 import com.usco.project.repository.RoleRepository;
 import com.usco.project.repository.UserRepository;
 import com.usco.project.security.CryptPassword;
 import com.usco.project.security.jwt.JwtProvider;
 import com.usco.project.service.EmailService;
+import com.usco.project.service.SessionService;
 import com.usco.project.service.UserServices;
  
 @RestController
@@ -56,6 +60,10 @@ public class AuthRestAPIs {
 	@Autowired
 	@Qualifier("email_service")
 	private EmailService emailService;
+
+	@Autowired
+	@Qualifier("session_service")
+	private SessionService sessionService;
  
 	@Autowired
 	RoleRepository roleRepository;
@@ -67,7 +75,8 @@ public class AuthRestAPIs {
 	JwtProvider jwtProvider;
  
 	@PostMapping("/signin")
-	public Response authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
+	public Response authenticateUser(@Valid @RequestBody LoginForm loginRequest, HttpServletRequest req) {
+		System.out.print("Ip = "+req.getRemoteAddr());
 		User user = userRepository.getInfoUser(loginRequest.getUsername());
 		if (user == null) {
 			return new Response(false, "Usuario o contraseña incorrecta");
@@ -83,15 +92,24 @@ public class AuthRestAPIs {
  
 				String jwt = jwtProvider.generateJwtToken(authentication);
 				UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-				Response response = new Response(true, "Usuario logueado correctamente");
-				response.setResult(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
-				return response;
-				//return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
+				Date dateSession = new Date();
+				Session newSession = new Session(user, dateSession, req.getRemoteAddr());
+				Boolean isSession = sessionService.addSession(newSession);
+				Response response = new Response();
+				if (isSession) {
+					response.setIsOk(true);
+					response.setMessage("Usuario logueado correctamente");
+					response.setResult(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
+					return response;
+				}else{
+					response.setIsOk(false);
+					response.setMessage("No se pudo guardar la session");
+					return response;
+				}
 		} catch (Exception e) {
 			Response response = new Response(false, "Ocurrio un error en la autenticacion");
 			response.setError(e.toString());
 			return response;
-			//return new ResponseEntity<>(new ResponseMessage("Fail -> Wrong credentials", false), HttpStatus.BAD_REQUEST);
 		}
 	}
  
