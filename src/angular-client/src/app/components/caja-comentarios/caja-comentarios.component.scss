@@ -1,0 +1,49 @@
+.containeer {
+    margin: 1rem 1rem 1rem 1rem;
+}
+  
+  .child {
+    background: #60e0b0;
+    padding: .2rem;
+    text-align: center;
+  }
+  
+  .center-h {
+    justify-content: center;
+  }
+  .center-v {
+    align-items: center;
+  }
+  .maxWidth{
+      width:100%;
+  }
+  .maxHeight{
+      height:100%;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+    font-size: 2em;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  .label-E:hover,
+  .label-E:hover ~ .label-E {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+
+  .estrella{
+    color: orange;
+  }

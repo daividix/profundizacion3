@@ -197,6 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_sitios_result_sitios_result_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/sitios-result/sitios-result.component */ "./src/app/components/sitios-result/sitios-result.component.ts");
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
 /* harmony import */ var _components_sitioregistro_sitioregistro_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/sitioregistro/sitioregistro.component */ "./src/app/components/sitioregistro/sitioregistro.component.ts");
+/* harmony import */ var _components_caja_comentarios_caja_comentarios_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/caja-comentarios/caja-comentarios.component */ "./src/app/components/caja-comentarios/caja-comentarios.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -223,6 +224,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
  // Modulo de Widgets Bootstrap
+
 
 
 
@@ -267,7 +269,8 @@ var AppModule = /** @class */ (function () {
                 _components_sitios_result_sitios_result_component__WEBPACK_IMPORTED_MODULE_25__["SitiosResultComponent"],
                 _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_26__["NavbarComponent"],
                 _components_sitioregistro_sitioregistro_component__WEBPACK_IMPORTED_MODULE_27__["SitioregistroComponent"],
-                _components_buscador_buscador_component__WEBPACK_IMPORTED_MODULE_18__["BuscadorComponent"]
+                _components_buscador_buscador_component__WEBPACK_IMPORTED_MODULE_18__["BuscadorComponent"],
+                _components_caja_comentarios_caja_comentarios_component__WEBPACK_IMPORTED_MODULE_28__["CajaComentariosComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -365,6 +368,85 @@ var BuscadorComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_site_service__WEBPACK_IMPORTED_MODULE_1__["SiteService"]])
     ], BuscadorComponent);
     return BuscadorComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/caja-comentarios/caja-comentarios.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/caja-comentarios/caja-comentarios.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div > \n  <div class=\"card text-center containeer\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">Calificación</h4>\n      <h1 class=\"card-title\">4.0</h1>\n      <p class=\"card-text\">estrellas</p>\n      <p class=\"card-text\">53 personas calificaron</p>\n    </div>\n  </div>\n\n  <div class=\"text-center  containeer\">\n    <h4>Deja tu opinión</h4>\n    <div class=\"card \">\n      <form (ngSubmit)=\"onSubmit()\"  class=\"card-body\">\n        <!--estrellas-->\n        <p class=\"clasificacion \">\n            <input id=\"radio1\" type=\"radio\" name=\"estrellas\" value=\"5\">\n            <label for=\"radio1\" class=\"label-E\">&#9733;</label>\n            <input id=\"radio2\" type=\"radio\" name=\"estrellas\" value=\"4\">\n            <label for=\"radio2\" class=\"label-E\">&#9733;</label>\n            <input id=\"radio3\" type=\"radio\" name=\"estrellas\" value=\"3\">\n            <label for=\"radio3\" class=\"label-E\">&#9733;</label>\n            <input id=\"radio4\" type=\"radio\" name=\"estrellas\" value=\"2\">\n            <label for=\"radio4\" class=\"label-E\">&#9733;</label>\n            <input id=\"radio5\" type=\"radio\" name=\"estrellas\" value=\"1\">\n            <label for=\"radio5\" class=\"label-E\">&#9733;</label>\n          </p>\n        <!---->\n          <div class=\"input-group \">\n              <div class=\"input-group-prepend\">\n                  <img class=\"input-group-text\" src=\"http://icons.iconarchive.com/icons/graphicloads/flat-finance/48/person-icon.png\" alt=\"imagen de usuario\">\n              </div>\n              <textarea class=\"form-control\" name=\"comentario\" [(ngModel)]=\"comentario\"></textarea>\n          </div>\n          <button type=\"submit\" class=\"btn btn-primary float-right\">Publicar</button>\n          \n      </form>\n    </div>\n  </div>\n\n<!-- Lista de comentarios -->\n\n\n<div class=\"containeer\">\n\n    <div class=\"card containeer\" *ngFor=\"let comentario of comentarios\">\n        <div class=\"card-body\">\n          <div class=\"input-group \">\n            <div class=\"input-group-prepend\">\n                <img class=\"input-group-text\" src=\"http://icons.iconarchive.com/icons/graphicloads/flat-finance/48/person-icon.png\" alt=\"imagen de usuario\">\n            </div>\n            <h5 class=\"card-title\">{{comentario.usuario}}</h5>\n            <p class=\"clasificacion \">\n              <label class=\"estrella\" *ngFor=\"let x of hacerEstrellas(comentario.calificacion)\">&#9733;</label>\n            </p>\n          </div>\n          <p class=\"card-text\">{{comentario.comentario}}</p>    \n        \n        </div>\n    </div>\n\n    \n  </div>\n\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/components/caja-comentarios/caja-comentarios.component.scss":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/caja-comentarios/caja-comentarios.component.scss ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".containeer {\n  margin: 1rem 1rem 1rem 1rem; }\n\n.child {\n  background: #60e0b0;\n  padding: .2rem;\n  text-align: center; }\n\n.center-h {\n  justify-content: center; }\n\n.center-v {\n  align-items: center; }\n\n.maxWidth {\n  width: 100%; }\n\n.maxHeight {\n  height: 100%; }\n\ninput[type=\"radio\"] {\n  display: none; }\n\nlabel {\n  color: grey;\n  font-size: 2em; }\n\n.clasificacion {\n  direction: rtl;\n  unicode-bidi: bidi-override; }\n\n.label-E:hover,\n.label-E:hover ~ .label-E {\n  color: orange; }\n\ninput[type=\"radio\"]:checked ~ label {\n  color: orange; }\n\n.estrella {\n  color: orange; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2plc2dyYS9Eb2N1bWVudG9zL3Byb2Z1bmRpemFjaW9uMy9zcmMvYW5ndWxhci1jbGllbnQvc3JjL2FwcC9jb21wb25lbnRzL2NhamEtY29tZW50YXJpb3MvY2FqYS1jb21lbnRhcmlvcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDJCQUEyQixFQUFBOztBQUc3QjtFQUNFLG1CQUFtQjtFQUNuQixjQUFjO0VBQ2Qsa0JBQWtCLEVBQUE7O0FBR3BCO0VBQ0UsdUJBQXVCLEVBQUE7O0FBRXpCO0VBQ0UsbUJBQW1CLEVBQUE7O0FBRXJCO0VBQ0ksV0FBVSxFQUFBOztBQUVkO0VBQ0ksWUFBVyxFQUFBOztBQUdmO0VBQ0UsYUFBYSxFQUFBOztBQUdmO0VBQ0UsV0FBVztFQUNYLGNBQWMsRUFBQTs7QUFHaEI7RUFDRSxjQUFjO0VBQ2QsMkJBQTJCLEVBQUE7O0FBRzdCOztFQUVFLGFBQWEsRUFBQTs7QUFHZjtFQUNFLGFBQWEsRUFBQTs7QUFHZjtFQUNFLGFBQWEsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2FqYS1jb21lbnRhcmlvcy9jYWphLWNvbWVudGFyaW9zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lZXIge1xuICAgIG1hcmdpbjogMXJlbSAxcmVtIDFyZW0gMXJlbTtcbn1cbiAgXG4gIC5jaGlsZCB7XG4gICAgYmFja2dyb3VuZDogIzYwZTBiMDtcbiAgICBwYWRkaW5nOiAuMnJlbTtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIH1cbiAgXG4gIC5jZW50ZXItaCB7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIH1cbiAgLmNlbnRlci12IHtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICB9XG4gIC5tYXhXaWR0aHtcbiAgICAgIHdpZHRoOjEwMCU7XG4gIH1cbiAgLm1heEhlaWdodHtcbiAgICAgIGhlaWdodDoxMDAlO1xuICB9XG5cbiAgaW5wdXRbdHlwZT1cInJhZGlvXCJdIHtcbiAgICBkaXNwbGF5OiBub25lO1xuICB9XG4gIFxuICBsYWJlbCB7XG4gICAgY29sb3I6IGdyZXk7XG4gICAgZm9udC1zaXplOiAyZW07XG4gIH1cbiAgXG4gIC5jbGFzaWZpY2FjaW9uIHtcbiAgICBkaXJlY3Rpb246IHJ0bDtcbiAgICB1bmljb2RlLWJpZGk6IGJpZGktb3ZlcnJpZGU7XG4gIH1cbiAgXG4gIC5sYWJlbC1FOmhvdmVyLFxuICAubGFiZWwtRTpob3ZlciB+IC5sYWJlbC1FIHtcbiAgICBjb2xvcjogb3JhbmdlO1xuICB9XG4gIFxuICBpbnB1dFt0eXBlPVwicmFkaW9cIl06Y2hlY2tlZCB+IGxhYmVsIHtcbiAgICBjb2xvcjogb3JhbmdlO1xuICB9XG5cbiAgLmVzdHJlbGxhe1xuICAgIGNvbG9yOiBvcmFuZ2U7XG4gIH0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/caja-comentarios/caja-comentarios.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/caja-comentarios/caja-comentarios.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: CajaComentariosComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CajaComentariosComponent", function() { return CajaComentariosComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CajaComentariosComponent = /** @class */ (function () {
+    function CajaComentariosComponent( /** asigno variable data para servicio de comentar  */) {
+        this.calificacion = ''; //calificacion de cada usuario
+        this.comentario = ''; //area text
+    }
+    CajaComentariosComponent.prototype.ngOnInit = function () { this.getComentarios(); };
+    CajaComentariosComponent.prototype.onSubmit = function () {
+        alert("Thanks for comment!");
+    };
+    CajaComentariosComponent.prototype.getComentarios = function () {
+        //this.comentariosService.listarComentarios().subscribe( res=> {
+        //  this.comentarios = res;
+        // },error=>{});
+    };
+    CajaComentariosComponent.prototype.hacerEstrellas = function (calificacion) {
+        var estrellas = [];
+        for (var i = 0; i < calificacion * 1; i++) {
+            estrellas.push(i);
+        }
+        return estrellas;
+    };
+    CajaComentariosComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-caja-comentarios',
+            template: __webpack_require__(/*! ./caja-comentarios.component.html */ "./src/app/components/caja-comentarios/caja-comentarios.component.html"),
+            styles: [__webpack_require__(/*! ./caja-comentarios.component.scss */ "./src/app/components/caja-comentarios/caja-comentarios.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CajaComentariosComponent);
+    return CajaComentariosComponent;
 }());
 
 

@@ -31,6 +31,8 @@ import { CategoriesResultComponent } from './components/categories-result/catego
 import { SitiosResultComponent } from './components/sitios-result/sitios-result.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SitioregistroComponent } from './components/sitioregistro/sitioregistro.component';
+import { CajaComentariosComponent } from './components/caja-comentarios/caja-comentarios.component';
+
 
 const routes: Routes = [
   {
@@ -65,7 +67,8 @@ const routes: Routes = [
     SitiosResultComponent,
     NavbarComponent,
     SitioregistroComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    CajaComentariosComponent
    ],
   imports: [
     BrowserModule,
