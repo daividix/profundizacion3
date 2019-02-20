@@ -20,6 +20,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { SitioComponent } from './components/sitio/sitio.component';
 import { SitiosCiudadesComponent } from './components/sitios-ciudades/sitios-ciudades.component';
+import { BuscadorComponent } from './components/buscador/buscador.component'
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // Modulo de Widgets Bootstrap
 import { CategoriesComponent } from './components/categories/categories.component';
@@ -63,7 +64,8 @@ const routes: Routes = [
     CategoriesResultComponent,
     SitiosResultComponent,
     NavbarComponent,
-    SitioregistroComponent
+    SitioregistroComponent,
+    BuscadorComponent
    ],
   imports: [
     BrowserModule,
