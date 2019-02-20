@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SiteService } from 'src/app/services/site.service';
+import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 
 @Component({
   selector: 'app-sitioregistro',
@@ -12,13 +13,14 @@ export class SitioregistroComponent implements OnInit {
     address: '',
     calification: '',
     information: '',
-    phone_number: '',
+    phoneNumber: '',
     eslogan: '',
     city: '',
     categories: [],
     services: [],
     longitude: '',
-    latitude: ''
+    latitude: '',
+    clicks: 0
   };
 
   latitude: Number = 2.944286;
@@ -32,13 +34,14 @@ export class SitioregistroComponent implements OnInit {
     console.log(this.latitude, this.longitude);
   }
 
-  constructor(private siteService: SiteService) { }
+  constructor(private siteService: SiteService, private tokenService: TokenStorageService) { }
 
   ngOnInit() {
   }
 
   crearSitio() {
-
+    console.log('Authorities', this.tokenService.getAuthorities());
+    console.log('token', this.tokenService.getToken());
   this.newSitio.latitude = this.latitude;
   this.newSitio.longitude = this.longitude;
   console.log(this.newSitio);

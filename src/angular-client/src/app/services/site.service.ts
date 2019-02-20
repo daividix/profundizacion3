@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TokenStorageService } from './token/token-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class SiteService {
   domain: String = '/api/v1/sitio';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private tokenService: TokenStorageService) { }
 
   public verSitios(): Observable<any> {
     return this.http.get(`${this.domain}/verSitios`);
@@ -21,7 +22,10 @@ export class SiteService {
 
 
   public crearSitio(sitio): Observable<any> {
-    return this.http.post(`${this.domain}/agregarSitio`, sitio);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.getToken()}`)
+    return this.http.post(`${this.domain}/agregarSitio`, sitio, {
+      headers: headers
+    });
   }
 
 }
