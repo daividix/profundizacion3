@@ -1,0 +1,14 @@
+ .child {
+    background: #60e0b0;
+    padding: .2rem;
+    text-align: center;
+  }
+  .containeer {
+    margin: 1rem 1rem 1rem 1rem;
+    display: flex;
+    /* align-items por defecto tiene el valor `stretch` */
+    align-items: start;
+  }
+  .maxWidth{
+    width:100%;
+}

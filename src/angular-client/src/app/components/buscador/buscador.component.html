@@ -1,0 +1,36 @@
+<div class="containeer center-h center-v">
+  <form class="containeer center-h center-v maxWidth" (ngSubmit)="realizarBusqueda()" #myForm="ngForm">
+
+  	<div class="maxWidth">
+  	
+  	<!--primer input Buscar -->
+  	<div class="col-sm child input-group ">
+  		<div class="input-group-prepend">
+    		<span class="input-group-text" id="basic-addon1">Busca</span>
+      </div>
+      
+  		<input type="text" class="form-control" placeholder="Hoteles,Restaurantes,etc..." maxlength="10" [(ngModel)]="nombre" name="nombre">
+      <!-- boton busqueda-->
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-outline-secondary"><i class="fa fa-search fa-lg"></i></button>
+      </div>
+    </div>
+
+  	</div>
+</form> 
+</div>
+
+<!-- Listo mi servicio -->
+
+<!-- tabla -->
+<table class="table-hover containeer">
+  <tbody>
+  <tr *ngFor="let sitio of sitiosBuscados$" class="trR" > 
+    <td><img src='{{sitio.img}}' class="img-fluid" alt="Imagen Negocio"></td>
+    <td>
+      <h2>{{sitio.name}}</h2><b class="card-title">{{sitio.addres}}</b><br>
+      <p>{{sitio.owner}} </p><a href="#" class="btn btn-outline-success">Visitar</a>
+    </td>
+  </tr>
+  </tbody>
+  </table>
