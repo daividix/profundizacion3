@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,7 +27,7 @@ public class Calification implements Serializable{
 	//comentario
 	//Columna id que se autogenera 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id", unique=true)
 	private Long id;
 	
@@ -52,20 +53,30 @@ public class Calification implements Serializable{
 		this.calificationValue = calificationValue;
 		this.date = date;
 	}
+	
+	
 
 	
+	public Calification(BigDecimal calificationValue, Date date, String userName) {
+		this.calificationValue = calificationValue;
+		this.date = date;
+		
+		User user = new User();
+		user.setUsername(userName);
+		
+		this.user = user;
+	}
+
+
+
+
 	public Calification () {
 		
 	}
-	
-	
-	//Metodos Getters y Setters para cada atributo
-	public long getId() {
-		return id;
-	}
 
-	public void setId(long id) {
-		this.id = id;
+
+	public Long getId() {
+		return id;
 	}
 
 
@@ -74,13 +85,28 @@ public class Calification implements Serializable{
 	}
 
 
-	public void setSite(Site site) {
-		this.site = site;
+	public User getUser() {
+		return user;
 	}
 
 
-	public User getUser() {
-		return user;
+	public BigDecimal getCalificationValue() {
+		return calificationValue;
+	}
+
+
+	public Date getDate() {
+		return date;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public void setSite(Site site) {
+		this.site = site;
 	}
 
 
@@ -89,21 +115,16 @@ public class Calification implements Serializable{
 	}
 
 
-	public BigDecimal getCalification() {
-		return calificationValue;
-	}
-
-	public void setCalification(BigDecimal calificationValue) {
+	public void setCalificationValue(BigDecimal calificationValue) {
 		this.calificationValue = calificationValue;
 	}
 
 
-	public Date getDate() {
-		return this.date;
-	}
-
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	
+	
+	
 	
 }

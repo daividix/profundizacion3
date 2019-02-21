@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,47 +14,73 @@ import javax.persistence.Table;
 
 //Esta tabla guardara todos los comentarios que haya hecho un usuario a un sitio
 @Entity
-@Table(name="Comment")
-public class Comment implements Serializable{
-
+@Table(name = "Comment")
+public class Comment implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	//Autogenerado, guarda el id del comentario 
+	// Autogenerado, guarda el id del comentario
 	@Id
-	@GeneratedValue
-	@Column(name="id", unique=true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true)
 	private long id;
-	
-	@JoinColumn(nullable=false)
-	@ManyToOne
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
-	
-	@JoinColumn(nullable=false)
-	@ManyToOne
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "site_id", nullable = false)
 	private Site site;
-	
-	//Columna donde se almacena el contenido del comentario
-	@Column(name="content", nullable=false)
+
+	// Columna donde se almacena el contenido del comentario
+	@Column(name = "content", nullable = false)
 	private String content;
-	
-	//Columna que almacena el numero de reportes que tiene un comentario
-	@Column(name="reports", columnDefinition="DEFAULT 0")
-	private Integer reports;
-	
-	//Almacena el numero de likes que tiene el comentario
-	@Column(name="likes", columnDefinition="DEFAULT 0")
-	private Integer likes;
-	
-	//Almacena el numero de dislikes de un comentario
-	@Column(name="dislikes", columnDefinition="DEFAULT 0")
-	private Integer dislikes;
-	
+
+	// Columna que almacena el numero de reportes que tiene un comentario
+	@Column(name = "reports")
+	private int reports;
+
+	// Almacena el numero de likes que tiene el comentario
+	@Column(name = "likes")
+	private int likes;
+
+	// Almacena el numero de dislikes de un comentario
+	@Column(name = "dislikes")
+	private int dislikes;
+
 	public Comment() {
+
+	}
+	
+	
+
+	public Comment(String content, int likes, int dislikes, String userName) {
+		this.content = content;
+		this.likes = likes;
+		this.dislikes = dislikes;
 		
+		User user = new User();
+		user.setUsername(userName);
+		
+		this.user = user;
+	}
+
+
+
+	public void setReports(int reports) {
+		this.reports = reports;
+	}
+
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
+
+	public void setDislikes(int dislikes) {
+		this.dislikes = dislikes;
 	}
 
 	public long getId() {
@@ -62,7 +90,6 @@ public class Comment implements Serializable{
 	public void setId(long id) {
 		this.id = id;
 	}
-
 
 	public User getUser() {
 		return user;
@@ -111,7 +138,5 @@ public class Comment implements Serializable{
 	public void setDislikes(Integer dislikes) {
 		this.dislikes = dislikes;
 	}
-	
-	
-	
+
 }
