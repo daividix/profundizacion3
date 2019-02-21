@@ -5,10 +5,19 @@
   }
   .containeer {
     margin: 1rem 1rem 1rem 1rem;
-    display: flex;
     /* align-items por defecto tiene el valor `stretch` */
     align-items: start;
   }
   .maxWidth{
     width:100%;
+}
+
+
+.trR{border-bottom: 1px solid #dee2e6;
+  background-color: white;
+  color: black }
+
+.formBar{
+  margin-left: auto;
+  margin-right: auto;
 }
