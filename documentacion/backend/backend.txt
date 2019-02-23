@@ -1,0 +1,10 @@
+URL del crud de Sitios
+
+"{[/api/v1/sitio/verSitio/{id}],methods=[GET]}"
+"{[/api/v1/sitio/verSitios],methods=[GET]}"
+"{[/api/v1/sitio/buscarPorNombre/{name}],methods=[GET]}"
+"{[/api/v1/sitio/sitiosPopulares],methods=[GET]}"
+"{[/api/v1/sitio/sitiosMejorCalificados],methods=[GET]}"
+"{[/api/v1/sitio/eliminarSitio/{id}],methods=[DELETE]}"
+"{[/api/v1/sitio/actualizarSitio/{id}],methods=[PUT]}"
+"{[/api/v1/sitio/agregarSitio],methods=[POST]}"
