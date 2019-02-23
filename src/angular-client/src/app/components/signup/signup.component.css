@@ -4,11 +4,7 @@
   z-index: -1;
   background-image: url('https://res.cloudinary.com/daividix/image/upload/v1549936257/building-chairs-city-157213.jpg');
   background-size: cover;
-  -webkit-filter: blur(2px);
-  -moz-filter: blur(2px);
-  -o-filter: blur(2px);
-  -ms-filter: blur(2px);
-  filter: blur(2px);
+  
 }
 .btn-register {
   height: 30px;
