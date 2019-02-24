@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.usco.project.entity.Calification;
+import com.usco.project.message.response.Response;
 import com.usco.project.service.CalificationService;
 
 @RestController
@@ -24,38 +25,46 @@ public class CalificacionApi {
 	private CalificationService calificationService;
 	
 	@PostMapping(value = "/guardar", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> guardar(@RequestBody Calification calification) {
+	public Response guardar(@RequestBody Calification calification) {
 		
-		ResponseEntity<?> response = null;
+		Response response = new Response();
 		
 		try {
 			
 			calificationService.guardar(calification);
-			response = new ResponseEntity<>(HttpStatus.OK);
+			response.setIsOk(true);
+			response.setMessage("Calificacion guardada correctamente");
 			
 		} catch(Exception e) {
 			
 			e.printStackTrace();
-			response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			response.setIsOk(false);
+			response.setMessage("Error al guardar la calificacion");
+			
 		}
 		
 		return response;
 	}
 	
 	@GetMapping(value = "/listarPorSiteId/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> listarPorSiteId(@PathVariable("id") long id) {
+	public Response listarPorSiteId(@PathVariable("id") long id) {
 		
-		ResponseEntity<?> response = null;
+		Response response = new Response();
 		
 		try {
 			
 			List<Calification> lstCalification = calificationService.listarPorSiteId(id);
-			response = new ResponseEntity<>(lstCalification, HttpStatus.OK);
+			response.setIsOk(true);
+			response.setResults(lstCalification);
+			response.setMessage("Las calificaciones fueron listadas por id correctamente");
+			//response = new ResponseEntity<>(lstCalification, HttpStatus.OK);
 			
 		} catch(Exception e) {
 			
 			e.printStackTrace();
-			response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			response.setIsOk(false);
+			response.setMessage("Error al listar las califaciones");
+			//response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		return response;
