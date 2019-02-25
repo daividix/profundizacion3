@@ -9,6 +9,11 @@ URL del crud de Sitios
 "{[/api/v1/sitio/actualizarSitio/{id}],methods=[PUT]}"
 "{[/api/v1/sitio/agregarSitio],methods=[POST]}"
 
+Video de crud de sitios
+	https://drive.google.com/file/d/1AfJpb3HmFoGe-U3bFcnwpKhwRDUbwTD2/view?usp=sharing	
+Diccionario de datos que utilizamos para realizar el desarrollo del crud
+	https://drive.google.com/file/d/1rQj5OJfFboq64UIcFWDdx1wc3RQD8kXE/view?usp=sharing
+    
 
 
 Videos
