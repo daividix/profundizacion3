@@ -8,3 +8,9 @@ URL del crud de Sitios
 "{[/api/v1/sitio/eliminarSitio/{id}],methods=[DELETE]}"
 "{[/api/v1/sitio/actualizarSitio/{id}],methods=[PUT]}"
 "{[/api/v1/sitio/agregarSitio],methods=[POST]}"
+
+
+
+Videos
+    Login-Register
+        https://drive.google.com/file/d/1dmWIm4fqFrxBOits-Zxrv4W2jdvf-myk/view?usp=sharing
