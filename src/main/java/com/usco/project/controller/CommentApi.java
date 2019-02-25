@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.usco.project.entity.Comment;
 import com.usco.project.service.CommentService;
+import com.usco.project.message.response.Response;
 
 @RestController
 @RequestMapping("/api/v1/comentario")
@@ -24,38 +25,46 @@ public class CommentApi {
 	private CommentService commentService;
 	
 	@PostMapping(value = "guardar", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> guardar(@RequestBody Comment comment) {
+	public Response guardar(@RequestBody Comment comment) {
 		
-		ResponseEntity<?> response = null;
+		Response response = new Response();
 		
 		try {
-			
 			commentService.guardar(comment);
-			response = new ResponseEntity<>(HttpStatus.OK);
+			response.setIsOk(true);
+			response.setMessage("Comentario guardado correctamente");
+			//response = new ResponseEntity<>(HttpStatus.OK);
 			
 		} catch(Exception e) {
-			
 			e.printStackTrace();
-			response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			response.setIsOk(false);
+			response.setMessage("Error al guardar comentario");
+			//response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		return response;
 	}
 	
-	@GetMapping(value = "listarPorSiteId/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> listarPorSiteId(@PathVariable("id") long id) {
 		
-		ResponseEntity<?> response = null;
+	
+	@GetMapping(value = "listarPorSiteId/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Response listarPorSiteId(@PathVariable("id") long id) {
+		
+		Response response = new Response();
 		
 		try {
 			
 			List<Comment> lstComment = commentService.listarPorSiteId(id);
-			response = new ResponseEntity<>(lstComment, HttpStatus.OK);
+			response.setIsOk(true);
+			response.setResults(lstComment);
+			response.setMessage("Los comentaros fueron listados por id correctamente");
 			
-		} catch(Exception e) {
 			
+		}catch(Exception e) {
 			e.printStackTrace();
-			response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			response.setIsOk(false);
+			response.setMessage("Error al listar los comentarios");
+			
 		}
 		
 		return response;
