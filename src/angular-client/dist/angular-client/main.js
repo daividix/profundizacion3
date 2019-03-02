@@ -1599,6 +1599,7 @@ var SitioregistroComponent = /** @class */ (function () {
         this.siteService.crearSitio(this.newSitio)
             .subscribe(function (res) {
             console.log(res);
+            alert(res.message);
         });
     };
     SitioregistroComponent = __decorate([

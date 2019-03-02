@@ -48,6 +48,7 @@ export class SitioregistroComponent implements OnInit {
   this.siteService.crearSitio(this.newSitio)
   .subscribe(res => {
     console.log(res);
+    alert(res.message);
   });
 
   }
