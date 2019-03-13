@@ -9,7 +9,7 @@ import { SiteService } from '../../services/site.service';
 })
 export class BuscadorComponent implements OnInit {
 
-  constructor(private data: SiteService,) { }
+  constructor(private data: SiteService) { }
 
   sitiosBuscados$: object;
   nombre: string = '';
@@ -20,9 +20,10 @@ export class BuscadorComponent implements OnInit {
     this.data.buscarSitios(this.nombre).subscribe(res => {
       console.log(res);
       if (res.isOk) {
-        this.sitiosBuscados$ = res.sitios;
+        this.sitiosBuscados$=res.results; 
       }
-    }); 
+    });
   }
+
 
 }

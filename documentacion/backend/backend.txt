@@ -1,0 +1,24 @@
+URL del crud de Sitios
+
+"{[/api/v1/sitio/verSitio/{id}],methods=[GET]}"
+"{[/api/v1/sitio/verSitios],methods=[GET]}"
+"{[/api/v1/sitio/buscarPorNombre/{name}],methods=[GET]}"
+"{[/api/v1/sitio/sitiosPopulares],methods=[GET]}"
+"{[/api/v1/sitio/sitiosMejorCalificados],methods=[GET]}"
+"{[/api/v1/sitio/eliminarSitio/{id}],methods=[DELETE]}"
+"{[/api/v1/sitio/actualizarSitio/{id}],methods=[PUT]}"
+"{[/api/v1/sitio/agregarSitio],methods=[POST]}"
+
+Diccionario de datos que utilizamos para realizar el desarrollo del backend
+	https://drive.google.com/file/d/1rQj5OJfFboq64UIcFWDdx1wc3RQD8kXE/view?usp=sharing
+    
+
+Videos
+    Login-Register
+        https://drive.google.com/file/d/1dmWIm4fqFrxBOits-Zxrv4W2jdvf-myk/view?usp=sharing
+	
+    Video de crud de sitios
+	https://drive.google.com/file/d/1AfJpb3HmFoGe-U3bFcnwpKhwRDUbwTD2/view?usp=sharing
+	
+    Comment-Calification
+        https://drive.google.com/file/d/1-SOxY5HrZBrwR82hR2ykeVW5cFcukAbk/view	

@@ -28,4 +28,12 @@ export class SiteService {
     });
   }
 
+  public VerSitioPorId(id: object): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.getToken()}`)
+    return this.http.post(`${this.domain}/verSitio/{id}`, id, {
+      headers: headers
+    });
+  }
+
+
 }
