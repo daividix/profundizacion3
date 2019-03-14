@@ -15,7 +15,7 @@ input[type=text]:focus {
 
 button {
   height: 50px;
-  width: 80px;
+  width: 70px;
 }
 
 .btn-outline-secondary{
@@ -36,6 +36,7 @@ button {
   font-size: 20px;
   color: #7a7a7a !important;
   font-weight: 900;
+  width: 82px;
 }
 
 .cb-font{

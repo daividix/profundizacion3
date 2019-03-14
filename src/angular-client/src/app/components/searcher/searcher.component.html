@@ -4,10 +4,9 @@
     <div class="slider-container">
       <div class="intro-text">
       <img src="https://res.cloudinary.com/hcarvajal/image/upload/v1550168488/sitios/Logo.png" />
-        <br>
         <app-buscador></app-buscador>
         <div class="categoTop" *ngFor="let populares of categoriaPopular$">
-          <a *ngIf="populares.popular" routerLink="/categories-result/{{populares.id}}"><i class=" material-icons">{{populares.icono}}</i>
+          <a *ngIf="populares.popular" routerLink="/categories-result/{{populares.id}}"><i class="material-icons">{{populares.icono}}</i>
           {{populares.nombre}}</a>
         </div>
       </div>
